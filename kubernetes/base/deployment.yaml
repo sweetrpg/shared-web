@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 
 metadata:
-    name: web
+    name: shared-web
 
 spec:
     replicas: 1
@@ -24,7 +24,7 @@ spec:
                 app: shared
                 component: web
         spec:
-            serviceAccountName: web
+            serviceAccountName: shared-web
             imagePullSecrets:
                 - name: sweetrpg-registry
             containers:
@@ -33,18 +33,18 @@ spec:
                   imagePullPolicy: Always
                   envFrom:
                       - configMapRef:
-                            name: web-common
+                            name: shared-web-common
                       - configMapRef:
-                            name: web-env
+                            name: shared-web-env
                       - secretRef:
-                            name: web-auth
+                            name: shared-web-auth
                       - secretRef:
-                            name: web-misc
+                            name: shared-web-misc
                       - secretRef:
-                            name: web-cache
+                            name: shared-web-cache
                   env: []
                   ports:
-                      - containerPort: 8080
+                      - containerPort: 8081
                         name: http
                   resources:
                       requests:
@@ -56,13 +56,13 @@ spec:
                   livenessProbe:
                       httpGet:
                           path: /health/ping
-                          port: 8080
+                          port: 8081
                       initialDelaySeconds: 90
                       timeoutSeconds: 10
                   readinessProbe:
                       httpGet:
                           path: /health/ping
-                          port: 8080
+                          port: 8081
                       initialDelaySeconds: 30
                       timeoutSeconds: 10
                   volumeMounts:
@@ -73,7 +73,7 @@ spec:
             volumes:
                 - name: config
                   secret:
-                      secretName: web-files
+                      secretName: shared-web-files
                       items:
                           - key: newrelic.ini
                             path: newrelic.ini
