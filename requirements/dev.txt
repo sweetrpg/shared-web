@@ -116,7 +116,7 @@ pluggy==1.0.0
     # via
     #   pytest
     #   tox
-py==1.10.0
+py==1.11.0
     # via
     #   pytest
     #   tox
@@ -152,7 +152,7 @@ pyyaml==6.0
     # via -r requirements/app.in
 redis==3.5.3
     # via -r requirements/app.in
-regex==2021.10.23
+regex==2021.11.2
     # via black
 requests==2.26.0
     # via
@@ -199,7 +199,7 @@ sphinxcontrib-qthelp==1.0.3
     # via sphinx
 sphinxcontrib-serializinghtml==1.1.5
     # via sphinx
-sweetrpg-web-core==0.0.4
+sweetrpg-web-core==0.0.6
     # via -r requirements/app.in
 toml==0.10.2
     # via
