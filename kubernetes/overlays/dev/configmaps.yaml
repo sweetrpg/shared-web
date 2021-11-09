@@ -10,4 +10,5 @@ data:
     SERVICE_CHECK_URL: http://dev.sweetrpg.com/health/ping
     HEALTH_CHECK_URL: http://dev.sweetrpg.com/health/status
     APPLICATION_BASE_PATH: ""
-    LIBRARY_API_BASE_URL: ""
+    BUILD_INFO_PATH: /app/build-info.json
+    SERVICE_REGISTRATION_URL: "http://consul.sweetrpg-support.svc.cluster.local:1234"
