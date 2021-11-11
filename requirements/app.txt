@@ -42,7 +42,7 @@ idna==3.3
     # via requests
 itsdangerous==2.0.1
     # via flask
-jinja2==3.0.2
+jinja2==3.0.3
     # via flask
 limits==1.5.1
     # via python-logstash-async
@@ -79,7 +79,7 @@ six==1.16.0
     #   flask-cors
     #   limits
     #   python-dateutil
-sweetrpg-web-core==0.0.6
+sweetrpg-web-core==0.0.7
     # via -r requirements/app.in
 urllib3==1.26.7
     # via
