@@ -129,7 +129,7 @@ six==1.16.0
     #   python-dateutil
     #   tox
     #   virtualenv
-sweetrpg-web-core==0.0.20
+sweetrpg-web-core==0.0.21
     # via -r requirements/app.in
 toml==0.10.2
     # via
