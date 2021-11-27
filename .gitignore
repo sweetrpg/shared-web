@@ -10,7 +10,6 @@ __pycache__/
 .dockerconfigjson
 .eggs/
 .env
-.idea/
 .pytest_cache/
 .python-version
 .tox/
