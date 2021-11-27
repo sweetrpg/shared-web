@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('div.col.volume').each(function (e) {
+    $('div.col.volume').each(function (i, e) {
         var id = e.id;
         // var created = $(e).find("time#volume-" + id + "-created").attr("datetime");
         var updated = $(e).find("time#volume-" + id + "-updated").attr("datetime");
