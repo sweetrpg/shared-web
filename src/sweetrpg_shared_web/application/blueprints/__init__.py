@@ -14,6 +14,7 @@ import os
 from sweetrpg_shared_web.application import constants
 import analytics
 import datetime
+from sweetrpg_web_core import constants as core_constants
 
 
 blueprint = Blueprint("web", __name__)
@@ -88,6 +89,32 @@ def _track():
         analytics.track(user_id, request.full_path, {
             'user_agent': request.headers.get('User-Agent')
         })
+
+
+def render_page(page:str, context:dict={}):
+    """Call `render_template` for the specified page, and merge the
+    provided context into an initialized, common context.
+
+    :param str page:
+    :param dict context:
+    :returns:
+    """
+    show_cookie_message = True
+    if request.cookies.get("cookies-accepted"):
+        show_cookie_message = False
+    context.update({
+       "showCookieMessage": show_cookie_message,
+    })
+
+    userinfo = session.get(core_constants.PROFILE_KEY)
+    if userinfo:
+        context.update({
+            "user_info": userinfo,
+            "segment_write_key": os.environ.get(constants.SEGMENT_WRITE_KEY, "")
+        })
+
+    current_app.logger.debug(f"context: {context}")
+    return render_template(page, **context)
 
 
 @blueprint.errorhandler(Exception)
