@@ -5,5 +5,5 @@ $('div.col.volume').each(function (e) {
     // var createdBy = $(e).find("data#volume-" + id + "-created-by").attr("value");
     // var updatedBy = $(e).find("data#volume-" + id + "-updated-by").attr("value");
     var cell = $(e).find("#volume-" + id + "-date-info");
-    $(cell).val(moment(updated).fromNow());
+    $(cell).html(moment(updated).fromNow());
 });
