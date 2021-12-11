@@ -17,12 +17,14 @@ spec:
             platform: sweetrpg
             app: shared
             component: web
+            version: v1
     template:
         metadata:
             labels:
                 platform: sweetrpg
                 app: shared
                 component: web
+                version: v1
         spec:
             serviceAccountName: shared-web
             imagePullSecrets:
