@@ -46,7 +46,7 @@ coverage-badge==1.1.0
     # via -r requirements/tests.in
 deprecated==1.2.13
     # via redis
-distlib==0.3.3
+distlib==0.3.4
     # via virtualenv
 docutils==0.16
     # via
@@ -202,7 +202,7 @@ sphinxcontrib-qthelp==1.0.3
     # via sphinx
 sphinxcontrib-serializinghtml==1.1.5
     # via sphinx
-sweetrpg-web-core==0.0.75
+sweetrpg-web-core==0.0.76
     # via -r requirements/app.in
 toml==0.10.2
     # via

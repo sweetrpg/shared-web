@@ -37,7 +37,7 @@ coverage-badge==1.1.0
     # via -r requirements/tests.in
 deprecated==1.2.13
     # via redis
-distlib==0.3.3
+distlib==0.3.4
     # via virtualenv
 filelock==3.4.0
     # via
@@ -134,7 +134,7 @@ six==1.16.0
     #   python-dateutil
     #   tox
     #   virtualenv
-sweetrpg-web-core==0.0.75
+sweetrpg-web-core==0.0.76
     # via -r requirements/app.in
 toml==0.10.2
     # via
