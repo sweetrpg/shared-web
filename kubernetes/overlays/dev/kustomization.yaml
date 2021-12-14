@@ -13,8 +13,10 @@ patchesStrategicMerge:
 
 commonLabels:
     platform: sweetrpg
-    app: shared
+    app: sweetrpg-shared-web-v1
     component: web
+    package: shared
+    version: v1
 
 generatorOptions:
     disableNameSuffixHash: true
