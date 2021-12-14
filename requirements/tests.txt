@@ -134,13 +134,13 @@ six==1.16.0
     #   python-dateutil
     #   tox
     #   virtualenv
-sweetrpg-web-core==0.0.80
+sweetrpg-web-core==0.0.81
     # via -r requirements/app.in
 toml==0.10.2
     # via
     #   pytest
     #   tox
-tomli==1.2.2
+tomli==2.0.0
     # via coverage
 tox==3.24.4
     # via -r requirements/tests.in
