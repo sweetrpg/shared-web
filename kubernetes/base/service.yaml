@@ -8,7 +8,7 @@ metadata:
 spec:
     selector:
         platform: sweetrpg
-        app: sweetrpg-shared-web-v1
+        app: shared-web
         component: web
         package: shared
         version: v1
