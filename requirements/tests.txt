@@ -74,7 +74,7 @@ itsdangerous==2.0.1
     # via flask
 jinja2==3.0.3
     # via flask
-limits==2.0.3
+limits==2.1.0
     # via python-logstash-async
 markupsafe==2.0.1
     # via jinja2
