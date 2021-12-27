@@ -53,7 +53,7 @@ docutils==0.16
     #   rstcheck
     #   sphinx
     #   sphinx-tabs
-filelock==3.4.0
+filelock==3.4.2
     # via
     #   tox
     #   virtualenv
@@ -104,6 +104,7 @@ packaging==21.3
     # via
     #   pallets-sphinx-themes
     #   pytest
+    #   redis
     #   sphinx
     #   tox
 pallets-sphinx-themes==2.0.2
@@ -114,7 +115,7 @@ pep517==0.12.0
     # via pip-tools
 pip-tools==6.4.0
     # via -r requirements/dev.in
-platformdirs==2.4.0
+platformdirs==2.4.1
     # via
     #   black
     #   virtualenv
@@ -156,7 +157,7 @@ pytz==2021.3
     # via babel
 pyyaml==6.0
     # via -r requirements/app.in
-redis==4.0.2
+redis==4.1.0
     # via -r requirements/app.in
 requests==2.26.0
     # via
@@ -202,7 +203,7 @@ sphinxcontrib-qthelp==1.0.3
     # via sphinx
 sphinxcontrib-serializinghtml==1.1.5
     # via sphinx
-sweetrpg-web-core==0.0.89
+sweetrpg-web-core==0.0.91
     # via -r requirements/app.in
 toml==0.10.2
     # via
