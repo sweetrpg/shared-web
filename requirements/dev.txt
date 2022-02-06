@@ -36,7 +36,7 @@ click==8.0.3
     #   black
     #   flask
     #   pip-tools
-coverage[toml]==6.3
+coverage[toml]==6.3.1
     # via
     #   coverage-badge
     #   pytest-cov
@@ -90,7 +90,7 @@ jinja2==3.0.3
     # via
     #   flask
     #   sphinx
-limits==2.3.2
+limits==2.3.3
     # via python-logstash-async
 markupsafe==2.0.1
     # via jinja2
@@ -133,7 +133,7 @@ pylogbeat==2.0.0
     # via python-logstash-async
 pyparsing==3.0.7
     # via packaging
-pytest==6.2.5
+pytest==7.0.0
     # via
     #   -r requirements/tests.in
     #   pytest-cov
@@ -204,14 +204,13 @@ sphinxcontrib-serializinghtml==1.1.5
 sweetrpg-web-core==0.0.112
     # via -r requirements/app.in
 toml==0.10.2
-    # via
-    #   pytest
-    #   tox
+    # via tox
 tomli==2.0.0
     # via
     #   black
     #   coverage
     #   pep517
+    #   pytest
 tox==3.24.5
     # via -r requirements/tests.in
 typing-extensions==4.0.1
@@ -221,7 +220,7 @@ urllib3==1.26.8
     #   -r requirements/app.in
     #   requests
     #   sentry-sdk
-virtualenv==20.13.0
+virtualenv==20.13.1
     # via tox
 werkzeug==2.0.2
     # via flask
