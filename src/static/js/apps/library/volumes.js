@@ -22,7 +22,7 @@ function fetch_volumes(start, length) {
         });
 }
 
-vue = Vue({
+var vue = Vue({
     el: '#app',
     data: {
         'volumes': []
