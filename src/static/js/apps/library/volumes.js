@@ -18,11 +18,12 @@ function fetch_volumes(start, length) {
     fetch(api_url + '/volumes/data?start=' + start + '&length=' + length)
         .then((res) => res.json())
         .then((data) => {
+            console.log(data);
             vue.volumes = data.items;
         });
 }
 
-var vue = Vue({
+let vue = Vue({
     el: '#app',
     data: {
         'volumes': []
