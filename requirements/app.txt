@@ -8,7 +8,7 @@ analytics-python==1.4.0
     # via -r requirements/app.in
 backoff==1.10.0
     # via analytics-python
-blinker==1.4
+blinker==1.5
     # via
     #   -r requirements/app.in
     #   sentry-sdk
@@ -89,7 +89,7 @@ six==1.16.0
     #   analytics-python
     #   flask-cors
     #   python-dateutil
-sweetrpg-web-core==0.0.130
+sweetrpg-web-core==0.0.131
     # via -r requirements/app.in
 urllib3==1.26.8
     # via
