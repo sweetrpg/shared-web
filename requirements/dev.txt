@@ -10,13 +10,15 @@ analytics-python==1.4.0
     # via -r requirements/app.in
 asgiref==3.5.0
     # via -r requirements/tests.in
+async-timeout==4.0.2
+    # via redis
 attrs==21.4.0
     # via pytest
 babel==2.9.1
     # via sphinx
 backoff==1.10.0
     # via analytics-python
-black==22.1.0
+black==22.6.0
     # via -r requirements/dev.in
 blinker==1.5
     # via
@@ -40,6 +42,9 @@ click==8.0.4
     #   black
     #   flask
     #   pip-tools
+    #   typer
+colorama==0.4.5
+    # via typer
 coverage[toml]==6.3.2
     # via
     #   coverage-badge
@@ -53,6 +58,7 @@ distlib==0.3.4
 docutils==0.17.1
     # via
     #   rstcheck
+    #   rstcheck-core
     #   sphinx
     #   sphinx-tabs
 filelock==3.6.0
@@ -131,6 +137,10 @@ py==1.11.0
     # via
     #   pytest
     #   tox
+pydantic==1.9.1
+    # via
+    #   rstcheck
+    #   rstcheck-core
 pygments==2.11.2
     # via
     #   sphinx
@@ -149,7 +159,7 @@ python-dateutil==2.8.2
     # via
     #   -r requirements/app.in
     #   analytics-python
-python-dotenv==0.19.2
+python-dotenv==0.20.0
     # via
     #   -r requirements/app.in
     #   -r requirements/tests.in
@@ -161,18 +171,22 @@ pytz==2021.3
     # via babel
 pyyaml==6.0
     # via -r requirements/app.in
-redis==4.1.4
+redis==4.3.4
     # via -r requirements/app.in
-requests==2.27.1
+requests==2.28.1
     # via
     #   -r requirements/app.in
     #   analytics-python
     #   python-logstash-async
     #   sphinx
-rstcheck==3.3.1
+rstcheck==6.0.0.post1
     # via -r requirements/docs.in
+rstcheck-core==1.0.2
+    # via rstcheck
 sentry-sdk[flask]==1.5.0
     # via -r requirements/app.in
+shellingham==1.4.0
+    # via typer
 six==1.16.0
     # via
     #   analytics-python
@@ -219,6 +233,14 @@ tomli==2.0.1
     #   pytest
 tox==3.25.1
     # via -r requirements/tests.in
+typer[all]==0.4.2
+    # via rstcheck
+types-docutils==0.18.3
+    # via
+    #   rstcheck
+    #   rstcheck-core
+typing-extensions==4.3.0
+    # via pydantic
 urllib3==1.26.11
     # via
     #   -r requirements/app.in
