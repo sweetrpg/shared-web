@@ -54,7 +54,7 @@ jobs:
               uses: docker/metadata-action@v4
               with:
                   images: |
-                      registry.sweetrpg.com/sweetrpg-shared-web
+                      ghcr.io/sweetrpg/shared-web
                   tags: |
                       type=raw,value=latest
                       type=raw,value=${{ steps.previoustag.outputs.tag }}
