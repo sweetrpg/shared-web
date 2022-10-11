@@ -18,7 +18,7 @@ babel==2.10.3
     # via sphinx
 backoff==1.10.0
     # via analytics-python
-black==22.8.0
+black==22.10.0
     # via -r requirements/dev.in
 blinker==1.5
     # via
@@ -96,6 +96,10 @@ idna==3.4
     # via requests
 imagesize==1.4.1
     # via sphinx
+importlib-metadata==5.0.0
+    # via
+    #   flask
+    #   sphinx
 iniconfig==1.1.1
     # via pytest
 itsdangerous==2.1.2
@@ -247,8 +251,9 @@ types-docutils==0.18.3
     # via
     #   rstcheck
     #   rstcheck-core
-typing-extensions==4.3.0
+typing-extensions==4.4.0
     # via
+    #   black
     #   limits
     #   pydantic
 urllib3==1.26.12
@@ -264,6 +269,8 @@ wheel==0.37.1
     # via pip-tools
 wrapt==1.14.1
     # via deprecated
+zipp==3.9.0
+    # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
 # pip

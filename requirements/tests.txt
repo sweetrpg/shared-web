@@ -72,6 +72,8 @@ hiredis==2.0.0
     # via -r requirements/app.in
 idna==3.4
     # via requests
+importlib-metadata==5.0.0
+    # via flask
 iniconfig==1.1.1
     # via pytest
 itsdangerous==2.1.2
@@ -150,7 +152,7 @@ tomli==2.0.1
     #   tox
 tox==3.26.0
     # via -r requirements/tests.in
-typing-extensions==4.3.0
+typing-extensions==4.4.0
     # via limits
 urllib3==1.26.12
     # via
@@ -163,6 +165,8 @@ werkzeug==2.2.2
     # via flask
 wrapt==1.14.1
     # via deprecated
+zipp==3.9.0
+    # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
