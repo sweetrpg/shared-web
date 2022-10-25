@@ -108,7 +108,7 @@ jinja2==3.1.2
     # via
     #   flask
     #   sphinx
-limits==2.7.0
+limits==2.7.1
     # via python-logstash-async
 markupsafe==2.1.1
     # via
@@ -178,7 +178,7 @@ python-editor==1.0.4
     # via -r requirements/app.in
 python-logstash-async==2.5.0
     # via -r requirements/app.in
-pytz==2022.4
+pytz==2022.5
     # via babel
 pyyaml==6.0
     # via -r requirements/app.in
@@ -269,7 +269,7 @@ wheel==0.37.1
     # via pip-tools
 wrapt==1.14.1
     # via deprecated
-zipp==3.9.0
+zipp==3.10.0
     # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:

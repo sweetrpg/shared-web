@@ -59,7 +59,7 @@ itsdangerous==2.1.2
     # via flask
 jinja2==3.1.2
     # via flask
-limits==2.7.0
+limits==2.7.1
     # via python-logstash-async
 markupsafe==2.1.1
     # via
@@ -110,13 +110,13 @@ urllib3==1.26.12
     #   -r requirements/app.in
     #   requests
     #   sentry-sdk
-uwsgi==2.0.20
+uwsgi==2.0.21
     # via -r requirements/deploy.in
 werkzeug==2.2.2
     # via flask
 wrapt==1.14.1
     # via deprecated
-zipp==3.9.0
+zipp==3.10.0
     # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
