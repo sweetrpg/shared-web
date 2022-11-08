@@ -14,7 +14,7 @@ async-timeout==4.0.2
     # via redis
 attrs==22.1.0
     # via pytest
-babel==2.10.3
+babel==2.11.0
     # via sphinx
 backoff==1.10.0
     # via analytics-python
@@ -65,7 +65,7 @@ docutils==0.18.1
     #   rstcheck-core
     #   sphinx
     #   sphinx-tabs
-exceptiongroup==1.0.0
+exceptiongroup==1.0.1
     # via pytest
 filelock==3.8.0
     # via
@@ -137,7 +137,7 @@ pep517==0.13.0
     # via build
 pip-tools==6.8.0
     # via -r requirements/dev.in
-platformdirs==2.5.2
+platformdirs==2.5.3
     # via
     #   black
     #   virtualenv
@@ -265,7 +265,7 @@ virtualenv==20.16.6
     # via tox
 werkzeug==2.2.2
     # via flask
-wheel==0.37.1
+wheel==0.38.2
     # via pip-tools
 wrapt==1.14.1
     # via deprecated

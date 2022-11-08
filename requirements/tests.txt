@@ -43,7 +43,7 @@ deprecated==1.2.13
     #   redis
 distlib==0.3.6
     # via virtualenv
-exceptiongroup==1.0.0
+exceptiongroup==1.0.1
     # via pytest
 filelock==3.8.0
     # via
@@ -96,7 +96,7 @@ packaging==21.3
     #   pytest
     #   redis
     #   tox
-platformdirs==2.5.2
+platformdirs==2.5.3
     # via virtualenv
 pluggy==1.0.0
     # via
