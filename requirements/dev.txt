@@ -61,11 +61,10 @@ distlib==0.3.6
     # via virtualenv
 docutils==0.18.1
     # via
-    #   rstcheck
     #   rstcheck-core
     #   sphinx
     #   sphinx-tabs
-exceptiongroup==1.0.1
+exceptiongroup==1.0.3
     # via pytest
 filelock==3.8.0
     # via
@@ -131,13 +130,13 @@ packaging==21.3
     #   tox
 pallets-sphinx-themes==2.0.2
     # via -r requirements/docs.in
-pathspec==0.10.1
+pathspec==0.10.2
     # via black
 pep517==0.13.0
     # via build
 pip-tools==6.8.0
     # via -r requirements/dev.in
-platformdirs==2.5.3
+platformdirs==2.5.4
     # via
     #   black
     #   virtualenv
@@ -148,9 +147,7 @@ pluggy==1.0.0
 py==1.11.0
     # via tox
 pydantic==1.10.2
-    # via
-    #   rstcheck
-    #   rstcheck-core
+    # via rstcheck-core
 pygments==2.13.0
     # via
     #   rich
@@ -192,9 +189,9 @@ requests==2.28.1
     #   sphinx
 rich==12.6.0
     # via typer
-rstcheck==6.1.0
+rstcheck==6.1.1
     # via -r requirements/docs.in
-rstcheck-core==1.0.2
+rstcheck-core==1.0.3
     # via rstcheck
 sentry-sdk[flask]==1.5.0
     # via -r requirements/app.in
@@ -245,12 +242,10 @@ tomli==2.0.1
     #   tox
 tox==3.26.0
     # via -r requirements/tests.in
-typer[all]==0.6.1
+typer[all]==0.7.0
     # via rstcheck
-types-docutils==0.18.3
-    # via
-    #   rstcheck
-    #   rstcheck-core
+types-docutils==0.19.1.1
+    # via rstcheck-core
 typing-extensions==4.4.0
     # via
     #   black
@@ -261,11 +256,11 @@ urllib3==1.26.12
     #   -r requirements/app.in
     #   requests
     #   sentry-sdk
-virtualenv==20.16.6
+virtualenv==20.16.7
     # via tox
 werkzeug==2.2.2
     # via flask
-wheel==0.38.2
+wheel==0.38.4
     # via pip-tools
 wrapt==1.14.1
     # via deprecated
