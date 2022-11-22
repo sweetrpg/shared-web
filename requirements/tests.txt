@@ -43,7 +43,7 @@ deprecated==1.2.13
     #   redis
 distlib==0.3.6
     # via virtualenv
-exceptiongroup==1.0.3
+exceptiongroup==1.0.4
     # via pytest
 filelock==3.8.0
     # via

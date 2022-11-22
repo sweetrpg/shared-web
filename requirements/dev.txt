@@ -64,7 +64,7 @@ docutils==0.18.1
     #   rstcheck-core
     #   sphinx
     #   sphinx-tabs
-exceptiongroup==1.0.3
+exceptiongroup==1.0.4
     # via pytest
 filelock==3.8.0
     # via
