@@ -41,8 +41,6 @@ deprecated==1.2.13
     # via limits
 distlib==0.3.6
     # via virtualenv
-exceptiongroup==1.0.4
-    # via pytest
 filelock==3.8.2
     # via
     #   tox
@@ -72,8 +70,6 @@ hiredis==2.0.0
     # via -r requirements/app.in
 idna==3.4
     # via requests
-importlib-metadata==5.1.0
-    # via flask
 iniconfig==1.1.1
     # via pytest
 itsdangerous==2.1.2
@@ -142,12 +138,7 @@ six==1.16.0
     #   tox
 sweetrpg-web-core==0.0.131
     # via -r requirements/app.in
-tomli==2.0.1
-    # via
-    #   coverage
-    #   pytest
-    #   tox
-tox==3.26.0
+tox==3.27.1
     # via -r requirements/tests.in
 typing-extensions==4.4.0
     # via limits
@@ -162,8 +153,6 @@ werkzeug==2.2.2
     # via flask
 wrapt==1.14.1
     # via deprecated
-zipp==3.11.0
-    # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
