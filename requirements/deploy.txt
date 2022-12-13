@@ -18,7 +18,7 @@ cachelib==0.9.0
     # via
     #   flask-caching
     #   flask-session
-certifi==2022.9.24
+certifi==2022.12.7
     # via
     #   requests
     #   sentry-sdk
@@ -57,7 +57,7 @@ itsdangerous==2.1.2
     # via flask
 jinja2==3.1.2
     # via flask
-limits==2.7.1
+limits==2.7.2
     # via python-logstash-async
 markupsafe==2.1.1
     # via
@@ -65,12 +65,10 @@ markupsafe==2.1.1
     #   werkzeug
 monotonic==1.6
     # via analytics-python
-packaging==21.3
+packaging==22.0
     # via limits
 pylogbeat==2.0.0
     # via python-logstash-async
-pyparsing==3.0.9
-    # via packaging
 python-dateutil==2.8.2
     # via
     #   -r requirements/app.in
