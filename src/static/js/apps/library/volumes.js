@@ -31,4 +31,4 @@ let vue = Vue({
     created() {
         fetch_volumes(start, length);
     }
-});
+}).mount('#app');
