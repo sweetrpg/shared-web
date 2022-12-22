@@ -10,9 +10,6 @@ $(document).ready(function () {
     // });
 });
 
-var start = 0;
-var length = 20;
-
 function fetch_persons(start, length) {
     var api_url = $('data#api-base-url').val();
     fetch(api_url + '/persons/data?start=' + start + '&length=' + length)
@@ -25,10 +22,13 @@ function fetch_persons(start, length) {
 
 let vue = Vue({
     el: '#app',
+    delimiters: ['[[', ']]'],
     data: {
-        'persons': []
+        'persons': [],
+        'startPage': 0,
+        'pageLength': 20,
     },
     created() {
-        fetch_persons(start, length);
+        fetch_persons(this.startPage, this.pageLength);
     }
 });

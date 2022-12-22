@@ -10,9 +10,6 @@ $(document).ready(function () {
     // });
 });
 
-var start = 0;
-var length = 20;
-
 function fetch_volumes(start, length) {
     var api_url = $('data#api-base-url').val();
     fetch(api_url + '/volumes/data?start=' + start + '&length=' + length)
@@ -25,10 +22,13 @@ function fetch_volumes(start, length) {
 
 let vue = Vue({
     el: '#app',
+    delimiters: ['[[', ']]'],
     data: {
-        'volumes': []
+        'volumes': [],
+        'startPage': 0,
+        'pageLength': 20,
     },
     created() {
-        fetch_volumes(start, length);
+        fetch_volumes(this.startPage, this.pageLength);
     }
 }).mount('#app');
