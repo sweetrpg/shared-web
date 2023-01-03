@@ -68,7 +68,7 @@ idna==3.4
     # via requests
 imagesize==1.4.1
     # via sphinx
-importlib-metadata==5.2.0
+importlib-metadata==6.0.0
     # via
     #   flask
     #   sphinx
@@ -93,9 +93,9 @@ packaging==22.0
     #   sphinx
 pallets-sphinx-themes==2.0.3
     # via -r requirements/docs.in
-pydantic==1.10.2
+pydantic==1.10.4
     # via rstcheck-core
-pygments==2.13.0
+pygments==2.14.0
     # via
     #   rich
     #   sphinx

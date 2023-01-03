@@ -47,7 +47,7 @@ colorama==0.4.6
     # via typer
 commonmark==0.9.1
     # via rich
-coverage[toml]==7.0.1
+coverage[toml]==7.0.2
     # via
     #   coverage-badge
     #   pytest-cov
@@ -64,7 +64,7 @@ docutils==0.18.1
     #   sphinx-tabs
 exceptiongroup==1.1.0
     # via pytest
-filelock==3.8.2
+filelock==3.9.0
     # via
     #   tox
     #   virtualenv
@@ -95,7 +95,7 @@ idna==3.4
     # via requests
 imagesize==1.4.1
     # via sphinx
-importlib-metadata==5.2.0
+importlib-metadata==6.0.0
     # via
     #   flask
     #   sphinx
@@ -133,7 +133,7 @@ pep517==0.13.0
     # via build
 pip-tools==6.8.0
     # via -r requirements/dev.in
-platformdirs==2.6.0
+platformdirs==2.6.2
     # via
     #   black
     #   virtualenv
@@ -143,9 +143,9 @@ pluggy==1.0.0
     #   tox
 py==1.11.0
     # via tox
-pydantic==1.10.2
+pydantic==1.10.4
     # via rstcheck-core
-pygments==2.13.0
+pygments==2.14.0
     # via
     #   rich
     #   sphinx
