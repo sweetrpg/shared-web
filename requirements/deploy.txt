@@ -57,7 +57,7 @@ itsdangerous==2.1.2
     # via flask
 jinja2==3.1.2
     # via flask
-limits==2.8.0
+limits==3.1.4
     # via python-logstash-async
 markupsafe==2.1.1
     # via
@@ -81,7 +81,7 @@ python-logstash-async==2.5.0
     # via -r requirements/app.in
 pyyaml==6.0
     # via -r requirements/app.in
-redis==4.4.0
+redis==4.4.1
     # via -r requirements/app.in
 requests==2.28.1
     # via
