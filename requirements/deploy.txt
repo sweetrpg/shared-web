@@ -51,8 +51,6 @@ hiredis==2.1.0
     # via -r requirements/app.in
 idna==3.4
     # via requests
-importlib-metadata==6.0.0
-    # via flask
 itsdangerous==2.1.2
     # via flask
 jinja2==3.1.2
@@ -99,7 +97,7 @@ sweetrpg-web-core==0.0.131
     # via -r requirements/app.in
 typing-extensions==4.4.0
     # via limits
-urllib3==1.26.12
+urllib3==1.26.13
     # via
     #   -r requirements/app.in
     #   requests
@@ -110,8 +108,6 @@ werkzeug==2.2.2
     # via flask
 wrapt==1.14.1
     # via deprecated
-zipp==3.11.0
-    # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
