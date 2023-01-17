@@ -27,11 +27,11 @@ certifi==2022.12.7
     # via
     #   requests
     #   sentry-sdk
-charset-normalizer==2.1.1
+charset-normalizer==3.0.1
     # via requests
 click==8.1.3
     # via flask
-coverage[toml]==7.0.4
+coverage[toml]==7.0.5
     # via
     #   coverage-badge
     #   pytest-cov
@@ -56,7 +56,7 @@ flask==2.2.2
     #   flask-session
     #   sentry-sdk
     #   sweetrpg-web-core
-flask-caching==2.0.1
+flask-caching==2.0.2
     # via -r requirements/app.in
 flask-cors==3.0.10
     # via -r requirements/app.in
@@ -68,7 +68,7 @@ greenlet==1.1.3
     # via
     #   -r requirements/app.in
     #   -r requirements/tests.in
-hiredis==2.1.0
+hiredis==2.1.1
     # via -r requirements/app.in
 idna==3.4
     # via requests
@@ -80,7 +80,7 @@ itsdangerous==2.1.2
     # via flask
 jinja2==3.1.2
     # via flask
-limits==3.1.4
+limits==3.1.6
     # via python-logstash-async
 markupsafe==2.1.1
     # via
@@ -88,7 +88,7 @@ markupsafe==2.1.1
     #   werkzeug
 monotonic==1.6
     # via analytics-python
-packaging==22.0
+packaging==23.0
     # via
     #   limits
     #   pytest
@@ -103,7 +103,7 @@ py==1.11.0
     # via tox
 pylogbeat==2.0.0
     # via python-logstash-async
-pytest==7.2.0
+pytest==7.2.1
     # via
     #   -r requirements/tests.in
     #   pytest-cov
@@ -123,9 +123,9 @@ python-logstash-async==2.5.0
     # via -r requirements/app.in
 pyyaml==6.0
     # via -r requirements/app.in
-redis==4.4.1
+redis==4.4.2
     # via -r requirements/app.in
-requests==2.28.1
+requests==2.28.2
     # via
     #   -r requirements/app.in
     #   analytics-python
