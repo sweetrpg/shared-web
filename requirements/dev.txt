@@ -18,7 +18,7 @@ babel==2.11.0
     # via sphinx
 backoff==1.10.0
     # via analytics-python
-black==22.12.0
+black==23.1.0
     # via -r requirements/dev.in
 blinker==1.5
     # via
@@ -119,6 +119,7 @@ mypy-extensions==0.4.3
     # via black
 packaging==23.0
     # via
+    #   black
     #   build
     #   limits
     #   pallets-sphinx-themes
@@ -215,7 +216,7 @@ sphinxcontrib-applehelp==1.0.4
     # via sphinx
 sphinxcontrib-devhelp==1.0.2
     # via sphinx
-sphinxcontrib-htmlhelp==2.0.0
+sphinxcontrib-htmlhelp==2.0.1
     # via sphinx
 sphinxcontrib-jsmath==1.0.1
     # via sphinx
