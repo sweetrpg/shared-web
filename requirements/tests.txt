@@ -93,7 +93,7 @@ packaging==23.0
     #   limits
     #   pytest
     #   tox
-platformdirs==2.6.2
+platformdirs==3.0.0
     # via virtualenv
 pluggy==1.0.0
     # via
@@ -123,7 +123,7 @@ python-logstash-async==2.5.0
     # via -r requirements/app.in
 pyyaml==6.0
     # via -r requirements/app.in
-redis==4.4.2
+redis==4.5.1
     # via -r requirements/app.in
 requests==2.28.2
     # via
@@ -154,13 +154,13 @@ urllib3==1.26.12
     #   -r requirements/app.in
     #   requests
     #   sentry-sdk
-virtualenv==20.18.0
+virtualenv==20.19.0
     # via tox
 werkzeug==2.2.2
     # via flask
 wrapt==1.14.1
     # via deprecated
-zipp==3.12.1
+zipp==3.13.0
     # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
