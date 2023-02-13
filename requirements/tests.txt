@@ -68,7 +68,7 @@ greenlet==1.1.3
     # via
     #   -r requirements/app.in
     #   -r requirements/tests.in
-hiredis==2.2.1
+hiredis==2.2.2
     # via -r requirements/app.in
 idna==3.4
     # via requests
