@@ -5,9 +5,9 @@
 #    pip-compile requirements/tests.in
 #
 analytics-python==1.4.0
-    # via -r requirements/app.in
+    # via -r app.in
 asgiref==3.6.0
-    # via -r requirements/tests.in
+    # via -r tests.in
 async-timeout==4.0.2
     # via redis
 attrs==22.2.0
@@ -16,8 +16,8 @@ backoff==1.10.0
     # via analytics-python
 blinker==1.5
     # via
-    #   -r requirements/app.in
-    #   -r requirements/tests.in
+    #   -r app.in
+    #   -r tests.in
     #   sentry-sdk
 cachelib==0.9.0
     # via
@@ -36,20 +36,18 @@ coverage[toml]==7.1.0
     #   coverage-badge
     #   pytest-cov
 coverage-badge==1.1.0
-    # via -r requirements/tests.in
+    # via -r tests.in
 deprecated==1.2.13
     # via limits
 distlib==0.3.6
     # via virtualenv
-exceptiongroup==1.1.0
-    # via pytest
 filelock==3.9.0
     # via
     #   tox
     #   virtualenv
 flask==2.2.2
     # via
-    #   -r requirements/app.in
+    #   -r app.in
     #   flask-caching
     #   flask-cors
     #   flask-dotenv
@@ -57,23 +55,21 @@ flask==2.2.2
     #   sentry-sdk
     #   sweetrpg-web-core
 flask-caching==2.0.2
-    # via -r requirements/app.in
+    # via -r app.in
 flask-cors==3.0.10
-    # via -r requirements/app.in
+    # via -r app.in
 flask-dotenv==0.1.2
-    # via -r requirements/app.in
+    # via -r app.in
 flask-session==0.4.0
-    # via -r requirements/app.in
+    # via -r app.in
 greenlet==1.1.3
     # via
-    #   -r requirements/app.in
-    #   -r requirements/tests.in
+    #   -r app.in
+    #   -r tests.in
 hiredis==2.2.2
-    # via -r requirements/app.in
+    # via -r app.in
 idna==3.4
     # via requests
-importlib-metadata==6.0.0
-    # via flask
 iniconfig==2.0.0
     # via pytest
 itsdangerous==2.1.2
@@ -105,33 +101,33 @@ pylogbeat==2.0.0
     # via python-logstash-async
 pytest==7.2.1
     # via
-    #   -r requirements/tests.in
+    #   -r tests.in
     #   pytest-cov
 pytest-cov==4.0.0
-    # via -r requirements/tests.in
+    # via -r tests.in
 python-dateutil==2.8.2
     # via
-    #   -r requirements/app.in
+    #   -r app.in
     #   analytics-python
 python-dotenv==0.21.0
     # via
-    #   -r requirements/app.in
-    #   -r requirements/tests.in
+    #   -r app.in
+    #   -r tests.in
 python-editor==1.0.4
-    # via -r requirements/app.in
+    # via -r app.in
 python-logstash-async==2.5.0
-    # via -r requirements/app.in
+    # via -r app.in
 pyyaml==6.0
-    # via -r requirements/app.in
+    # via -r app.in
 redis==4.5.1
-    # via -r requirements/app.in
+    # via -r app.in
 requests==2.28.2
     # via
-    #   -r requirements/app.in
+    #   -r app.in
     #   analytics-python
     #   python-logstash-async
 sentry-sdk[flask]==1.5.0
-    # via -r requirements/app.in
+    # via -r app.in
 six==1.16.0
     # via
     #   analytics-python
@@ -139,29 +135,22 @@ six==1.16.0
     #   python-dateutil
     #   tox
 sweetrpg-web-core==0.0.153
-    # via -r requirements/app.in
-tomli==2.0.1
-    # via
-    #   coverage
-    #   pytest
-    #   tox
+    # via -r app.in
 tox==3.26.0
-    # via -r requirements/tests.in
+    # via -r tests.in
 typing-extensions==4.4.0
     # via limits
 urllib3==1.26.12
     # via
-    #   -r requirements/app.in
+    #   -r app.in
     #   requests
     #   sentry-sdk
 virtualenv==20.19.0
     # via tox
-werkzeug==2.2.2
+werkzeug==2.2.3
     # via flask
 wrapt==1.14.1
     # via deprecated
-zipp==3.13.0
-    # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
