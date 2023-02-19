@@ -8,6 +8,11 @@ footer, nav {
    font-family: "Raleway", sans-serif !important;
 }
 
+#main-footer {
+    position: fixed;
+    bottom: 0;
+}
+
 /* div.card {
       font-family: "LeagueSpartan", sans-serif !important;
 } */
