@@ -106,7 +106,7 @@ uwsgi==2.0.21
     # via -r requirements/deploy.in
 werkzeug==2.2.3
     # via flask
-wrapt==1.14.1
+wrapt==1.15.0
     # via deprecated
 
 # The following packages are considered to be unsafe in a requirements file:
