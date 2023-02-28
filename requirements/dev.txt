@@ -62,8 +62,6 @@ docutils==0.18.1
     #   rstcheck-core
     #   sphinx
     #   sphinx-tabs
-exceptiongroup==1.1.0
-    # via pytest
 filelock==3.9.0
     # via
     #   tox
@@ -126,7 +124,7 @@ pallets-sphinx-themes==2.0.3
     # via -r requirements/docs.in
 pathspec==0.11.0
     # via black
-pip-tools==6.8.0
+pip-tools==6.12.2
     # via -r requirements/dev.in
 platformdirs==3.0.0
     # via
@@ -224,14 +222,6 @@ sphinxcontrib-serializinghtml==1.1.5
     # via sphinx
 sweetrpg-web-core==0.0.185
     # via -r requirements/app.in
-tomli==2.0.1
-    # via
-    #   black
-    #   build
-    #   coverage
-    #   pyproject-hooks
-    #   pytest
-    #   tox
 tox==3.26.0
     # via -r requirements/tests.in
 typer[all]==0.7.0
