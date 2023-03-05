@@ -91,7 +91,7 @@ packaging==23.0
     #   limits
     #   pytest
     #   tox
-platformdirs==3.0.0
+platformdirs==3.1.0
     # via virtualenv
 pluggy==1.0.0
     # via
@@ -101,7 +101,7 @@ py==1.11.0
     # via tox
 pylogbeat==2.0.0
     # via python-logstash-async
-pytest==7.2.1
+pytest==7.2.2
     # via
     #   -r requirements/tests.in
     #   pytest-cov
@@ -152,7 +152,7 @@ urllib3==1.26.12
     #   -r requirements/app.in
     #   requests
     #   sentry-sdk
-virtualenv==20.19.0
+virtualenv==20.20.0
     # via tox
 werkzeug==2.2.3
     # via flask
