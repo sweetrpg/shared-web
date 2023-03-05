@@ -62,8 +62,6 @@ docutils==0.18.1
     #   rstcheck-core
     #   sphinx
     #   sphinx-tabs
-exceptiongroup==1.1.0
-    # via pytest
 filelock==3.9.0
     # via
     #   tox
@@ -222,14 +220,6 @@ sphinxcontrib-serializinghtml==1.1.5
     # via sphinx
 sweetrpg-web-core==0.0.186
     # via -r requirements/app.in
-tomli==2.0.1
-    # via
-    #   black
-    #   build
-    #   coverage
-    #   pyproject-hooks
-    #   pytest
-    #   tox
 tox==3.26.0
     # via -r requirements/tests.in
 typer[all]==0.7.0
@@ -240,7 +230,7 @@ typing-extensions==4.5.0
     # via
     #   limits
     #   pydantic
-urllib3==1.26.12
+urllib3==1.26.14
     # via
     #   -r requirements/app.in
     #   requests
