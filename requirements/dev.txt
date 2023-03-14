@@ -62,7 +62,7 @@ docutils==0.18.1
     #   rstcheck-core
     #   sphinx
     #   sphinx-tabs
-exceptiongroup==1.1.0
+exceptiongroup==1.1.1
     # via pytest
 filelock==3.9.0
     # via
@@ -179,7 +179,7 @@ requests==2.28.2
     #   sphinx
 rich==12.6.0
     # via typer
-rstcheck==6.1.1
+rstcheck==6.1.2
     # via -r requirements/docs.in
 rstcheck-core==1.0.3
     # via rstcheck
@@ -245,7 +245,7 @@ urllib3==1.26.12
     #   -r requirements/app.in
     #   requests
     #   sentry-sdk
-virtualenv==20.20.0
+virtualenv==20.21.0
     # via tox
 werkzeug==2.2.3
     # via flask
