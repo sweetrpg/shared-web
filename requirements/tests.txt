@@ -4,7 +4,7 @@
 #
 #    pip-compile requirements/tests.in
 #
-analytics-python==1.4.0
+analytics-python==1.4.post1
     # via -r requirements/app.in
 asgiref==3.6.0
     # via -r requirements/tests.in
@@ -43,7 +43,7 @@ distlib==0.3.6
     # via virtualenv
 exceptiongroup==1.1.1
     # via pytest
-filelock==3.10.0
+filelock==3.10.5
     # via
     #   tox
     #   virtualenv
@@ -72,13 +72,15 @@ hiredis==2.2.2
     # via -r requirements/app.in
 idna==3.4
     # via requests
+importlib-resources==5.12.0
+    # via limits
 iniconfig==2.0.0
     # via pytest
 itsdangerous==2.1.2
     # via flask
 jinja2==3.1.2
     # via flask
-limits==3.2.0
+limits==3.3.1
     # via python-logstash-async
 markupsafe==2.1.2
     # via
@@ -91,7 +93,7 @@ packaging==23.0
     #   limits
     #   pytest
     #   tox
-platformdirs==3.1.1
+platformdirs==3.2.0
     # via virtualenv
 pluggy==1.0.0
     # via
@@ -121,7 +123,7 @@ python-logstash-async==2.5.0
     # via -r requirements/app.in
 pyyaml==6.0
     # via -r requirements/app.in
-redis==4.5.2
+redis==4.5.3
     # via -r requirements/app.in
 requests==2.28.2
     # via
