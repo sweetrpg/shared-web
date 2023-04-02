@@ -18,7 +18,7 @@ babel==2.12.1
     # via sphinx
 backoff==1.10.0
     # via analytics-python
-black==23.1.0
+black==23.3.0
     # via -r requirements/dev.in
 blinker==1.5
     # via
@@ -171,7 +171,7 @@ python-logstash-async==2.5.0
     # via -r requirements/app.in
 pyyaml==6.0
     # via -r requirements/app.in
-redis==4.5.3
+redis==4.5.4
     # via -r requirements/app.in
 requests==2.28.2
     # via
