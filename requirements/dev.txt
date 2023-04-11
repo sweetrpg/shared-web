@@ -18,7 +18,7 @@ backoff==1.10.0
     # via analytics-python
 black==23.3.0
     # via -r requirements/dev.in
-blinker==1.6
+blinker==1.6.1
     # via
     #   -r requirements/app.in
     #   -r requirements/tests.in
@@ -140,7 +140,7 @@ py==1.11.0
     # via tox
 pydantic==1.10.7
     # via rstcheck-core
-pygments==2.14.0
+pygments==2.15.0
     # via
     #   rich
     #   sphinx
