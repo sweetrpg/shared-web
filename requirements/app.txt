@@ -10,7 +10,7 @@ async-timeout==4.0.2
     # via redis
 backoff==1.10.0
     # via analytics-python
-blinker==1.6.1
+blinker==1.6.2
     # via
     #   -r requirements/app.in
     #   sentry-sdk
@@ -65,7 +65,7 @@ markupsafe==2.1.2
     #   werkzeug
 monotonic==1.6
     # via analytics-python
-packaging==23.0
+packaging==23.1
     # via limits
 pylogbeat==2.0.0
     # via python-logstash-async
@@ -98,9 +98,7 @@ six==1.16.0
 sweetrpg-web-core==0.0.227
     # via -r requirements/app.in
 typing-extensions==4.5.0
-    # via
-    #   blinker
-    #   limits
+    # via limits
 urllib3==1.26.12
     # via
     #   -r requirements/app.in

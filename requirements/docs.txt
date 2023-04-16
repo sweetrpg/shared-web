@@ -14,7 +14,7 @@ babel==2.12.1
     # via sphinx
 backoff==1.10.0
     # via analytics-python
-blinker==1.6.1
+blinker==1.6.2
     # via
     #   -r requirements/app.in
     #   sentry-sdk
@@ -84,7 +84,7 @@ markupsafe==2.1.2
     #   werkzeug
 monotonic==1.6
     # via analytics-python
-packaging==23.0
+packaging==23.1
     # via
     #   limits
     #   pallets-sphinx-themes
@@ -170,7 +170,6 @@ types-docutils==0.19.1.7
     # via rstcheck-core
 typing-extensions==4.5.0
     # via
-    #   blinker
     #   limits
     #   pydantic
 urllib3==1.26.12
