@@ -57,7 +57,7 @@ itsdangerous==2.1.2
     # via flask
 jinja2==3.1.2
     # via flask
-limits==3.3.1
+limits==3.4.0
     # via python-logstash-async
 markupsafe==2.1.2
     # via
@@ -95,7 +95,7 @@ six==1.16.0
     #   analytics-python
     #   flask-cors
     #   python-dateutil
-sweetrpg-web-core==0.0.233
+sweetrpg-web-core==0.0.234
     # via -r requirements/app.in
 typing-extensions==4.5.0
     # via limits
