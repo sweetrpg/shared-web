@@ -83,7 +83,7 @@ pyyaml==6.0
     # via -r requirements/app.in
 redis==4.5.4
     # via -r requirements/app.in
-requests==2.28.2
+requests==2.29.0
     # via
     #   -r requirements/app.in
     #   analytics-python
@@ -106,7 +106,7 @@ urllib3==1.26.12
     #   sentry-sdk
 uwsgi==2.0.21
     # via -r requirements/deploy.in
-werkzeug==2.2.3
+werkzeug==2.3.2
     # via flask
 wrapt==1.15.0
     # via deprecated
