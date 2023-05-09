@@ -18,7 +18,7 @@ cachelib==0.9.0
     # via
     #   flask-caching
     #   flask-session
-certifi==2022.12.7
+certifi==2023.5.7
     # via
     #   requests
     #   sentry-sdk
@@ -81,7 +81,7 @@ python-logstash-async==2.5.0
     # via -r requirements/app.in
 pyyaml==6.0
     # via -r requirements/app.in
-redis==4.5.4
+redis==4.5.5
     # via -r requirements/app.in
 requests==2.30.0
     # via
@@ -106,7 +106,7 @@ urllib3==1.26.12
     #   sentry-sdk
 uwsgi==2.0.21
     # via -r requirements/deploy.in
-werkzeug==2.3.3
+werkzeug==2.3.4
     # via flask
 wrapt==1.15.0
     # via deprecated

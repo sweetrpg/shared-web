@@ -18,7 +18,7 @@ cachelib==0.9.0
     # via
     #   flask-caching
     #   flask-session
-certifi==2022.12.7
+certifi==2023.5.7
     # via
     #   requests
     #   sentry-sdk
@@ -81,7 +81,7 @@ python-logstash-async==2.5.0
     # via -r requirements/app.in
 pyyaml==6.0
     # via -r requirements/app.in
-redis==4.5.4
+redis==4.5.5
     # via -r requirements/app.in
 requests==2.30.0
     # via
@@ -95,7 +95,7 @@ six==1.16.0
     #   analytics-python
     #   flask-cors
     #   python-dateutil
-sweetrpg-web-core==0.0.254
+sweetrpg-web-core==0.0.255
     # via -r requirements/app.in
 typing-extensions==4.5.0
     # via limits
@@ -104,7 +104,7 @@ urllib3==1.26.12
     #   -r requirements/app.in
     #   requests
     #   sentry-sdk
-werkzeug==2.3.3
+werkzeug==2.3.4
     # via flask
 wrapt==1.15.0
     # via deprecated
