@@ -4,6 +4,9 @@ apiVersion: v1
 
 metadata:
     name: shared-web-v1
+    annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8081"
 
 spec:
     selector:
