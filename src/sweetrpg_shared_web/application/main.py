@@ -16,6 +16,7 @@ from redis.client import Redis
 from sentry_sdk.integrations.wsgi import SentryWsgiMiddleware
 import analytics
 import os
+from prometheus_flask_exporter import PrometheusMetrics
 
 
 ENV_FILE = find_dotenv()
@@ -55,6 +56,10 @@ def create_app(app_name=constants.APPLICATION_NAME):
     app.config.from_object("sweetrpg_shared_web.application.config.BaseConfig")
     # env = DotEnv(app)
 
+    metrics = PrometheusMetrics(app)
+    # static information as metric
+    # metrics.info('app_info', 'Application info', version=app_version)
+
     app.logger.info("Setting up cache...")
     cache.init_app(app)
 
@@ -84,6 +89,9 @@ def create_app(app_name=constants.APPLICATION_NAME):
     #     'application': ('static/sass', 'static/css', '/static/css')
     # })
     # scss = Scss(app, static_dir='static', asset_dir='assets')
+
+    metrics.register_default(metrics.counter('by_path_counter', 'Request count by request paths',
+            labels={'path': lambda: request.path}))
 
     print(app.url_map)
 
