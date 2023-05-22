@@ -90,9 +90,6 @@ def create_app(app_name=constants.APPLICATION_NAME):
     # })
     # scss = Scss(app, static_dir='static', asset_dir='assets')
 
-    metrics.register_default(metrics.counter('by_path_counter', 'Request count by request paths',
-            labels={'path': lambda: request.path}))
-
     print(app.url_map)
 
     return app
