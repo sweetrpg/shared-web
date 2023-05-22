@@ -10,6 +10,8 @@ analytics-python==1.4.post1
     # via -r requirements/app.in
 asgiref==3.6.0
     # via -r requirements/tests.in
+async-timeout==4.0.2
+    # via redis
 babel==2.12.1
     # via sphinx
 backoff==1.10.0
