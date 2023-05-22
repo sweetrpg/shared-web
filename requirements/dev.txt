@@ -225,6 +225,14 @@ sphinxcontrib-serializinghtml==1.1.5
     # via sphinx
 sweetrpg-web-core==0.0.268
     # via -r requirements/app.in
+tomli==2.0.1
+    # via
+    #   black
+    #   build
+    #   coverage
+    #   pyproject-hooks
+    #   pytest
+    #   tox
 tox==3.26.0
     # via -r requirements/tests.in
 typer[all]==0.7.0
