@@ -17,6 +17,7 @@ from sentry_sdk.integrations.wsgi import SentryWsgiMiddleware
 import analytics
 import os
 from prometheus_flask_exporter import PrometheusMetrics
+import sweetrpg_shared_web
 
 
 ENV_FILE = find_dotenv()
@@ -58,7 +59,7 @@ def create_app(app_name=constants.APPLICATION_NAME):
 
     metrics = PrometheusMetrics(app)
     # static information as metric
-    # metrics.info('app_info', 'Application info', version=app_version)
+    metrics.info('app_info', sweetrpg_shared_web.__name__, version=sweetrpg_shared_web.__version__, build=sweetrpg_shared_web.__build__)
 
     app.logger.info("Setting up cache...")
     cache.init_app(app)
@@ -89,6 +90,8 @@ def create_app(app_name=constants.APPLICATION_NAME):
     #     'application': ('static/sass', 'static/css', '/static/css')
     # })
     # scss = Scss(app, static_dir='static', asset_dir='assets')
+
+    # register_metrics(app, app_version=config["version"], app_config=config["config"])
 
     print(app.url_map)
 
