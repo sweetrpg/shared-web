@@ -50,6 +50,7 @@ flask==2.2.2
     #   flask-cors
     #   flask-dotenv
     #   flask-session
+    #   prometheus-flask-exporter
     #   sentry-sdk
     #   sweetrpg-web-core
 flask-caching==2.0.2
@@ -91,6 +92,10 @@ packaging==23.1
     #   sphinx
 pallets-sphinx-themes==2.1.0
     # via -r requirements/docs.in
+prometheus-client==0.16.0
+    # via prometheus-flask-exporter
+prometheus-flask-exporter==0.22.4
+    # via -r requirements/app.in
 pydantic==1.10.7
     # via rstcheck-core
 pygments==2.15.1
@@ -114,7 +119,7 @@ pyyaml==6.0
     # via -r requirements/app.in
 redis==4.5.5
     # via -r requirements/app.in
-requests==2.30.0
+requests==2.31.0
     # via
     #   -r requirements/app.in
     #   analytics-python

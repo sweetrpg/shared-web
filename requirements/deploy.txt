@@ -35,6 +35,7 @@ flask==2.2.2
     #   flask-cors
     #   flask-dotenv
     #   flask-session
+    #   prometheus-flask-exporter
     #   sentry-sdk
     #   sweetrpg-web-core
 flask-caching==2.0.2
@@ -67,6 +68,10 @@ monotonic==1.6
     # via analytics-python
 packaging==23.1
     # via limits
+prometheus-client==0.16.0
+    # via prometheus-flask-exporter
+prometheus-flask-exporter==0.22.4
+    # via -r requirements/app.in
 pylogbeat==2.0.0
     # via python-logstash-async
 python-dateutil==2.8.2
@@ -83,7 +88,7 @@ pyyaml==6.0
     # via -r requirements/app.in
 redis==4.5.5
     # via -r requirements/app.in
-requests==2.30.0
+requests==2.31.0
     # via
     #   -r requirements/app.in
     #   analytics-python
