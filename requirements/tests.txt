@@ -147,7 +147,7 @@ six==1.16.0
     #   analytics-python
     #   flask-cors
     #   python-dateutil
-sweetrpg-web-core==0.0.269
+sweetrpg-web-core==0.0.270
     # via -r requirements/app.in
 tomli==2.0.1
     # via
