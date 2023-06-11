@@ -69,7 +69,7 @@ docutils==0.18.1
     #   sphinx-tabs
 exceptiongroup==1.1.1
     # via pytest
-filelock==3.12.0
+filelock==3.12.1
     # via
     #   tox
     #   virtualenv
@@ -128,13 +128,13 @@ packaging==23.1
     #   pytest
     #   sphinx
     #   tox
-pallets-sphinx-themes==2.1.0
+pallets-sphinx-themes==2.1.1
     # via -r requirements/docs.in
 pathspec==0.11.1
     # via black
 pip-tools==6.12.3
     # via -r requirements/dev.in
-platformdirs==3.5.1
+platformdirs==3.5.3
     # via
     #   black
     #   tox
@@ -147,7 +147,7 @@ prometheus-client==0.17.0
     # via prometheus-flask-exporter
 prometheus-flask-exporter==0.22.4
     # via -r requirements/app.in
-pydantic==1.10.8
+pydantic==1.10.9
     # via rstcheck-core
 pygments==2.15.1
     # via
@@ -160,7 +160,7 @@ pyproject-api==1.5.1
     # via tox
 pyproject-hooks==1.0.0
     # via build
-pytest==7.3.1
+pytest==7.3.2
     # via
     #   -r requirements/tests.in
     #   pytest-cov
@@ -259,7 +259,7 @@ urllib3==1.26.16
     #   sentry-sdk
 virtualenv==20.23.0
     # via tox
-werkzeug==2.3.4
+werkzeug==2.3.6
     # via flask
 wheel==0.40.0
     # via pip-tools
