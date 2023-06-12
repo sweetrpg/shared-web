@@ -10,8 +10,6 @@ analytics-python==1.4.post1
     # via -r requirements/app.in
 asgiref==3.7.2
     # via -r requirements/tests.in
-async-timeout==4.0.2
-    # via redis
 babel==2.12.1
     # via sphinx
 backoff==1.10.0
@@ -67,8 +65,6 @@ docutils==0.18.1
     #   rstcheck-core
     #   sphinx
     #   sphinx-tabs
-exceptiongroup==1.1.1
-    # via pytest
 filelock==3.12.1
     # via
     #   tox
@@ -230,17 +226,8 @@ sphinxcontrib-qthelp==1.0.3
     # via sphinx
 sphinxcontrib-serializinghtml==1.1.5
     # via sphinx
-sweetrpg-web-core==0.0.300
+sweetrpg-web-core==0.0.301
     # via -r requirements/app.in
-tomli==2.0.1
-    # via
-    #   black
-    #   build
-    #   coverage
-    #   pyproject-api
-    #   pyproject-hooks
-    #   pytest
-    #   tox
 tox==4.4.6
     # via -r requirements/tests.in
 typer[all]==0.7.0
@@ -249,7 +236,6 @@ types-docutils==0.19.1.9
     # via rstcheck-core
 typing-extensions==4.6.3
     # via
-    #   asgiref
     #   limits
     #   pydantic
 urllib3==1.26.16
