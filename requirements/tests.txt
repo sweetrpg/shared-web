@@ -48,7 +48,7 @@ distlib==0.3.6
     # via virtualenv
 exceptiongroup==1.1.1
     # via pytest
-filelock==3.12.1
+filelock==3.12.2
     # via
     #   tox
     #   virtualenv
@@ -147,7 +147,7 @@ six==1.16.0
     #   analytics-python
     #   flask-cors
     #   python-dateutil
-sweetrpg-web-core==0.0.300
+sweetrpg-web-core==0.0.301
     # via -r requirements/app.in
 tomli==2.0.1
     # via
