@@ -8,8 +8,6 @@ analytics-python==1.4.post1
     # via -r requirements/app.in
 asgiref==3.7.2
     # via -r requirements/tests.in
-async-timeout==4.0.2
-    # via redis
 backoff==1.10.0
     # via analytics-python
 blinker==1.6.2
@@ -46,8 +44,6 @@ deprecated==1.2.14
     # via limits
 distlib==0.3.6
     # via virtualenv
-exceptiongroup==1.1.1
-    # via pytest
 filelock==3.12.2
     # via
     #   tox
@@ -123,7 +119,7 @@ python-dateutil==2.8.2
     # via
     #   -r requirements/app.in
     #   analytics-python
-python-dotenv==0.21.0
+python-dotenv==1.0.0
     # via
     #   -r requirements/app.in
     #   -r requirements/tests.in
@@ -149,18 +145,10 @@ six==1.16.0
     #   python-dateutil
 sweetrpg-web-core==0.0.301
     # via -r requirements/app.in
-tomli==2.0.1
-    # via
-    #   coverage
-    #   pyproject-api
-    #   pytest
-    #   tox
 tox==4.4.6
     # via -r requirements/tests.in
 typing-extensions==4.6.3
-    # via
-    #   asgiref
-    #   limits
+    # via limits
 urllib3==1.26.16
     # via
     #   -r requirements/app.in

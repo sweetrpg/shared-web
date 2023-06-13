@@ -8,8 +8,6 @@ alabaster==0.7.13
     # via sphinx
 analytics-python==1.4.post1
     # via -r requirements/app.in
-async-timeout==4.0.2
-    # via redis
 babel==2.12.1
     # via sphinx
 backoff==1.10.0
@@ -109,7 +107,7 @@ python-dateutil==2.8.2
     # via
     #   -r requirements/app.in
     #   analytics-python
-python-dotenv==0.21.1
+python-dotenv==1.0.0
     # via -r requirements/app.in
 python-editor==1.0.4
     # via -r requirements/app.in
