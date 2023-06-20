@@ -134,7 +134,7 @@ pathspec==0.11.1
     # via black
 pip-tools==6.12.3
     # via -r requirements/dev.in
-platformdirs==3.5.3
+platformdirs==3.6.0
     # via
     #   black
     #   tox
@@ -230,7 +230,7 @@ sphinxcontrib-qthelp==1.0.3
     # via sphinx
 sphinxcontrib-serializinghtml==1.1.5
     # via sphinx
-sweetrpg-web-core==0.0.307
+sweetrpg-web-core==0.0.308
     # via -r requirements/app.in
 tomli==2.0.1
     # via

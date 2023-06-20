@@ -97,7 +97,7 @@ packaging==23.1
     #   pyproject-api
     #   pytest
     #   tox
-platformdirs==3.5.3
+platformdirs==3.6.0
     # via
     #   tox
     #   virtualenv
@@ -147,7 +147,7 @@ six==1.16.0
     #   analytics-python
     #   flask-cors
     #   python-dateutil
-sweetrpg-web-core==0.0.307
+sweetrpg-web-core==0.0.308
     # via -r requirements/app.in
 tomli==2.0.1
     # via
