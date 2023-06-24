@@ -97,11 +97,11 @@ packaging==23.1
     #   pyproject-api
     #   pytest
     #   tox
-platformdirs==3.6.0
+platformdirs==3.8.0
     # via
     #   tox
     #   virtualenv
-pluggy==1.0.0
+pluggy==1.2.0
     # via
     #   pytest
     #   tox
@@ -113,7 +113,7 @@ pylogbeat==2.0.0
     # via python-logstash-async
 pyproject-api==1.5.2
     # via tox
-pytest==7.3.2
+pytest==7.4.0
     # via
     #   -r requirements/tests.in
     #   pytest-cov
