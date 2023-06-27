@@ -86,7 +86,7 @@ python-logstash-async==2.5.0
     # via -r requirements/app.in
 pyyaml==6.0
     # via -r requirements/app.in
-redis==4.5.5
+redis==4.6.0
     # via -r requirements/app.in
 requests==2.31.0
     # via
