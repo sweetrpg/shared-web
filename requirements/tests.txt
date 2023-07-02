@@ -157,7 +157,7 @@ tomli==2.0.1
     #   tox
 tox==4.4.6
     # via -r requirements/tests.in
-typing-extensions==4.6.3
+typing-extensions==4.7.0
     # via
     #   asgiref
     #   limits
