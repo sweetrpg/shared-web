@@ -46,7 +46,7 @@ deprecated==1.2.14
     # via limits
 distlib==0.3.6
     # via virtualenv
-exceptiongroup==1.1.1
+exceptiongroup==1.1.2
     # via pytest
 filelock==3.12.2
     # via
@@ -147,7 +147,7 @@ six==1.16.0
     #   analytics-python
     #   flask-cors
     #   python-dateutil
-sweetrpg-web-core==0.0.315
+sweetrpg-web-core==0.0.316
     # via -r requirements/app.in
 tomli==2.0.1
     # via
@@ -157,7 +157,7 @@ tomli==2.0.1
     #   tox
 tox==4.4.6
     # via -r requirements/tests.in
-typing-extensions==4.7.0
+typing-extensions==4.7.1
     # via
     #   asgiref
     #   limits
