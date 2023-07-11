@@ -92,7 +92,7 @@ packaging==23.1
     #   sphinx
 pallets-sphinx-themes==2.1.1
     # via -r requirements/docs.in
-prometheus-client==0.17.0
+prometheus-client==0.17.1
     # via prometheus-flask-exporter
 prometheus-flask-exporter==0.22.4
     # via -r requirements/app.in
@@ -167,7 +167,7 @@ sphinxcontrib-qthelp==1.0.3
     # via sphinx
 sphinxcontrib-serializinghtml==1.1.5
     # via sphinx
-sweetrpg-web-core==0.0.322
+sweetrpg-web-core==0.0.323
     # via -r requirements/app.in
 typer[all]==0.7.0
     # via rstcheck

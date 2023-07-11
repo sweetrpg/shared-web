@@ -105,7 +105,7 @@ pluggy==1.2.0
     # via
     #   pytest
     #   tox
-prometheus-client==0.17.0
+prometheus-client==0.17.1
     # via prometheus-flask-exporter
 prometheus-flask-exporter==0.22.4
     # via -r requirements/app.in
@@ -147,7 +147,7 @@ six==1.16.0
     #   analytics-python
     #   flask-cors
     #   python-dateutil
-sweetrpg-web-core==0.0.322
+sweetrpg-web-core==0.0.323
     # via -r requirements/app.in
 tomli==2.0.1
     # via
