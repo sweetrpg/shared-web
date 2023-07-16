@@ -40,7 +40,7 @@ chardet==5.1.0
     # via tox
 charset-normalizer==3.2.0
     # via requests
-click==8.1.4
+click==8.1.5
     # via
     #   black
     #   flask
@@ -134,7 +134,7 @@ pathspec==0.11.1
     # via black
 pip-tools==6.12.3
     # via -r requirements/dev.in
-platformdirs==3.8.1
+platformdirs==3.9.1
     # via
     #   black
     #   tox
@@ -230,7 +230,7 @@ sphinxcontrib-qthelp==1.0.3
     # via sphinx
 sphinxcontrib-serializinghtml==1.1.5
     # via sphinx
-sweetrpg-web-core==0.0.323
+sweetrpg-web-core==0.0.324
     # via -r requirements/app.in
 tomli==2.0.1
     # via
@@ -257,7 +257,7 @@ urllib3==1.26.16
     #   -r requirements/app.in
     #   requests
     #   sentry-sdk
-virtualenv==20.23.1
+virtualenv==20.24.0
     # via tox
 werkzeug==2.3.6
     # via flask
