@@ -84,7 +84,7 @@ python-editor==1.0.4
     # via -r requirements/app.in
 python-logstash-async==2.5.0
     # via -r requirements/app.in
-pyyaml==6.0
+pyyaml==6.0.1
     # via -r requirements/app.in
 redis==4.6.0
     # via -r requirements/app.in
@@ -100,7 +100,7 @@ six==1.16.0
     #   analytics-python
     #   flask-cors
     #   python-dateutil
-sweetrpg-web-core==0.0.330
+sweetrpg-web-core==0.0.331
     # via -r requirements/app.in
 typing-extensions==4.7.1
     # via limits

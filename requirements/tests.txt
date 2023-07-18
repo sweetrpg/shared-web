@@ -44,7 +44,7 @@ coverage-badge==1.1.0
     # via -r requirements/tests.in
 deprecated==1.2.14
     # via limits
-distlib==0.3.6
+distlib==0.3.7
     # via virtualenv
 exceptiongroup==1.1.2
     # via pytest
@@ -131,7 +131,7 @@ python-editor==1.0.4
     # via -r requirements/app.in
 python-logstash-async==2.5.0
     # via -r requirements/app.in
-pyyaml==6.0
+pyyaml==6.0.1
     # via -r requirements/app.in
 redis==4.6.0
     # via -r requirements/app.in
@@ -147,7 +147,7 @@ six==1.16.0
     #   analytics-python
     #   flask-cors
     #   python-dateutil
-sweetrpg-web-core==0.0.330
+sweetrpg-web-core==0.0.331
     # via -r requirements/app.in
 tomli==2.0.1
     # via

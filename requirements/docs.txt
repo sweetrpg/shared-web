@@ -115,7 +115,7 @@ python-editor==1.0.4
     # via -r requirements/app.in
 python-logstash-async==2.5.0
     # via -r requirements/app.in
-pyyaml==6.0
+pyyaml==6.0.1
     # via -r requirements/app.in
 redis==4.6.0
     # via -r requirements/app.in
@@ -167,7 +167,7 @@ sphinxcontrib-qthelp==1.0.3
     # via sphinx
 sphinxcontrib-serializinghtml==1.1.5
     # via sphinx
-sweetrpg-web-core==0.0.330
+sweetrpg-web-core==0.0.331
     # via -r requirements/app.in
 typer[all]==0.7.0
     # via rstcheck
