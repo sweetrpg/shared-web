@@ -140,7 +140,7 @@ requests==2.31.0
     #   -r requirements/app.in
     #   analytics-python
     #   python-logstash-async
-sentry-sdk[flask]==1.23.1
+sentry-sdk[flask]==1.28.1
     # via -r requirements/app.in
 six==1.16.0
     # via
