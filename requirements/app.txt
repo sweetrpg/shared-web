@@ -6,8 +6,6 @@
 #
 analytics-python==1.4.post1
     # via -r requirements/app.in
-async-timeout==4.0.2
-    # via redis
 backoff==1.10.0
     # via analytics-python
 blinker==1.6.2
@@ -93,7 +91,7 @@ requests==2.31.0
     #   -r requirements/app.in
     #   analytics-python
     #   python-logstash-async
-sentry-sdk[flask]==1.23.1
+sentry-sdk[flask]==1.28.1
     # via -r requirements/app.in
 six==1.16.0
     # via
