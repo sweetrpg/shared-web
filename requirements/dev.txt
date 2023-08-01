@@ -154,7 +154,7 @@ pygments==2.15.1
     #   rich
     #   sphinx
     #   sphinx-tabs
-pylogbeat==2.0.0
+pylogbeat==2.0.1
     # via python-logstash-async
 pyproject-api==1.5.3
     # via tox
@@ -176,7 +176,7 @@ python-dotenv==0.21.0
     #   -r requirements/tests.in
 python-editor==1.0.4
     # via -r requirements/app.in
-python-logstash-async==2.5.0
+python-logstash-async==2.6.0
     # via -r requirements/app.in
 pyyaml==6.0.1
     # via -r requirements/app.in
@@ -194,7 +194,7 @@ rstcheck==6.1.2
     # via -r requirements/docs.in
 rstcheck-core==1.0.3
     # via rstcheck
-sentry-sdk[flask]==1.28.1
+sentry-sdk[flask]==1.29.0
     # via -r requirements/app.in
 shellingham==1.5.0.post1
     # via typer

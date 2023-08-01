@@ -109,7 +109,7 @@ prometheus-client==0.17.1
     # via prometheus-flask-exporter
 prometheus-flask-exporter==0.22.4
     # via -r requirements/app.in
-pylogbeat==2.0.0
+pylogbeat==2.0.1
     # via python-logstash-async
 pyproject-api==1.5.3
     # via tox
@@ -129,7 +129,7 @@ python-dotenv==0.21.0
     #   -r requirements/tests.in
 python-editor==1.0.4
     # via -r requirements/app.in
-python-logstash-async==2.5.0
+python-logstash-async==2.6.0
     # via -r requirements/app.in
 pyyaml==6.0.1
     # via -r requirements/app.in
@@ -140,7 +140,7 @@ requests==2.31.0
     #   -r requirements/app.in
     #   analytics-python
     #   python-logstash-async
-sentry-sdk[flask]==1.28.1
+sentry-sdk[flask]==1.29.0
     # via -r requirements/app.in
 six==1.16.0
     # via
