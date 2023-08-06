@@ -28,7 +28,7 @@ certifi==2023.7.22
     # via
     #   requests
     #   sentry-sdk
-chardet==5.1.0
+chardet==5.2.0
     # via tox
 charset-normalizer==3.2.0
     # via requests
@@ -140,7 +140,7 @@ requests==2.31.0
     #   -r requirements/app.in
     #   analytics-python
     #   python-logstash-async
-sentry-sdk[flask]==1.29.0
+sentry-sdk[flask]==1.29.2
     # via -r requirements/app.in
 six==1.16.0
     # via
