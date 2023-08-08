@@ -51,7 +51,7 @@ hiredis==2.2.3
     # via -r requirements/app.in
 idna==3.4
     # via requests
-importlib-resources==6.0.0
+importlib-resources==6.0.1
     # via limits
 itsdangerous==2.1.2
     # via flask
@@ -100,7 +100,7 @@ six==1.16.0
     #   analytics-python
     #   flask-cors
     #   python-dateutil
-sweetrpg-web-core==0.0.349
+sweetrpg-web-core==0.0.350
     # via -r requirements/app.in
 typing-extensions==4.7.1
     # via limits

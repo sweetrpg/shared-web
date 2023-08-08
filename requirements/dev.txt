@@ -97,7 +97,7 @@ idna==3.4
     # via requests
 imagesize==1.4.1
     # via sphinx
-importlib-resources==6.0.0
+importlib-resources==6.0.1
     # via limits
 iniconfig==2.0.0
     # via pytest
@@ -149,7 +149,7 @@ prometheus-flask-exporter==0.22.4
     # via -r requirements/app.in
 pydantic==1.10.12
     # via rstcheck-core
-pygments==2.15.1
+pygments==2.16.1
     # via
     #   rich
     #   sphinx
