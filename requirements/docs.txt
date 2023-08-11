@@ -8,7 +8,7 @@ alabaster==0.7.13
     # via sphinx
 analytics-python==1.4.post1
     # via -r requirements/app.in
-async-timeout==4.0.2
+async-timeout==4.0.3
     # via redis
 babel==2.12.1
     # via sphinx
