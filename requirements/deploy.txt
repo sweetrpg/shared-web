@@ -25,7 +25,7 @@ certifi==2023.7.22
     #   sentry-sdk
 charset-normalizer==3.2.0
     # via requests
-click==8.1.6
+click==8.1.7
     # via flask
 deprecated==1.2.14
     # via limits
@@ -100,7 +100,7 @@ six==1.16.0
     #   analytics-python
     #   flask-cors
     #   python-dateutil
-sweetrpg-web-core==0.0.359
+sweetrpg-web-core==0.0.360
     # via -r requirements/app.in
 typing-extensions==4.7.1
     # via limits

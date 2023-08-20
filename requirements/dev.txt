@@ -40,7 +40,7 @@ chardet==5.2.0
     # via tox
 charset-normalizer==3.2.0
     # via requests
-click==8.1.6
+click==8.1.7
     # via
     #   black
     #   flask
@@ -156,7 +156,7 @@ pygments==2.16.1
     #   sphinx-tabs
 pylogbeat==2.0.1
     # via python-logstash-async
-pyproject-api==1.5.3
+pyproject-api==1.5.4
     # via tox
 pyproject-hooks==1.0.0
     # via build
@@ -196,7 +196,7 @@ rstcheck-core==1.0.3
     # via rstcheck
 sentry-sdk[flask]==1.29.2
     # via -r requirements/app.in
-shellingham==1.5.0.post1
+shellingham==1.5.3
     # via typer
 six==1.16.0
     # via
@@ -235,7 +235,7 @@ sphinxcontrib-qthelp==1.0.6
     # via sphinx
 sphinxcontrib-serializinghtml==1.1.8
     # via sphinx
-sweetrpg-web-core==0.0.359
+sweetrpg-web-core==0.0.360
     # via -r requirements/app.in
 tomli==2.0.1
     # via
