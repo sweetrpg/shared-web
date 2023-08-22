@@ -52,7 +52,7 @@ filelock==3.12.2
     # via
     #   tox
     #   virtualenv
-flask==2.3.2
+flask==2.3.3
     # via
     #   -r requirements/app.in
     #   flask-caching
@@ -129,7 +129,7 @@ python-dotenv==0.21.0
     #   -r requirements/tests.in
 python-editor==1.0.4
     # via -r requirements/app.in
-python-logstash-async==2.6.0
+python-logstash-async==2.7.0
     # via -r requirements/app.in
 pyyaml==6.0.1
     # via -r requirements/app.in
