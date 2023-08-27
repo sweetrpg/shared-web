@@ -7,7 +7,7 @@ setup(
         "analytics-python~=1.0",
         "blinker~=1.6",
         "Flask-Caching~=2.0",
-        "Flask-CORS~=3.0",
+        "Flask-CORS>=3,<5",
         "Flask-DotEnv~=0.1",
         "Flask-Session~=0.5",
         "Flask~=2.2",

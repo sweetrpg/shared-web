@@ -6,8 +6,6 @@
 #
 analytics-python==1.4.post1
     # via -r requirements/app.in
-async-timeout==4.0.3
-    # via redis
 backoff==1.10.0
     # via analytics-python
 blinker==1.6.2
@@ -41,7 +39,7 @@ flask==2.3.3
     #   sweetrpg-web-core
 flask-caching==2.0.2
     # via -r requirements/app.in
-flask-cors==3.0.10
+flask-cors==4.0.0
     # via -r requirements/app.in
 flask-dotenv==0.1.2
     # via -r requirements/app.in
@@ -98,7 +96,6 @@ sentry-sdk[flask]==1.29.2
 six==1.16.0
     # via
     #   analytics-python
-    #   flask-cors
     #   python-dateutil
 sweetrpg-web-core==0.0.371
     # via -r requirements/app.in
