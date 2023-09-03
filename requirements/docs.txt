@@ -172,7 +172,7 @@ sphinxcontrib-qthelp==1.0.6
     # via sphinx
 sphinxcontrib-serializinghtml==1.1.9
     # via sphinx
-sweetrpg-web-core==0.0.372
+sweetrpg-web-core==0.0.373
     # via -r requirements/app.in
 typer[all]==0.7.0
     # via rstcheck
