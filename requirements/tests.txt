@@ -36,7 +36,7 @@ click==8.1.7
     # via flask
 colorama==0.4.6
     # via tox
-coverage[toml]==7.3.0
+coverage[toml]==7.3.1
     # via
     #   coverage-badge
     #   pytest-cov
@@ -113,7 +113,7 @@ pylogbeat==2.0.1
     # via python-logstash-async
 pyproject-api==1.6.1
     # via tox
-pytest==7.4.1
+pytest==7.4.2
     # via
     #   -r requirements/tests.in
     #   pytest-cov
@@ -167,7 +167,7 @@ urllib3==1.26.16
     #   -r requirements/app.in
     #   requests
     #   sentry-sdk
-virtualenv==20.24.4
+virtualenv==20.24.5
     # via tox
 werkzeug==2.3.7
     # via flask
