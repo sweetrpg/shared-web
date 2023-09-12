@@ -18,7 +18,7 @@ babel==2.12.1
     # via sphinx
 backoff==1.10.0
     # via analytics-python
-black==23.9.0
+black==23.9.1
     # via -r requirements/dev.in
 blinker==1.6.2
     # via
@@ -182,7 +182,7 @@ python-dotenv==0.21.0
     #   -r requirements/tests.in
 python-editor==1.0.4
     # via -r requirements/app.in
-python-logstash-async==2.7.0
+python-logstash-async==2.7.1
     # via -r requirements/app.in
 pyyaml==6.0.1
     # via -r requirements/app.in
