@@ -82,7 +82,7 @@ python-dotenv==0.21.1
     # via -r requirements/app.in
 python-editor==1.0.4
     # via -r requirements/app.in
-python-logstash-async==2.7.1
+python-logstash-async==2.7.2
     # via -r requirements/app.in
 pyyaml==6.0.1
     # via -r requirements/app.in
@@ -93,7 +93,7 @@ requests==2.31.0
     #   -r requirements/app.in
     #   analytics-python
     #   python-logstash-async
-sentry-sdk[flask]==1.30.0
+sentry-sdk[flask]==1.31.0
     # via -r requirements/app.in
 six==1.16.0
     # via
