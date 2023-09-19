@@ -131,7 +131,7 @@ requests==2.31.0
     #   analytics-python
     #   python-logstash-async
     #   sphinx
-rich==13.5.2
+rich==13.5.3
     # via typer
 rstcheck==6.2.0
     # via -r requirements/docs.in
@@ -182,7 +182,7 @@ sweetrpg-web-core==0.0.389
     # via -r requirements/app.in
 typer[all]==0.9.0
     # via rstcheck
-typing-extensions==4.7.1
+typing-extensions==4.8.0
     # via
     #   limits
     #   pydantic
