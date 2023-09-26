@@ -100,9 +100,9 @@ prometheus-client==0.17.1
     # via prometheus-flask-exporter
 prometheus-flask-exporter==0.22.4
     # via -r requirements/app.in
-pydantic==2.4.0
+pydantic==2.4.1
     # via rstcheck-core
-pydantic-core==2.10.0
+pydantic-core==2.10.1
     # via pydantic
 pygments==2.16.1
     # via
