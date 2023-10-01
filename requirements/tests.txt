@@ -30,7 +30,7 @@ certifi==2023.7.22
     #   sentry-sdk
 chardet==5.2.0
     # via tox
-charset-normalizer==3.2.0
+charset-normalizer==3.3.0
     # via requests
 click==8.1.7
     # via flask
@@ -168,7 +168,7 @@ urllib3==1.26.16
     #   sentry-sdk
 virtualenv==20.24.5
     # via tox
-werkzeug==2.3.7
+werkzeug==3.0.0
     # via flask
 wrapt==1.15.0
     # via deprecated
