@@ -66,7 +66,7 @@ markupsafe==2.1.3
     #   werkzeug
 monotonic==1.6
     # via analytics-python
-packaging==23.1
+packaging==23.2
     # via limits
 prometheus-client==0.17.1
     # via prometheus-flask-exporter
@@ -100,11 +100,11 @@ six==1.16.0
     #   analytics-python
     #   flask-cors
     #   python-dateutil
-sweetrpg-web-core==0.0.419
+sweetrpg-web-core==0.0.420
     # via -r requirements/app.in
 typing-extensions==4.8.0
     # via limits
-urllib3==1.26.16
+urllib3==1.26.17
     # via
     #   -r requirements/app.in
     #   requests

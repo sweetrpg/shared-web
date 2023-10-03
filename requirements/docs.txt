@@ -89,7 +89,7 @@ mdurl==0.1.2
     # via markdown-it-py
 monotonic==1.6
     # via analytics-python
-packaging==23.1
+packaging==23.2
     # via
     #   limits
     #   pallets-sphinx-themes
@@ -188,7 +188,7 @@ typing-extensions==4.8.0
     #   pydantic
     #   pydantic-core
     #   typer
-urllib3==1.26.16
+urllib3==1.26.17
     # via
     #   -r requirements/app.in
     #   requests
