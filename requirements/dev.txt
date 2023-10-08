@@ -8,19 +8,19 @@ alabaster==0.7.13
     # via sphinx
 analytics-python==1.4.post1
     # via -r requirements/app.in
-annotated-types==0.5.0
+annotated-types==0.6.0
     # via pydantic
 asgiref==3.7.2
     # via -r requirements/tests.in
 async-timeout==4.0.3
     # via redis
-babel==2.12.1
+babel==2.13.0
     # via sphinx
 backoff==1.10.0
     # via analytics-python
 black==23.9.1
     # via -r requirements/dev.in
-blinker==1.6.2
+blinker==1.6.3
     # via
     #   -r requirements/app.in
     #   -r requirements/tests.in
