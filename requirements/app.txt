@@ -39,7 +39,7 @@ flask==2.3.3
     #   prometheus-flask-exporter
     #   sentry-sdk
     #   sweetrpg-web-core
-flask-caching==2.0.2
+flask-caching==2.1.0
     # via -r requirements/app.in
 flask-cors==3.0.10
     # via -r requirements/app.in
@@ -100,7 +100,7 @@ six==1.16.0
     #   analytics-python
     #   flask-cors
     #   python-dateutil
-sweetrpg-web-core==0.0.426
+sweetrpg-web-core==0.0.427
     # via -r requirements/app.in
 typing-extensions==4.8.0
     # via limits
