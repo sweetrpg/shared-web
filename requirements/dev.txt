@@ -18,7 +18,7 @@ babel==2.13.0
     # via sphinx
 backoff==1.10.0
     # via analytics-python
-black==23.9.1
+black==23.10.0
     # via -r requirements/dev.in
 blinker==1.6.3
     # via
@@ -201,7 +201,9 @@ rstcheck==6.2.0
 rstcheck-core==1.1.1
     # via rstcheck
 sentry-sdk[flask]==1.32.0
-    # via -r requirements/app.in
+    # via
+    #   -r requirements/app.in
+    #   sentry-sdk
 shellingham==1.5.3
     # via typer
 six==1.16.0
@@ -255,7 +257,9 @@ tomli==2.0.1
 tox==4.4.6
     # via -r requirements/tests.in
 typer[all]==0.9.0
-    # via rstcheck
+    # via
+    #   rstcheck
+    #   typer
 typing-extensions==4.8.0
     # via
     #   asgiref
@@ -264,7 +268,7 @@ typing-extensions==4.8.0
     #   pydantic
     #   pydantic-core
     #   typer
-urllib3==1.26.17
+urllib3==1.26.18
     # via
     #   -r requirements/app.in
     #   requests

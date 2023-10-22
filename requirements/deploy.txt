@@ -94,7 +94,9 @@ requests==2.31.0
     #   analytics-python
     #   python-logstash-async
 sentry-sdk[flask]==1.32.0
-    # via -r requirements/app.in
+    # via
+    #   -r requirements/app.in
+    #   sentry-sdk
 six==1.16.0
     # via
     #   analytics-python
@@ -104,7 +106,7 @@ sweetrpg-web-core==0.0.440
     # via -r requirements/app.in
 typing-extensions==4.8.0
     # via limits
-urllib3==1.26.17
+urllib3==1.26.18
     # via
     #   -r requirements/app.in
     #   requests
