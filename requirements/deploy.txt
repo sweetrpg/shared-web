@@ -70,7 +70,7 @@ packaging==23.2
     # via limits
 prometheus-client==0.17.1
     # via prometheus-flask-exporter
-prometheus-flask-exporter==0.22.4
+prometheus-flask-exporter==0.23.0
     # via -r requirements/app.in
 pylogbeat==2.0.1
     # via python-logstash-async
@@ -113,7 +113,7 @@ urllib3==1.26.18
     #   sentry-sdk
 uwsgi==2.0.22
     # via -r requirements/deploy.in
-werkzeug==3.0.0
+werkzeug==3.0.1
     # via flask
 wrapt==1.15.0
     # via deprecated

@@ -12,7 +12,7 @@ annotated-types==0.6.0
     # via pydantic
 async-timeout==4.0.3
     # via redis
-babel==2.13.0
+babel==2.13.1
     # via sphinx
 backoff==1.10.0
     # via analytics-python
@@ -98,7 +98,7 @@ pallets-sphinx-themes==2.1.1
     # via -r requirements/docs.in
 prometheus-client==0.17.1
     # via prometheus-flask-exporter
-prometheus-flask-exporter==0.22.4
+prometheus-flask-exporter==0.23.0
     # via -r requirements/app.in
 pydantic==2.4.2
     # via rstcheck-core
@@ -141,7 +141,7 @@ sentry-sdk[flask]==1.32.0
     # via
     #   -r requirements/app.in
     #   sentry-sdk
-shellingham==1.5.3
+shellingham==1.5.4
     # via typer
 six==1.16.0
     # via
@@ -197,7 +197,7 @@ urllib3==1.26.18
     #   -r requirements/app.in
     #   requests
     #   sentry-sdk
-werkzeug==3.0.0
+werkzeug==3.0.1
     # via flask
 wrapt==1.15.0
     # via deprecated
