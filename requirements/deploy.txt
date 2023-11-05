@@ -10,7 +10,7 @@ async-timeout==4.0.3
     # via redis
 backoff==1.10.0
     # via analytics-python
-blinker==1.6.3
+blinker==1.7.0
     # via
     #   -r requirements/app.in
     #   flask
@@ -23,7 +23,7 @@ certifi==2023.7.22
     # via
     #   requests
     #   sentry-sdk
-charset-normalizer==3.3.1
+charset-normalizer==3.3.2
     # via requests
 click==8.1.7
     # via flask
@@ -93,7 +93,7 @@ requests==2.31.0
     #   -r requirements/app.in
     #   analytics-python
     #   python-logstash-async
-sentry-sdk[flask]==1.32.0
+sentry-sdk[flask]==1.34.0
     # via
     #   -r requirements/app.in
     #   sentry-sdk
@@ -111,7 +111,7 @@ urllib3==1.26.18
     #   -r requirements/app.in
     #   requests
     #   sentry-sdk
-uwsgi==2.0.22
+uwsgi==2.0.23
     # via -r requirements/deploy.in
 werkzeug==3.0.1
     # via flask

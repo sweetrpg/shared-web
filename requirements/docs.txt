@@ -16,7 +16,7 @@ babel==2.13.1
     # via sphinx
 backoff==1.10.0
     # via analytics-python
-blinker==1.6.3
+blinker==1.7.0
     # via
     #   -r requirements/app.in
     #   flask
@@ -29,7 +29,7 @@ certifi==2023.7.22
     # via
     #   requests
     #   sentry-sdk
-charset-normalizer==3.3.1
+charset-normalizer==3.3.2
     # via requests
 click==8.1.7
     # via
@@ -137,7 +137,7 @@ rstcheck==6.2.0
     # via -r requirements/docs.in
 rstcheck-core==1.1.1
     # via rstcheck
-sentry-sdk[flask]==1.32.0
+sentry-sdk[flask]==1.34.0
     # via
     #   -r requirements/app.in
     #   sentry-sdk
