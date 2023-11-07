@@ -97,7 +97,7 @@ idna==3.4
     # via requests
 imagesize==1.4.1
     # via sphinx
-importlib-resources==6.1.0
+importlib-resources==6.1.1
     # via limits
 iniconfig==2.0.0
     # via pytest
