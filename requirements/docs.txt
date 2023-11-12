@@ -199,5 +199,5 @@ urllib3==1.26.18
     #   sentry-sdk
 werkzeug==3.0.1
     # via flask
-wrapt==1.15.0
+wrapt==1.16.0
     # via deprecated
