@@ -68,7 +68,7 @@ monotonic==1.6
     # via analytics-python
 packaging==23.2
     # via limits
-prometheus-client==0.18.0
+prometheus-client==0.19.0
     # via prometheus-flask-exporter
 prometheus-flask-exporter==0.23.0
     # via -r requirements/app.in
@@ -102,7 +102,7 @@ six==1.16.0
     #   analytics-python
     #   flask-cors
     #   python-dateutil
-sweetrpg-web-core==0.0.461
+sweetrpg-web-core==0.0.462
     # via -r requirements/app.in
 typing-extensions==4.8.0
     # via limits
