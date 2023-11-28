@@ -277,7 +277,7 @@ virtualenv==20.24.7
     # via tox
 werkzeug==3.0.1
     # via flask
-wheel==0.41.3
+wheel==0.42.0
     # via pip-tools
 wrapt==1.16.0
     # via deprecated
