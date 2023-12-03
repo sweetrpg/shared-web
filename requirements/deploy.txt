@@ -93,7 +93,7 @@ requests==2.31.0
     #   -r requirements/app.in
     #   analytics-python
     #   python-logstash-async
-sentry-sdk[flask]==1.37.1
+sentry-sdk[flask]==1.38.0
     # via
     #   -r requirements/app.in
     #   sentry-sdk

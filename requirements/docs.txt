@@ -137,7 +137,7 @@ rstcheck==6.2.0
     # via -r requirements/docs.in
 rstcheck-core==1.2.0
     # via rstcheck
-sentry-sdk[flask]==1.37.1
+sentry-sdk[flask]==1.38.0
     # via
     #   -r requirements/app.in
     #   sentry-sdk
