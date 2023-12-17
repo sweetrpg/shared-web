@@ -36,7 +36,7 @@ click==8.1.7
     # via flask
 colorama==0.4.6
     # via tox
-coverage[toml]==7.3.2
+coverage[toml]==7.3.3
     # via
     #   coverage-badge
     #   pytest-cov
@@ -44,7 +44,7 @@ coverage-badge==1.1.0
     # via -r requirements/tests.in
 deprecated==1.2.14
     # via limits
-distlib==0.3.7
+distlib==0.3.8
     # via virtualenv
 exceptiongroup==1.2.0
     # via pytest
@@ -140,7 +140,7 @@ requests==2.31.0
     #   -r requirements/app.in
     #   analytics-python
     #   python-logstash-async
-sentry-sdk[flask]==1.38.0
+sentry-sdk[flask]==1.39.1
     # via
     #   -r requirements/app.in
     #   sentry-sdk

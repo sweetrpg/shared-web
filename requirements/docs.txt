@@ -12,7 +12,7 @@ annotated-types==0.6.0
     # via pydantic
 async-timeout==4.0.3
     # via redis
-babel==2.13.1
+babel==2.14.0
     # via sphinx
 backoff==1.10.0
     # via analytics-python
@@ -137,7 +137,7 @@ rstcheck==6.2.0
     # via -r requirements/docs.in
 rstcheck-core==1.2.0
     # via rstcheck
-sentry-sdk[flask]==1.38.0
+sentry-sdk[flask]==1.39.1
     # via
     #   -r requirements/app.in
     #   sentry-sdk
