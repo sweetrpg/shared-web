@@ -103,7 +103,7 @@ frozenlist==1.4.1
     # via
     #   aiohttp
     #   aiosignal
-hiredis==2.2.3
+hiredis==2.3.2
     # via -r requirements/app.in
 idna==3.6
     # via
