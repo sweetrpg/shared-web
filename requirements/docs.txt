@@ -4,7 +4,7 @@
 #
 #    pip-compile requirements/docs.in
 #
-alabaster==0.7.15
+alabaster==0.7.16
     # via sphinx
 analytics-python==1.4.post1
     # via -r requirements/app.in
@@ -72,7 +72,7 @@ importlib-resources==6.1.1
     # via limits
 itsdangerous==2.1.2
     # via flask
-jinja2==3.1.2
+jinja2==3.1.3
     # via
     #   flask
     #   sphinx
@@ -137,7 +137,7 @@ rstcheck==6.2.0
     # via -r requirements/docs.in
 rstcheck-core==1.2.0
     # via rstcheck
-sentry-sdk[flask]==1.39.1
+sentry-sdk[flask]==1.39.2
     # via
     #   -r requirements/app.in
     #   sentry-sdk
@@ -156,29 +156,24 @@ sphinx==6.1.3
     #   pallets-sphinx-themes
     #   sphinx-issues
     #   sphinx-tabs
-    #   sphinxcontrib-applehelp
-    #   sphinxcontrib-devhelp
-    #   sphinxcontrib-htmlhelp
     #   sphinxcontrib-log-cabinet
-    #   sphinxcontrib-qthelp
-    #   sphinxcontrib-serializinghtml
 sphinx-issues==3.0.1
     # via -r requirements/docs.in
 sphinx-tabs==3.4.4
     # via -r requirements/docs.in
-sphinxcontrib-applehelp==1.0.7
+sphinxcontrib-applehelp==1.0.8
     # via sphinx
-sphinxcontrib-devhelp==1.0.5
+sphinxcontrib-devhelp==1.0.6
     # via sphinx
-sphinxcontrib-htmlhelp==2.0.4
+sphinxcontrib-htmlhelp==2.0.5
     # via sphinx
 sphinxcontrib-jsmath==1.0.1
     # via sphinx
 sphinxcontrib-log-cabinet==1.0.1
     # via -r requirements/docs.in
-sphinxcontrib-qthelp==1.0.6
+sphinxcontrib-qthelp==1.0.7
     # via sphinx
-sphinxcontrib-serializinghtml==1.1.9
+sphinxcontrib-serializinghtml==1.1.10
     # via sphinx
 sweetrpg-web-core==0.0.498
     # via -r requirements/app.in
