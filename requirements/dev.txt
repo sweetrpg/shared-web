@@ -18,7 +18,7 @@ babel==2.14.0
     # via sphinx
 backoff==1.10.0
     # via analytics-python
-black==24.1.0
+black==24.1.1
     # via -r requirements/dev.in
 blinker==1.7.0
     # via
@@ -151,9 +151,9 @@ prometheus-client==0.19.0
     # via prometheus-flask-exporter
 prometheus-flask-exporter==0.23.0
     # via -r requirements/app.in
-pydantic==2.5.3
+pydantic==2.6.0
     # via rstcheck-core
-pydantic-core==2.14.6
+pydantic-core==2.16.1
     # via pydantic
 pygments==2.17.2
     # via
