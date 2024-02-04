@@ -25,7 +25,7 @@ cachelib==0.9.0
     # via
     #   flask-caching
     #   flask-session
-certifi==2023.11.17
+certifi==2024.2.2
     # via
     #   requests
     #   sentry-sdk
@@ -80,7 +80,7 @@ limits==3.7.0
     # via python-logstash-async
 markdown-it-py==3.0.0
     # via rich
-markupsafe==2.1.4
+markupsafe==2.1.5
     # via
     #   jinja2
     #   sentry-sdk
@@ -137,7 +137,7 @@ rstcheck==6.2.0
     # via -r requirements/docs.in
 rstcheck-core==1.2.0
     # via rstcheck
-sentry-sdk[flask]==1.39.2
+sentry-sdk[flask]==1.40.0
     # via
     #   -r requirements/app.in
     #   sentry-sdk
