@@ -52,7 +52,7 @@ colorama==0.4.6
     # via
     #   tox
     #   typer
-coverage[toml]==7.4.1
+coverage[toml]==7.4.3
     # via
     #   coverage-badge
     #   pytest-cov
@@ -151,9 +151,9 @@ prometheus-client==0.20.0
     # via prometheus-flask-exporter
 prometheus-flask-exporter==0.23.0
     # via -r requirements/app.in
-pydantic==2.6.1
+pydantic==2.6.2
     # via rstcheck-core
-pydantic-core==2.16.2
+pydantic-core==2.16.3
     # via pydantic
 pygments==2.17.2
     # via
@@ -166,7 +166,7 @@ pyproject-api==1.6.1
     # via tox
 pyproject-hooks==1.0.0
     # via build
-pytest==8.0.1
+pytest==8.0.2
     # via
     #   -r requirements/tests.in
     #   pytest-cov
@@ -264,7 +264,7 @@ urllib3==1.26.18
     #   -r requirements/app.in
     #   requests
     #   sentry-sdk
-virtualenv==20.25.0
+virtualenv==20.25.1
     # via tox
 werkzeug==3.0.1
     # via flask
