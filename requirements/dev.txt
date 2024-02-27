@@ -32,7 +32,7 @@ cachelib==0.9.0
     # via
     #   flask-caching
     #   flask-session
-cachetools==5.3.2
+cachetools==5.3.3
     # via tox
 certifi==2024.2.2
     # via
@@ -97,7 +97,7 @@ idna==3.6
     # via requests
 imagesize==1.4.1
     # via sphinx
-importlib-resources==6.1.1
+importlib-resources==6.1.2
     # via limits
 iniconfig==2.0.0
     # via pytest
@@ -251,7 +251,7 @@ tox==4.4.6
     # via -r requirements/tests.in
 typer[all]==0.9.0
     # via rstcheck
-typing-extensions==4.9.0
+typing-extensions==4.10.0
     # via
     #   asgiref
     #   black
