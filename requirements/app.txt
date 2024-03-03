@@ -74,7 +74,7 @@ prometheus-flask-exporter==0.23.0
     # via -r requirements/app.in
 pylogbeat==2.0.1
     # via python-logstash-async
-python-dateutil==2.8.2
+python-dateutil==2.9.0.post0
     # via
     #   -r requirements/app.in
     #   analytics-python
@@ -93,7 +93,7 @@ requests==2.31.0
     #   -r requirements/app.in
     #   analytics-python
     #   python-logstash-async
-sentry-sdk[flask]==1.40.5
+sentry-sdk[flask]==1.40.6
     # via -r requirements/app.in
 six==1.16.0
     # via

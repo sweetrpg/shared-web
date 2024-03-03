@@ -119,7 +119,7 @@ pytest==8.0.2
     #   pytest-cov
 pytest-cov==4.0.0
     # via -r requirements/tests.in
-python-dateutil==2.8.2
+python-dateutil==2.9.0.post0
     # via
     #   -r requirements/app.in
     #   analytics-python
@@ -140,7 +140,7 @@ requests==2.31.0
     #   -r requirements/app.in
     #   analytics-python
     #   python-logstash-async
-sentry-sdk[flask]==1.40.5
+sentry-sdk[flask]==1.40.6
     # via -r requirements/app.in
 six==1.16.0
     # via
