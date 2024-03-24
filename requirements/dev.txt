@@ -10,7 +10,7 @@ analytics-python==1.4.post1
     # via -r requirements/app.in
 annotated-types==0.6.0
     # via pydantic
-asgiref==3.7.2
+asgiref==3.8.1
     # via -r requirements/tests.in
 async-timeout==4.0.3
     # via redis
@@ -95,7 +95,7 @@ idna==3.6
     # via requests
 imagesize==1.4.1
     # via sphinx
-importlib-resources==6.3.1
+importlib-resources==6.4.0
     # via limits
 iniconfig==2.0.0
     # via pytest
@@ -196,11 +196,11 @@ requests==2.31.0
     #   sphinx
 rich==13.7.1
     # via typer
-rstcheck==6.2.0
+rstcheck==6.2.1
     # via -r requirements/docs.in
-rstcheck-core==1.2.0
+rstcheck-core==1.2.1
     # via rstcheck
-sentry-sdk[flask]==1.42.0
+sentry-sdk[flask]==1.43.0
     # via -r requirements/app.in
 shellingham==1.5.4
     # via typer
@@ -249,7 +249,7 @@ tomli==2.0.1
     #   tox
 tox==4.4.6
     # via -r requirements/tests.in
-typer[all]==0.9.0
+typer[all]==0.10.0
     # via rstcheck
 typing-extensions==4.10.0
     # via

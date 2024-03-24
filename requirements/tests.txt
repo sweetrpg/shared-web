@@ -6,7 +6,7 @@
 #
 analytics-python==1.4.post1
     # via -r requirements/app.in
-asgiref==3.7.2
+asgiref==3.8.1
     # via -r requirements/tests.in
 async-timeout==4.0.3
     # via redis
@@ -72,7 +72,7 @@ hiredis==2.3.2
     # via -r requirements/app.in
 idna==3.6
     # via requests
-importlib-resources==6.3.1
+importlib-resources==6.4.0
     # via limits
 iniconfig==2.0.0
     # via pytest
@@ -140,7 +140,7 @@ requests==2.31.0
     #   -r requirements/app.in
     #   analytics-python
     #   python-logstash-async
-sentry-sdk[flask]==1.42.0
+sentry-sdk[flask]==1.43.0
     # via -r requirements/app.in
 six==1.16.0
     # via
