@@ -16,7 +16,9 @@ blinker==1.7.0
     #   flask
     #   sentry-sdk
 cachelib==0.9.0
-    # via flask-caching
+    # via
+    #   flask-caching
+    #   flask-session
 certifi==2024.2.2
     # via
     #   requests
@@ -43,7 +45,7 @@ flask-cors==3.0.10
     # via -r requirements/app.in
 flask-dotenv==0.1.2
     # via -r requirements/app.in
-flask-session==0.7.0
+flask-session==0.8.0
     # via -r requirements/app.in
 hiredis==2.3.2
     # via -r requirements/app.in
@@ -93,7 +95,7 @@ requests==2.31.0
     #   -r requirements/app.in
     #   analytics-python
     #   python-logstash-async
-sentry-sdk[flask]==1.43.0
+sentry-sdk[flask]==1.44.0
     # via -r requirements/app.in
 six==1.16.0
     # via
