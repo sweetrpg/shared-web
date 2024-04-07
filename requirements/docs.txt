@@ -34,7 +34,7 @@ charset-normalizer==3.3.2
 click==8.1.7
     # via
     #   flask
-    #   typer-slim
+    #   typer
 deprecated==1.2.14
     # via limits
 docutils==0.19
@@ -132,15 +132,15 @@ requests==2.31.0
     #   python-logstash-async
     #   sphinx
 rich==13.7.1
-    # via typer-slim
+    # via typer
 rstcheck==6.2.1
     # via -r requirements/docs.in
 rstcheck-core==1.2.1
     # via rstcheck
-sentry-sdk[flask]==1.44.0
+sentry-sdk[flask]==1.44.1
     # via -r requirements/app.in
 shellingham==1.5.4
-    # via typer-slim
+    # via typer
 six==1.16.0
     # via
     #   analytics-python
@@ -175,20 +175,14 @@ sphinxcontrib-serializinghtml==1.1.10
     # via sphinx
 sweetrpg-web-core==0.0.551
     # via -r requirements/app.in
-typer[all]==0.12.0
+typer[all]==0.12.1
     # via rstcheck
-typer-cli==0.12.0
-    # via typer
-typer-slim[standard]==0.12.0
-    # via
-    #   typer
-    #   typer-cli
-typing-extensions==4.10.0
+typing-extensions==4.11.0
     # via
     #   limits
     #   pydantic
     #   pydantic-core
-    #   typer-slim
+    #   typer
 urllib3==1.26.18
     # via
     #   -r requirements/app.in

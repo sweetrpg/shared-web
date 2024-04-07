@@ -47,7 +47,7 @@ click==8.1.7
     #   black
     #   flask
     #   pip-tools
-    #   typer-slim
+    #   typer
 colorama==0.4.6
     # via tox
 coverage[toml]==7.4.4
@@ -195,15 +195,15 @@ requests==2.31.0
     #   python-logstash-async
     #   sphinx
 rich==13.7.1
-    # via typer-slim
+    # via typer
 rstcheck==6.2.1
     # via -r requirements/docs.in
 rstcheck-core==1.2.1
     # via rstcheck
-sentry-sdk[flask]==1.44.0
+sentry-sdk[flask]==1.44.1
     # via -r requirements/app.in
 shellingham==1.5.4
-    # via typer-slim
+    # via typer
 six==1.16.0
     # via
     #   analytics-python
@@ -249,22 +249,16 @@ tomli==2.0.1
     #   tox
 tox==4.4.6
     # via -r requirements/tests.in
-typer[all]==0.12.0
+typer[all]==0.12.1
     # via rstcheck
-typer-cli==0.12.0
-    # via typer
-typer-slim[standard]==0.12.0
-    # via
-    #   typer
-    #   typer-cli
-typing-extensions==4.10.0
+typing-extensions==4.11.0
     # via
     #   asgiref
     #   black
     #   limits
     #   pydantic
     #   pydantic-core
-    #   typer-slim
+    #   typer
 urllib3==1.26.18
     # via
     #   -r requirements/app.in

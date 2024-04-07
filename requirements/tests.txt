@@ -142,7 +142,7 @@ requests==2.31.0
     #   -r requirements/app.in
     #   analytics-python
     #   python-logstash-async
-sentry-sdk[flask]==1.44.0
+sentry-sdk[flask]==1.44.1
     # via -r requirements/app.in
 six==1.16.0
     # via
@@ -159,7 +159,7 @@ tomli==2.0.1
     #   tox
 tox==4.4.6
     # via -r requirements/tests.in
-typing-extensions==4.10.0
+typing-extensions==4.11.0
     # via
     #   asgiref
     #   limits

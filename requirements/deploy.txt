@@ -95,7 +95,7 @@ requests==2.31.0
     #   -r requirements/app.in
     #   analytics-python
     #   python-logstash-async
-sentry-sdk[flask]==1.44.0
+sentry-sdk[flask]==1.44.1
     # via -r requirements/app.in
 six==1.16.0
     # via
@@ -104,7 +104,7 @@ six==1.16.0
     #   python-dateutil
 sweetrpg-web-core==0.0.551
     # via -r requirements/app.in
-typing-extensions==4.10.0
+typing-extensions==4.11.0
     # via limits
 urllib3==1.26.18
     # via
