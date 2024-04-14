@@ -49,7 +49,7 @@ flask-session==0.8.0
     # via -r requirements/app.in
 hiredis==2.3.2
     # via -r requirements/app.in
-idna==3.6
+idna==3.7
     # via requests
 importlib-resources==6.4.0
     # via limits
@@ -95,7 +95,7 @@ requests==2.31.0
     #   -r requirements/app.in
     #   analytics-python
     #   python-logstash-async
-sentry-sdk[flask]==1.44.1
+sentry-sdk[flask]==1.45.0
     # via -r requirements/app.in
 six==1.16.0
     # via
