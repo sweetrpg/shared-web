@@ -18,9 +18,9 @@ babel==2.14.0
     # via sphinx
 backoff==1.10.0
     # via analytics-python
-black==24.4.0
+black==24.4.2
     # via -r requirements/dev.in
-blinker==1.7.0
+blinker==1.8.0
     # via
     #   -r requirements/app.in
     #   -r requirements/tests.in
@@ -50,7 +50,7 @@ click==8.1.7
     #   typer
 colorama==0.4.6
     # via tox
-coverage[toml]==7.4.4
+coverage[toml]==7.5.0
     # via
     #   coverage-badge
     #   pytest-cov
@@ -81,7 +81,7 @@ flask==2.3.3
     #   prometheus-flask-exporter
     #   sentry-sdk
     #   sweetrpg-web-core
-flask-caching==2.1.0
+flask-caching==2.2.0
     # via -r requirements/app.in
 flask-cors==3.0.10
     # via -r requirements/app.in
@@ -138,7 +138,7 @@ pathspec==0.12.1
     # via black
 pip-tools==6.12.3
     # via -r requirements/dev.in
-platformdirs==4.2.0
+platformdirs==4.2.1
     # via
     #   black
     #   tox
@@ -151,9 +151,9 @@ prometheus-client==0.20.0
     # via prometheus-flask-exporter
 prometheus-flask-exporter==0.23.0
     # via -r requirements/app.in
-pydantic==2.7.0
+pydantic==2.7.1
     # via rstcheck-core
-pydantic-core==2.18.1
+pydantic-core==2.18.2
     # via pydantic
 pygments==2.17.2
     # via
@@ -166,7 +166,7 @@ pyproject-api==1.6.1
     # via tox
 pyproject-hooks==1.0.0
     # via build
-pytest==8.1.1
+pytest==8.2.0
     # via
     #   -r requirements/tests.in
     #   pytest-cov
@@ -264,7 +264,7 @@ urllib3==1.26.18
     #   -r requirements/app.in
     #   requests
     #   sentry-sdk
-virtualenv==20.25.3
+virtualenv==20.26.0
     # via tox
 werkzeug==3.0.2
     # via flask

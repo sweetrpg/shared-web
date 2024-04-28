@@ -10,7 +10,7 @@ async-timeout==4.0.3
     # via redis
 backoff==1.10.0
     # via analytics-python
-blinker==1.7.0
+blinker==1.8.0
     # via
     #   -r requirements/app.in
     #   flask
@@ -39,7 +39,7 @@ flask==2.3.3
     #   prometheus-flask-exporter
     #   sentry-sdk
     #   sweetrpg-web-core
-flask-caching==2.1.0
+flask-caching==2.2.0
     # via -r requirements/app.in
 flask-cors==3.0.10
     # via -r requirements/app.in
