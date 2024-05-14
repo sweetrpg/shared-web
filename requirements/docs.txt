@@ -74,7 +74,7 @@ jinja2==3.1.4
     # via
     #   flask
     #   sphinx
-limits==3.11.0
+limits==3.12.0
     # via python-logstash-async
 markdown-it-py==3.0.0
     # via rich

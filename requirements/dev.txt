@@ -105,7 +105,7 @@ jinja2==3.1.4
     # via
     #   flask
     #   sphinx
-limits==3.11.0
+limits==3.12.0
     # via python-logstash-async
 markdown-it-py==3.0.0
     # via rich
@@ -263,7 +263,7 @@ urllib3==1.26.18
     #   -r requirements/app.in
     #   requests
     #   sentry-sdk
-virtualenv==20.26.1
+virtualenv==20.26.2
     # via tox
 werkzeug==3.0.3
     # via flask
