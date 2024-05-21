@@ -115,7 +115,7 @@ pylogbeat==2.0.1
     # via python-logstash-async
 pyproject-api==1.6.1
     # via tox
-pytest==8.2.0
+pytest==8.2.1
     # via
     #   -r requirements/tests.in
     #   pytest-cov
@@ -137,7 +137,7 @@ pyyaml==6.0.1
     # via -r requirements/app.in
 redis==4.6.0
     # via -r requirements/app.in
-requests==2.31.0
+requests==2.32.1
     # via
     #   -r requirements/app.in
     #   analytics-python

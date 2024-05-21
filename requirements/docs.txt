@@ -8,7 +8,7 @@ alabaster==0.7.16
     # via sphinx
 analytics-python==1.4.post1
     # via -r requirements/app.in
-annotated-types==0.6.0
+annotated-types==0.7.0
     # via pydantic
 async-timeout==4.0.3
     # via redis
@@ -125,7 +125,7 @@ pyyaml==6.0.1
     # via -r requirements/app.in
 redis==4.6.0
     # via -r requirements/app.in
-requests==2.31.0
+requests==2.32.1
     # via
     #   -r requirements/app.in
     #   analytics-python
