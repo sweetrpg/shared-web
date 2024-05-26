@@ -188,7 +188,7 @@ pyyaml==6.0.1
     # via -r requirements/app.in
 redis==4.6.0
     # via -r requirements/app.in
-requests==2.32.1
+requests==2.32.2
     # via
     #   -r requirements/app.in
     #   analytics-python
@@ -250,7 +250,7 @@ tox==4.4.6
     # via -r requirements/tests.in
 typer[all]==0.12.3
     # via rstcheck
-typing-extensions==4.11.0
+typing-extensions==4.12.0
     # via
     #   asgiref
     #   black

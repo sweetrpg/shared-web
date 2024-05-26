@@ -90,7 +90,7 @@ pyyaml==6.0.1
     # via -r requirements/app.in
 redis==4.6.0
     # via -r requirements/app.in
-requests==2.32.1
+requests==2.32.2
     # via
     #   -r requirements/app.in
     #   analytics-python
@@ -104,7 +104,7 @@ six==1.16.0
     #   python-dateutil
 sweetrpg-web-core==0.0.583
     # via -r requirements/app.in
-typing-extensions==4.11.0
+typing-extensions==4.12.0
     # via limits
 urllib3==1.26.18
     # via
