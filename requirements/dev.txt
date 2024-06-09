@@ -166,7 +166,7 @@ pyproject-api==1.6.1
     # via tox
 pyproject-hooks==1.1.0
     # via build
-pytest==8.2.1
+pytest==8.2.2
     # via
     #   -r requirements/tests.in
     #   pytest-cov
@@ -250,7 +250,7 @@ tox==4.4.6
     # via -r requirements/tests.in
 typer[all]==0.12.3
     # via rstcheck
-typing-extensions==4.12.1
+typing-extensions==4.12.2
     # via
     #   asgiref
     #   black

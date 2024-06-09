@@ -177,7 +177,7 @@ sweetrpg-web-core==0.0.593
     # via -r requirements/app.in
 typer[all]==0.12.3
     # via rstcheck
-typing-extensions==4.12.1
+typing-extensions==4.12.2
     # via
     #   limits
     #   pydantic

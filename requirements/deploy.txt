@@ -104,7 +104,7 @@ six==1.16.0
     #   python-dateutil
 sweetrpg-web-core==0.0.593
     # via -r requirements/app.in
-typing-extensions==4.12.1
+typing-extensions==4.12.2
     # via limits
 urllib3==1.26.18
     # via

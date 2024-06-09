@@ -115,7 +115,7 @@ pylogbeat==2.0.1
     # via python-logstash-async
 pyproject-api==1.6.1
     # via tox
-pytest==8.2.1
+pytest==8.2.2
     # via
     #   -r requirements/tests.in
     #   pytest-cov
@@ -159,7 +159,7 @@ tomli==2.0.1
     #   tox
 tox==4.4.6
     # via -r requirements/tests.in
-typing-extensions==4.12.1
+typing-extensions==4.12.2
     # via
     #   asgiref
     #   limits
