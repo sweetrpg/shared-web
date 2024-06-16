@@ -67,7 +67,7 @@ docutils==0.19
     #   sphinx-tabs
 exceptiongroup==1.2.1
     # via pytest
-filelock==3.14.0
+filelock==3.15.1
     # via
     #   tox
     #   virtualenv
@@ -151,7 +151,7 @@ prometheus-client==0.20.0
     # via prometheus-flask-exporter
 prometheus-flask-exporter==0.23.0
     # via -r requirements/app.in
-pydantic==2.7.3
+pydantic==2.7.4
     # via rstcheck-core
 pydantic-core==2.18.4
     # via pydantic
