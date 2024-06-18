@@ -236,7 +236,7 @@ sphinxcontrib-qthelp==1.0.7
     # via sphinx
 sphinxcontrib-serializinghtml==1.1.10
     # via sphinx
-sweetrpg-web-core==0.0.601
+sweetrpg-web-core==0.0.602
     # via -r requirements/app.in
 tomli==2.0.1
     # via
@@ -258,7 +258,7 @@ typing-extensions==4.12.2
     #   pydantic
     #   pydantic-core
     #   typer
-urllib3==1.26.18
+urllib3==1.26.19
     # via
     #   -r requirements/app.in
     #   requests

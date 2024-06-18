@@ -102,11 +102,11 @@ six==1.16.0
     #   analytics-python
     #   flask-cors
     #   python-dateutil
-sweetrpg-web-core==0.0.601
+sweetrpg-web-core==0.0.602
     # via -r requirements/app.in
 typing-extensions==4.12.2
     # via limits
-urllib3==1.26.18
+urllib3==1.26.19
     # via
     #   -r requirements/app.in
     #   requests

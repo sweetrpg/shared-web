@@ -106,7 +106,7 @@ sweetrpg-web-core==0.0.602
     # via -r requirements/app.in
 typing-extensions==4.12.2
     # via limits
-urllib3==1.26.18
+urllib3==1.26.19
     # via
     #   -r requirements/app.in
     #   requests
