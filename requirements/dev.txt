@@ -50,7 +50,7 @@ click==8.1.7
     #   typer
 colorama==0.4.6
     # via tox
-coverage[toml]==7.5.3
+coverage[toml]==7.5.4
     # via
     #   coverage-badge
     #   pytest-cov
@@ -67,7 +67,7 @@ docutils==0.19
     #   sphinx-tabs
 exceptiongroup==1.2.1
     # via pytest
-filelock==3.15.1
+filelock==3.15.4
     # via
     #   tox
     #   virtualenv
@@ -162,7 +162,7 @@ pygments==2.18.0
     #   sphinx-tabs
 pylogbeat==2.0.1
     # via python-logstash-async
-pyproject-api==1.6.1
+pyproject-api==1.7.1
     # via tox
 pyproject-hooks==1.1.0
     # via build
@@ -263,7 +263,7 @@ urllib3==1.26.19
     #   -r requirements/app.in
     #   requests
     #   sentry-sdk
-virtualenv==20.26.2
+virtualenv==20.26.3
     # via tox
 werkzeug==3.0.3
     # via flask
