@@ -196,7 +196,7 @@ requests==2.32.3
     #   sphinx
 rich==13.7.1
     # via typer
-rstcheck==6.2.1
+rstcheck==6.2.4
     # via -r requirements/docs.in
 rstcheck-core==1.2.1
     # via rstcheck
@@ -248,7 +248,7 @@ tomli==2.0.1
     #   tox
 tox==4.4.6
     # via -r requirements/tests.in
-typer[all]==0.12.3
+typer==0.12.3
     # via rstcheck
 typing-extensions==4.12.2
     # via
