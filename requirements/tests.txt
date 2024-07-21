@@ -70,7 +70,7 @@ flask-dotenv==0.1.2
     # via -r requirements/app.in
 flask-session==0.8.0
     # via -r requirements/app.in
-hiredis==2.3.2
+hiredis==2.4.0
     # via -r requirements/app.in
 idna==3.7
     # via requests
@@ -115,7 +115,7 @@ pylogbeat==2.0.1
     # via python-logstash-async
 pyproject-api==1.7.1
     # via tox
-pytest==8.2.2
+pytest==8.3.1
     # via
     #   -r requirements/tests.in
     #   pytest-cov
