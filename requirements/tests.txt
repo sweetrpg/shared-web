@@ -115,7 +115,7 @@ pylogbeat==2.0.1
     # via python-logstash-async
 pyproject-api==1.7.1
     # via tox
-pytest==8.3.1
+pytest==8.3.2
     # via
     #   -r requirements/tests.in
     #   pytest-cov
@@ -142,7 +142,7 @@ requests==2.32.3
     #   -r requirements/app.in
     #   analytics-python
     #   python-logstash-async
-sentry-sdk[flask]==1.45.0
+sentry-sdk[flask]==1.45.1
     # via -r requirements/app.in
 six==1.16.0
     # via

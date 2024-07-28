@@ -137,7 +137,7 @@ rstcheck==6.2.4
     # via -r requirements/docs.in
 rstcheck-core==1.2.1
     # via rstcheck
-sentry-sdk[flask]==1.45.0
+sentry-sdk[flask]==1.45.1
     # via -r requirements/app.in
 shellingham==1.5.4
     # via typer
