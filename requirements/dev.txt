@@ -18,7 +18,7 @@ babel==2.15.0
     # via sphinx
 backoff==1.10.0
     # via analytics-python
-black==24.4.2
+black==24.8.0
     # via -r requirements/dev.in
 blinker==1.8.2
     # via
