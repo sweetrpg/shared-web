@@ -12,7 +12,7 @@ annotated-types==0.7.0
     # via pydantic
 async-timeout==4.0.3
     # via redis
-babel==2.15.0
+babel==2.16.0
     # via sphinx
 backoff==1.10.0
     # via analytics-python
@@ -121,7 +121,7 @@ python-editor==1.0.4
     # via -r requirements/app.in
 python-logstash-async==2.7.2
     # via -r requirements/app.in
-pyyaml==6.0.1
+pyyaml==6.0.2
     # via -r requirements/app.in
 redis==4.6.0
     # via -r requirements/app.in
