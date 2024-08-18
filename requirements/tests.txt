@@ -74,7 +74,7 @@ hiredis==2.4.0
     # via -r requirements/app.in
 idna==3.7
     # via requests
-importlib-resources==6.4.0
+importlib-resources==6.4.3
     # via limits
 iniconfig==2.0.0
     # via pytest
