@@ -131,7 +131,7 @@ requests==2.32.3
     #   analytics-python
     #   python-logstash-async
     #   sphinx
-rich==13.7.1
+rich==13.8.0
     # via typer
 rstcheck==6.2.4
     # via -r requirements/docs.in
