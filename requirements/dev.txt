@@ -95,7 +95,7 @@ idna==3.8
     # via requests
 imagesize==1.4.1
     # via sphinx
-importlib-resources==6.4.4
+importlib-resources==6.4.5
     # via limits
 iniconfig==2.0.0
     # via pytest
@@ -138,7 +138,7 @@ pathspec==0.12.1
     # via black
 pip-tools==6.12.3
     # via -r requirements/dev.in
-platformdirs==4.3.1
+platformdirs==4.3.2
     # via
     #   black
     #   tox
@@ -151,9 +151,9 @@ prometheus-client==0.20.0
     # via prometheus-flask-exporter
 prometheus-flask-exporter==0.23.1
     # via -r requirements/app.in
-pydantic==2.9.0
+pydantic==2.9.1
     # via rstcheck-core
-pydantic-core==2.23.2
+pydantic-core==2.23.3
     # via pydantic
 pygments==2.18.0
     # via
@@ -258,8 +258,6 @@ typing-extensions==4.12.2
     #   pydantic
     #   pydantic-core
     #   typer
-tzdata==2024.1
-    # via pydantic
 urllib3==1.26.20
     # via
     #   -r requirements/app.in

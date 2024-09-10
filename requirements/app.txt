@@ -51,7 +51,7 @@ hiredis==2.4.0
     # via -r requirements/app.in
 idna==3.8
     # via requests
-importlib-resources==6.4.4
+importlib-resources==6.4.5
     # via limits
 itsdangerous==2.2.0
     # via flask
