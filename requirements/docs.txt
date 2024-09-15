@@ -62,7 +62,7 @@ flask-session==0.8.0
     # via -r requirements/app.in
 hiredis==2.4.0
     # via -r requirements/app.in
-idna==3.9
+idna==3.10
     # via requests
 imagesize==1.4.1
     # via sphinx
