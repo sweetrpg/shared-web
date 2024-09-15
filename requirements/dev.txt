@@ -91,7 +91,7 @@ flask-session==0.8.0
     # via -r requirements/app.in
 hiredis==2.4.0
     # via -r requirements/app.in
-idna==3.8
+idna==3.9
     # via requests
 imagesize==1.4.1
     # via sphinx
@@ -138,7 +138,7 @@ pathspec==0.12.1
     # via black
 pip-tools==6.12.3
     # via -r requirements/dev.in
-platformdirs==4.3.2
+platformdirs==4.3.3
     # via
     #   black
     #   tox
@@ -166,7 +166,7 @@ pyproject-api==1.7.1
     # via tox
 pyproject-hooks==1.1.0
     # via build
-pytest==8.3.2
+pytest==8.3.3
     # via
     #   -r requirements/tests.in
     #   pytest-cov
@@ -194,7 +194,7 @@ requests==2.32.3
     #   analytics-python
     #   python-logstash-async
     #   sphinx
-rich==13.8.0
+rich==13.8.1
     # via typer
 rstcheck==6.2.4
     # via -r requirements/docs.in

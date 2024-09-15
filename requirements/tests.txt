@@ -72,7 +72,7 @@ flask-session==0.8.0
     # via -r requirements/app.in
 hiredis==2.4.0
     # via -r requirements/app.in
-idna==3.8
+idna==3.9
     # via requests
 importlib-resources==6.4.5
     # via limits
@@ -99,7 +99,7 @@ packaging==24.1
     #   pyproject-api
     #   pytest
     #   tox
-platformdirs==4.3.2
+platformdirs==4.3.3
     # via
     #   tox
     #   virtualenv
@@ -115,7 +115,7 @@ pylogbeat==2.0.1
     # via python-logstash-async
 pyproject-api==1.7.1
     # via tox
-pytest==8.3.2
+pytest==8.3.3
     # via
     #   -r requirements/tests.in
     #   pytest-cov
