@@ -164,7 +164,7 @@ pylogbeat==2.0.1
     # via python-logstash-async
 pyproject-api==1.8.0
     # via tox
-pyproject-hooks==1.1.0
+pyproject-hooks==1.2.0
     # via build
 pytest==8.3.3
     # via
