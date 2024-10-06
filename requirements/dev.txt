@@ -26,7 +26,7 @@ blinker==1.8.2
     #   -r requirements/tests.in
     #   flask
     #   sentry-sdk
-build==1.2.2
+build==1.2.2.post1
     # via pip-tools
 cachelib==0.9.0
     # via
