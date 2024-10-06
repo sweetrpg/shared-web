@@ -194,7 +194,7 @@ requests==2.32.3
     #   analytics-python
     #   python-logstash-async
     #   sphinx
-rich==13.8.1
+rich==13.9.2
     # via typer
 rstcheck==6.2.4
     # via -r requirements/docs.in
@@ -238,7 +238,7 @@ sphinxcontrib-serializinghtml==2.0.0
     # via sphinx
 sweetrpg-web-core==0.0.681
     # via -r requirements/app.in
-tomli==2.0.1
+tomli==2.0.2
     # via
     #   black
     #   build
@@ -257,6 +257,7 @@ typing-extensions==4.12.2
     #   limits
     #   pydantic
     #   pydantic-core
+    #   rich
     #   typer
 urllib3==1.26.20
     # via

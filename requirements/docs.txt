@@ -131,7 +131,7 @@ requests==2.32.3
     #   analytics-python
     #   python-logstash-async
     #   sphinx
-rich==13.8.1
+rich==13.9.2
     # via typer
 rstcheck==6.2.4
     # via -r requirements/docs.in
@@ -182,6 +182,7 @@ typing-extensions==4.12.2
     #   limits
     #   pydantic
     #   pydantic-core
+    #   rich
     #   typer
 urllib3==1.26.20
     # via
