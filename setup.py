@@ -10,7 +10,7 @@ setup(
         "Flask-CORS~=3.0",
         "Flask-DotEnv~=0.1",
         "Flask-Session~=0.5",
-        "Flask~=2.2",
+        "Flask~=3.0",
         "hiredis~=2.2",
         "prometheus-flask-exporter~=0.22",
         "python-dateutil~=2.8",
