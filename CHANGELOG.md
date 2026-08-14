@@ -1,3 +1,18 @@
+## [0.3.0] - 2026-08-14
+
+### 🚀 Features
+
+- *(dev)* Remove unused service URLs from configmap
+- Give the error pages medieval/D&D flavor text
+
+### 🐛 Bug Fixes
+
+- Remove logo size
+
+### 🎨 Styling
+
+- *(error)* Increase error status font size for visibility
+
 ## [0.2.0] - 2026-08-14
 
 ### 🚀 Features

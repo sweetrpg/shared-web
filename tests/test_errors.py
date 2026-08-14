@@ -8,7 +8,7 @@ import pytest
 
 from markupsafe import escape
 
-from sweetrpg_shared_web.application.blueprints.errors import STATUS_COPY
+from sweetrpg_shared_web.application.blueprints.errors import DEFAULT_COPY, STATUS_COPY
 
 
 @pytest.mark.parametrize("status_code", sorted(STATUS_COPY))
@@ -27,7 +27,7 @@ def test_unsupported_status_code_falls_back(client):
 
     assert response.status_code == 418
     body = response.get_data(as_text=True)
-    assert "Something Went Wrong" in body
+    assert DEFAULT_COPY[0] in body
 
 
 def test_service_and_request_id_render_when_present(client):
@@ -43,7 +43,7 @@ def test_service_and_request_id_omitted_when_absent(client):
 
     assert response.status_code == 404
     body = response.get_data(as_text=True)
-    assert "Not Found" in body
+    assert STATUS_COPY[404][0] in body
     assert "Request ID" not in body
 
 
