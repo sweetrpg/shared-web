@@ -1,3 +1,8 @@
+## [0.1.4] - 2026-08-14
+
+### 🐛 Bug Fixes
+
+- Bump base image to Python 3.14, matching assets-web
 # Changelog
 
 <!--next-version-placeholder-->
