@@ -21,3 +21,8 @@ commonLabels:
 
 generatorOptions:
     disableNameSuffixHash: true
+
+images:
+  - name: shared-web
+    newName: ghcr.io/sweetrpg/shared-web
+    newTag: latest
