@@ -45,3 +45,12 @@ def test_service_and_request_id_omitted_when_absent(client):
     body = response.get_data(as_text=True)
     assert "Not Found" in body
     assert "Request ID" not in body
+
+
+def test_renders_shared_branding_assets(app, client):
+    response = client.get("/errors/404")
+
+    body = response.get_data(as_text=True)
+    shared_assets_url = app.config["SHARED_ASSETS_URL"]
+    assert f"{shared_assets_url}/static/css/broadsheet.css" in body
+    assert f"{shared_assets_url}/static/img/sweetrpg-logo-black.svg" in body

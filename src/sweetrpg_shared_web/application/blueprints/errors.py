@@ -5,7 +5,7 @@ Branded HTML error pages for the platform's *-web frontends, reached via each
 frontend's Traefik `errors` middleware rather than per-frontend code.
 """
 
-from flask import Blueprint, render_template, request
+from flask import Blueprint, current_app, render_template, request
 
 
 # Registered directly on the app (not nested under the `web` blueprint), so it never runs
@@ -36,5 +36,6 @@ def error_page(status_code):
         "description": description,
         "service": request.args.get("service"),
         "request_id": request.args.get("request_id"),
+        "shared_assets_url": current_app.config.get("SHARED_ASSETS_URL"),
     }
     return render_template("error.html", **context), status_code

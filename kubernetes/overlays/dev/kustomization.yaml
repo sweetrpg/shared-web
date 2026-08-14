@@ -7,15 +7,18 @@ namespace: sweetrpg-shared
 resources:
     - ../../base
     - configmaps.yaml
-    - destination-rules.yaml
-    - secrets.yaml
+    - secrets/auth.yaml
+    - secrets/misc.yaml
+    - secrets/cache.yaml
+    - secrets/files.yaml
 
-commonLabels:
-    app: web
-    version: v1
-    platform: sweetrpg
-    package: shared
-    component: web
+labels:
+    - pairs:
+        app: web
+        version: v1
+        platform: sweetrpg
+        package: shared
+        component: web
 
 generatorOptions:
     disableNameSuffixHash: true
