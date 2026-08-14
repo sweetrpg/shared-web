@@ -1,3 +1,18 @@
+## [0.2.0] - 2026-08-14
+
+### 🚀 Features
+
+- Brand the error pages with the platform's real design system
+
+### 📚 Documentation
+
+- Describe the error-pages route contract
+
+### ⚙️ Miscellaneous Tasks
+
+- Remove "secrets"
+- *(kubernetes)* Remove destination-rules.yaml and update kustomization labels
+- Divide secrets
 # Changelog
 
 <!--next-version-placeholder-->
