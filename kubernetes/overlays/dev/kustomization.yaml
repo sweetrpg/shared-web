@@ -9,8 +9,6 @@ resources:
     - configmaps.yaml
     - destination-rules.yaml
     - secrets.yaml
-patchesStrategicMerge:
-    - replicas.yaml
 
 commonLabels:
     app: shared-web
