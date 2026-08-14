@@ -1,3 +1,14 @@
+## [0.1.5] - 2026-08-14
+
+### 🐛 Bug Fixes
+
+- Use Python 3.13, not 3.14 - uwsgi/msgspec fail to build wheels on 3.14
+- Bump msgspec 0.18.6 -> 0.21.1 - no cp313 wheel at the old pin
+
+### ⚙️ Miscellaneous Tasks
+
+- Rename
+- Update Python version
 # Changelog
 
 <!--next-version-placeholder-->
