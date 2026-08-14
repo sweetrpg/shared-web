@@ -6,4 +6,4 @@ metadata:
     name: shared-web-v1
 
 spec:
-    replicas: 2
+    replicas: 1
