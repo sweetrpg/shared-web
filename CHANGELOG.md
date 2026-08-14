@@ -1,3 +1,10 @@
+## [0.1.2] - 2026-08-14
+
+### 🐛 Bug Fixes
+
+- *(kubernetes)* Run 1 replica in dev, not 2
+- *(kubernetes)* Don't pin replicas at all - let it default to 1
+- *(kubernetes)* Align resource naming with platform convention
 # Changelog
 
 <!--next-version-placeholder-->
