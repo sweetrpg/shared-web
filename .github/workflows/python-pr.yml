@@ -33,17 +33,17 @@ jobs:
                 include:
                     - {
                           name: Linux,
-                          python: "3.14",
+                          python: "3.13",
                           os: ubuntu-latest,
-                          tox: py314,
+                          tox: py313,
                       }
                     # - {
                     #       name: Windows,
-                    #       python: "3.14",
+                    #       python: "3.13",
                     #       os: windows-latest,
-                    #       tox: py314,
+                    #       tox: py313,
                     #   }
-                    # - { name: Mac, python: "3.14", os: macos-latest, tox: py314 }
+                    # - { name: Mac, python: "3.13", os: macos-latest, tox: py313 }
         steps:
             - uses: actions/checkout@v7
             - uses: actions/setup-python@v6
@@ -65,6 +65,6 @@ jobs:
             - name: install-utils
               run: pip install tox
             # - name: lint
-            #   run: black --check -t py314 --diff --color src
+            #   run: black --check -t py313 --diff --color src
             - name: tests
               run: tox -e ${{ matrix.tox }}
