@@ -4,31 +4,7 @@ __author__ = "Paul Schifferer <dm@sweetrpg.com>"
 Tests for the maintenance-mode before_request hook.
 """
 
-import os
-
-import pytest
 from sweetrpg_admin_api_client import MaintenanceMode
-
-
-os.environ.setdefault("REDIS_HOST", "localhost")
-os.environ.setdefault("SENTRY_DSN", "")
-
-from sweetrpg_shared_web.application.main import create_app  # noqa: E402
-
-
-@pytest.fixture(scope="module")
-def app():
-    # create_app() registers Prometheus metrics against the global default
-    # registry, so it can only be called once per process without colliding
-    # on duplicate timeseries -- share a single app instance across tests.
-    app = create_app()
-    app.config.update(TESTING=True)
-    return app
-
-
-@pytest.fixture
-def client(app):
-    return app.test_client()
 
 
 def test_health_endpoint_is_never_gated(app, client):
