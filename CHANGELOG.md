@@ -1,3 +1,32 @@
+## [0.1.0] - 2026-08-14
+
+### 🚀 Features
+
+- *(admin-api)* Add maintenance-mode banner via admin-api-client.py
+- Add shared branded error pages
+
+### 🐛 Bug Fixes
+
+- Secret version
+- *(k8s)* Remove HPA and PDB from dev overlay
+- *(ci)* Install Python 3.11 to match the py311 tox environment
+- Unblock CI - templates outside sdist, no redis service
+- Support Redis auth and fix always-true DEBUG parsing
+- *(ci)* Scope Docker Build's concurrency group by ref
+- *(ci)* Trigger CI/PR checks on workflow-file changes
+- *(kubernetes)* Wire deployment to shared-web's own cache, make image pinnable
+
+### 🚜 Refactor
+
+- Rename unused LIBRARY_API_BASE_URL constant to SHELF_API_BASE_URL
+
+### ⚙️ Miscellaneous Tasks
+
+- Build arm64 image alongside amd64
+- Fix memory spec
+- *(kubernetes)* Move out of retired sweetrpg-support into sweetrpg-shared
+- Add repo-setup-standard scaffolding
+- Bootstrap real release pipeline
 # Changelog
 
 <!--next-version-placeholder-->
