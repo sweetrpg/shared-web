@@ -1,3 +1,9 @@
+## [0.1.3] - 2026-08-14
+
+### 🐛 Bug Fixes
+
+- Bump base image to Python 3.11 - 3.9 crashes on boot
+
 ## [0.1.2] - 2026-08-14
 
 ### 🐛 Bug Fixes
