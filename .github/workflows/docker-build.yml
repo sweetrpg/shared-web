@@ -1,6 +1,6 @@
 name: Docker Build
 
-concurrency: docker
+concurrency: docker-${{ github.ref }}
 
 on:
   push:
@@ -68,6 +68,7 @@ jobs:
           # context: .
           push: true
           no-cache: true
+          platforms: linux/amd64,linux/arm64
           tags: ${{ steps.meta.outputs.tags }}
           build-args: |
             BUILD_NUMBER=${{ github.run_number }}
