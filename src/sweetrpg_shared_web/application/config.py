@@ -51,3 +51,7 @@ class BaseConfig(object):
     SEGMENT_WRITE_KEY = os.environ.get(constants.SEGMENT_WRITE_KEY)
     # base URL for admin-api; unset/empty disables the client (fail-open, no banners/maintenance checks)
     ADMIN_API_URL = os.environ.get(constants.ADMIN_API_URL)
+    # base URL for shared branding assets (logo, favicon, stylesheet) - see
+    # docs/frontend-conventions.md. Defaults to a local assets-web instance's own address,
+    # matching every other frontend's fallback.
+    SHARED_ASSETS_URL = os.environ.get(constants.SHARED_ASSETS_URL) or "http://localhost:8081"
