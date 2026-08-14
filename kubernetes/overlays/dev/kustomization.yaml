@@ -7,7 +7,10 @@ namespace: sweetrpg-shared
 resources:
     - ../../base
     - configmaps.yaml
-    - secrets.yaml
+    - secrets/auth.yaml
+    - secrets/misc.yaml
+    - secrets/cache.yaml
+    - secrets/files.yaml
 
 labels:
     - pairs:
