@@ -14,17 +14,17 @@ from flask import Blueprint, current_app, render_template, request
 blueprint = Blueprint("errors", __name__)
 
 STATUS_COPY = {
-    400: ("Bad Request", "The request could not be understood."),
-    401: ("Unauthorized", "You need to sign in to view this page."),
-    403: ("Forbidden", "You don't have permission to view this page."),
-    404: ("Not Found", "The page you're looking for doesn't exist."),
-    500: ("Internal Server Error", "Something went wrong on our end."),
-    502: ("Bad Gateway", "The service is temporarily unreachable."),
-    503: ("Service Unavailable", "The service is temporarily unavailable."),
-    504: ("Gateway Timeout", "The service took too long to respond."),
+    400: ("A Garbled Missive", "Thy scroll bears words even our sages cannot parse."),
+    401: ("Halt, Traveler", "Thou must prove thy identity before passing this gate."),
+    403: ("The Gate Is Sealed", "Thy credentials do not grant passage beyond this ward."),
+    404: ("Lost in the Mists", "No such chamber exists within these halls - the path thou seek has vanished."),
+    500: ("A Curse Upon the Keep", "Something has gone dreadfully wrong within our walls."),
+    502: ("The Messenger Was Waylaid", "The realm beyond could not be reached."),
+    503: ("The Keep Is Under Siege", "Our halls are overwhelmed and cannot receive thee just now."),
+    504: ("The Herald Never Returned", "We awaited word from afar, but none arrived in time."),
 }
 
-DEFAULT_COPY = ("Something Went Wrong", "An unexpected error occurred.")
+DEFAULT_COPY = ("By the Gods, Something Went Awry", "An unforeseen mishap has befallen this realm.")
 
 
 @blueprint.route("/errors/<int:status_code>")
