@@ -12,6 +12,90 @@
 ### 🎨 Styling
 
 - *(error)* Increase error status font size for visibility
+
+## [0.2.0] - 2026-08-14
+
+### 🚀 Features
+
+- Brand the error pages with the platform's real design system
+
+### 📚 Documentation
+
+- Describe the error-pages route contract
+
+### ⚙️ Miscellaneous Tasks
+
+- Remove "secrets"
+- *(kubernetes)* Remove destination-rules.yaml and update kustomization labels
+- Divide secrets
+
+## [0.1.5] - 2026-08-14
+
+### 🐛 Bug Fixes
+
+- Use Python 3.13, not 3.14 - uwsgi/msgspec fail to build wheels on 3.14
+- Bump msgspec 0.18.6 -> 0.21.1 - no cp313 wheel at the old pin
+
+### ⚙️ Miscellaneous Tasks
+
+- Rename
+- Update Python version
+
+## [0.1.4] - 2026-08-14
+
+### 🐛 Bug Fixes
+
+- Bump base image to Python 3.14, matching assets-web
+
+## [0.1.3] - 2026-08-14
+
+### 🐛 Bug Fixes
+
+- Bump base image to Python 3.11 - 3.9 crashes on boot
+
+## [0.1.2] - 2026-08-14
+
+### 🐛 Bug Fixes
+
+- *(kubernetes)* Run 1 replica in dev, not 2
+- *(kubernetes)* Don't pin replicas at all - let it default to 1
+- *(kubernetes)* Align resource naming with platform convention
+
+## [0.1.1] - 2026-08-14
+
+### 🐛 Bug Fixes
+
+- Remove crash-on-boot unconditional Sentry init
+
+## [0.1.0] - 2026-08-14
+
+### 🚀 Features
+
+- *(admin-api)* Add maintenance-mode banner via admin-api-client.py
+- Add shared branded error pages
+
+### 🐛 Bug Fixes
+
+- Secret version
+- *(k8s)* Remove HPA and PDB from dev overlay
+- *(ci)* Install Python 3.11 to match the py311 tox environment
+- Unblock CI - templates outside sdist, no redis service
+- Support Redis auth and fix always-true DEBUG parsing
+- *(ci)* Scope Docker Build's concurrency group by ref
+- *(ci)* Trigger CI/PR checks on workflow-file changes
+- *(kubernetes)* Wire deployment to shared-web's own cache, make image pinnable
+
+### 🚜 Refactor
+
+- Rename unused LIBRARY_API_BASE_URL constant to SHELF_API_BASE_URL
+
+### ⚙️ Miscellaneous Tasks
+
+- Build arm64 image alongside amd64
+- Fix memory spec
+- *(kubernetes)* Move out of retired sweetrpg-support into sweetrpg-shared
+- Add repo-setup-standard scaffolding
+- Bootstrap real release pipeline
 # Changelog
 
 <!--next-version-placeholder-->
