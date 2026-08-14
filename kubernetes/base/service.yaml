@@ -3,7 +3,7 @@ kind: Service
 apiVersion: v1
 
 metadata:
-    name: shared-web-v1
+    name: web-v1
     annotations:
         prometheus.io/scrape: "true"
         prometheus.io/port: "8081"
@@ -11,7 +11,7 @@ metadata:
 spec:
     selector:
         platform: sweetrpg
-        app: shared-web
+        app: web
         component: web
         package: shared
         version: v1

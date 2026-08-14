@@ -9,11 +9,9 @@ resources:
     - configmaps.yaml
     - destination-rules.yaml
     - secrets.yaml
-patchesStrategicMerge:
-    - replicas.yaml
 
 commonLabels:
-    app: shared-web
+    app: web
     version: v1
     platform: sweetrpg
     package: shared

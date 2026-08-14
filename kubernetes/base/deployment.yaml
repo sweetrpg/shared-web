@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 
 metadata:
-    name: shared-web-v1
+    name: web-v1
 
 spec:
     strategy:
@@ -14,7 +14,7 @@ spec:
     selector:
         matchLabels:
             platform: sweetrpg
-            app: shared-web
+            app: web
             component: web
             package: shared
             version: v1
@@ -22,12 +22,12 @@ spec:
         metadata:
             labels:
                 platform: sweetrpg
-                app: shared-web
+                app: web
                 component: web
                 package: shared
                 version: v1
         spec:
-            serviceAccountName: shared-web
+            serviceAccountName: web
             imagePullSecrets:
                 - name: sweetrpg-registry
             containers:
@@ -36,15 +36,15 @@ spec:
                   imagePullPolicy: Always
                   envFrom:
                       - configMapRef:
-                            name: shared-web-common
+                            name: web-common
                       - configMapRef:
-                            name: shared-web-env
+                            name: web-env
                       - secretRef:
-                            name: shared-web-auth
+                            name: web-auth
                       - secretRef:
-                            name: shared-web-misc
+                            name: web-misc
                       - secretRef:
-                            name: shared-web-cache
+                            name: web-cache
                   env: []
                   ports:
                       - containerPort: 8081
@@ -76,7 +76,7 @@ spec:
             volumes:
                 - name: config
                   secret:
-                      secretName: shared-web-files
+                      secretName: web-files
                       items:
                           - key: newrelic.ini
                             path: newrelic.ini
