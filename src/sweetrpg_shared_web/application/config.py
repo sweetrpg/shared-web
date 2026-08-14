@@ -27,3 +27,5 @@ class BaseConfig(object):
     SESSION_TYPE = "redis"
     SESSION_REDIS = redis.from_url(f"redis://{os.environ[constants.REDIS_HOST]}:{int(os.environ.get(constants.REDIS_PORT) or 6379)}")
     SEGMENT_WRITE_KEY = os.environ.get(constants.SEGMENT_WRITE_KEY)
+    # base URL for admin-api; unset/empty disables the client (fail-open, no banners/maintenance checks)
+    ADMIN_API_URL = os.environ.get(constants.ADMIN_API_URL)
