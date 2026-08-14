@@ -11,7 +11,7 @@ resources:
     - secrets.yaml
 
 commonLabels:
-    app: shared-web
+    app: web
     version: v1
     platform: sweetrpg
     package: shared
