@@ -93,11 +93,13 @@ def create_app(app_name=constants.APPLICATION_NAME):
     app.logger.info("Setting up endpoints...")
 
     from sweetrpg_shared_web.application.blueprints import blueprint as main_blueprint
+    from sweetrpg_shared_web.application.blueprints.errors import blueprint as errors_blueprint
 
     from sweetrpg_web_core.blueprints.health import blueprint as health_blueprint
     main_blueprint.register_blueprint(health_blueprint)
 
     app.register_blueprint(main_blueprint)
+    app.register_blueprint(errors_blueprint)
 
     # app.wsgi_app = SassMiddleware(app.wsgi_app, {
     #     'application': ('static/sass', 'static/css', '/static/css')
