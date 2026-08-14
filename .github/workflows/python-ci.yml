@@ -37,17 +37,17 @@ jobs:
                 include:
                     - {
                           name: Linux,
-                          python: "3.11",
+                          python: "3.13",
                           os: ubuntu-latest,
-                          tox: py311,
+                          tox: py313,
                       }
                     # - {
                     #       name: Windows,
-                    #       python: "3.11",
+                    #       python: "3.13",
                     #       os: windows-latest,
-                    #       tox: py311,
+                    #       tox: py313,
                     #   }
-                    # - { name: Mac, python: "3.11", os: macos-latest, tox: py311 }
+                    # - { name: Mac, python: "3.13", os: macos-latest, tox: py313 }
         steps:
             - uses: actions/checkout@v4
             - uses: actions/setup-python@v6
@@ -78,7 +78,7 @@ jobs:
             - uses: actions/checkout@v4
             - uses: actions/setup-python@v6
               with:
-                  python-version: "3.11"
+                  python-version: "3.13"
             - name: install-deps
               run: pip install -r requirements/docs.txt
             - name: make-docs
