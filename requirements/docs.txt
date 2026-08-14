@@ -131,6 +131,7 @@ requests==2.32.3
     #   analytics-python
     #   python-logstash-async
     #   sphinx
+    #   sweetrpg-admin-api-client
 rich==13.9.2
     # via typer
 rstcheck==6.2.4
@@ -173,6 +174,8 @@ sphinxcontrib-qthelp==2.0.0
     # via sphinx
 sphinxcontrib-serializinghtml==2.0.0
     # via sphinx
+sweetrpg-admin-api-client @ git+https://github.com/sweetrpg/admin-api-client.py.git@develop
+    # via -r requirements/app.in
 sweetrpg-web-core==0.0.697
     # via -r requirements/app.in
 typer==0.12.5

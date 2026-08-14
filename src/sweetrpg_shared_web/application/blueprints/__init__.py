@@ -21,6 +21,25 @@ blueprint = Blueprint("web", __name__)
 
 
 @blueprint.before_request
+def _check_maintenance():
+    # Health checks must never be gated by maintenance mode, or readiness/liveness probes
+    # would start failing during a maintenance window.
+    if request.endpoint and "health" in request.endpoint:
+        return None
+
+    admin_client = getattr(current_app, "admin_client", None)
+    if admin_client is None:
+        return None
+
+    modes = admin_client.fetch_maintenance_modes(["platform", "service:shared"])
+    if not modes:
+        return None
+
+    mode = modes[0]
+    return render_template("maintenance.html", mode=mode), 503
+
+
+@blueprint.before_request
 def _populate():
     # Host: dev.sweetrpg.com
     # X-Real-Ip: 10.32.0.7

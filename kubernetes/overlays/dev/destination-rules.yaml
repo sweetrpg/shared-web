@@ -6,7 +6,7 @@ metadata:
     name: shared-web
 
 spec:
-    host: shared-web-v1.sweetrpg-support.svc.cluster.local
+    host: shared-web-v1.sweetrpg-shared.svc.cluster.local
     trafficPolicy:
         loadBalancer:
             simple: LEAST_CONN
