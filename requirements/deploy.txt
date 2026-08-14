@@ -95,6 +95,7 @@ requests==2.32.3
     #   -r requirements/app.in
     #   analytics-python
     #   python-logstash-async
+    #   sweetrpg-admin-api-client
 sentry-sdk[flask]==1.45.1
     # via -r requirements/app.in
 six==1.16.0
@@ -102,6 +103,8 @@ six==1.16.0
     #   analytics-python
     #   flask-cors
     #   python-dateutil
+sweetrpg-admin-api-client @ git+https://github.com/sweetrpg/admin-api-client.py.git@develop
+    # via -r requirements/app.in
 sweetrpg-web-core==0.0.697
     # via -r requirements/app.in
 typing-extensions==4.12.2

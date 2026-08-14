@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{{ mode.label or "Under Maintenance" }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #12141a;
+            color: #e8e8e8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .card {
+            max-width: 32rem;
+            padding: 2rem;
+            text-align: center;
+        }
+        h1 { margin-bottom: 0.5rem; }
+        p { color: #b0b0b0; }
+        .window { margin-top: 1.5rem; font-size: 0.9rem; color: #808080; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>{{ mode.label or "Under Maintenance" }}</h1>
+        {% if mode.description %}
+        <p>{{ mode.description }}</p>
+        {% endif %}
+        {% if mode.starts_at or mode.ends_at %}
+        <p class="window">
+            {% if mode.starts_at %}Started: {{ mode.starts_at }}{% endif %}
+            {% if mode.starts_at and mode.ends_at %} - {% endif %}
+            {% if mode.ends_at %}Expected back: {{ mode.ends_at }}{% endif %}
+        </p>
+        {% endif %}
+    </div>
+</body>
+</html>
