@@ -32,7 +32,7 @@ spec:
                 - name: sweetrpg-registry
             containers:
                 - name: app
-                  image: ghcr.io/sweetrpg/shared-web:latest
+                  image: shared-web
                   imagePullPolicy: Always
                   envFrom:
                       - configMapRef:
