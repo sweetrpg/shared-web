@@ -22,6 +22,7 @@ setup(
         "requests~=2.0",
         "sentry-sdk[flask]~=2.0",
         "sweetrpg-web-core",
+        "sweetrpg-admin-api-client",
         "urllib3~=2.0",
     ],
     extras_require={},

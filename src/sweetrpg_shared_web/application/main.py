@@ -5,6 +5,7 @@ __author__ = "Paul Schifferer <dm@sweetrpg.com>"
 Creates a Flask app instance and registers various services and middleware.
 """
 
+from pathlib import Path
 from flask import Flask, session, g
 from flask_cors import CORS
 from flask_session import Session
@@ -14,11 +15,19 @@ from sweetrpg_shared_web.application import constants
 from logging.config import dictConfig
 from redis.client import Redis
 from sentry_sdk.integrations.wsgi import SentryWsgiMiddleware
+from sweetrpg_admin_api_client import AdminClient
 import analytics
 import os
 from prometheus_flask_exporter import PrometheusMetrics
 import sweetrpg_shared_web
 
+
+# Flask is constructed with app_name (a plain string, not this module's __name__), so it
+# cannot infer root_path from an importable module and would otherwise fall back to the
+# process's current working directory -- fragile, since that differs between `pytest`
+# (repo root) and the Docker image (WORKDIR /app == src/). Point template_folder at the
+# package's templates directory directly so template lookup is independent of cwd.
+TEMPLATE_DIR = str(Path(__file__).resolve().parent.parent.parent / "templates")
 
 ENV_FILE = find_dotenv()
 if ENV_FILE:
@@ -52,7 +61,7 @@ def create_app(app_name=constants.APPLICATION_NAME):
         }
     )
 
-    app = Flask(app_name)
+    app = Flask(app_name, template_folder=TEMPLATE_DIR)
     app.debug = app.config.get(constants.DEBUG, False)
     app.config.from_object("sweetrpg_shared_web.application.config.BaseConfig")
     # env = DotEnv(app)
@@ -63,6 +72,10 @@ def create_app(app_name=constants.APPLICATION_NAME):
 
     app.logger.info("Setting up cache...")
     cache.init_app(app)
+
+    app.logger.info("Setting up admin-api client...")
+    # constructed once and reused; fail-open (returns [] on any error, including no base_url set)
+    app.admin_client = AdminClient(base_url=app.config.get(constants.ADMIN_API_URL))
 
     app.logger.info("Setting up analytics...")
     analytics.write_key = app.config.get(constants.SEGMENT_WRITE_KEY)
