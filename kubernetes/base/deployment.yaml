@@ -3,10 +3,9 @@ apiVersion: apps/v1
 kind: Deployment
 
 metadata:
-    name: web
+    name: shared-web-v1
 
 spec:
-    replicas: 1
     strategy:
         rollingUpdate:
             maxSurge: 1
@@ -15,56 +14,60 @@ spec:
     selector:
         matchLabels:
             platform: sweetrpg
-            app: shared
+            app: shared-web
             component: web
+            package: shared
+            version: v1
     template:
         metadata:
             labels:
                 platform: sweetrpg
-                app: shared
+                app: shared-web
                 component: web
+                package: shared
+                version: v1
         spec:
-            serviceAccountName: web
+            serviceAccountName: shared-web
             imagePullSecrets:
                 - name: sweetrpg-registry
             containers:
-                - name: web-app
-                  image: registry.sweetrpg.com/sweetrpg-shared-web:latest
+                - name: app
+                  image: shared-web
                   imagePullPolicy: Always
                   envFrom:
                       - configMapRef:
-                            name: web-common
+                            name: shared-web-common
                       - configMapRef:
-                            name: web-env
+                            name: shared-web-env
                       - secretRef:
-                            name: web-auth
+                            name: shared-web-auth
                       - secretRef:
-                            name: web-misc
+                            name: shared-web-misc
                       - secretRef:
-                            name: web-cache
+                            name: shared-web-cache
                   env: []
                   ports:
-                      - containerPort: 8080
+                      - containerPort: 8081
                         name: http
                   resources:
                       requests:
                           cpu: "20m"
-                          memory: "55m"
+                          memory: "55Mi"
                       limits:
                           cpu: "1.0"
                           memory: "1Gi"
-                  livenessProbe:
-                      httpGet:
-                          path: /health/ping
-                          port: 8080
-                      initialDelaySeconds: 90
-                      timeoutSeconds: 10
-                  readinessProbe:
-                      httpGet:
-                          path: /health/ping
-                          port: 8080
-                      initialDelaySeconds: 30
-                      timeoutSeconds: 10
+                  #   livenessProbe:
+                  #       httpGet:
+                  #           path: /health/ping
+                  #           port: 8081
+                  #       initialDelaySeconds: 90
+                  #       timeoutSeconds: 10
+                  #   readinessProbe:
+                  #       httpGet:
+                  #           path: /health/ping
+                  #           port: 8081
+                  #       initialDelaySeconds: 30
+                  #       timeoutSeconds: 10
                   volumeMounts:
                       - mountPath: /data
                         name: data
@@ -73,7 +76,7 @@ spec:
             volumes:
                 - name: config
                   secret:
-                      secretName: web-files
+                      secretName: shared-web-files
                       items:
                           - key: newrelic.ini
                             path: newrelic.ini

@@ -2,19 +2,27 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-namespace: sweetrpg-support
+namespace: sweetrpg-shared
 
 resources:
-    - namespace.yaml
     - ../../base
     - configmaps.yaml
+    - destination-rules.yaml
+    - secrets.yaml
 patchesStrategicMerge:
     - replicas.yaml
 
 commonLabels:
+    app: shared-web
+    version: v1
     platform: sweetrpg
-    app: shared
+    package: shared
     component: web
 
 generatorOptions:
     disableNameSuffixHash: true
+
+images:
+  - name: shared-web
+    newName: ghcr.io/sweetrpg/shared-web
+    newTag: latest

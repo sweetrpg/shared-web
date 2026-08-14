@@ -10,7 +10,6 @@ __pycache__/
 .dockerconfigjson
 .eggs/
 .env
-.idea/
 .pytest_cache/
 .python-version
 .tox/
@@ -54,3 +53,5 @@ toy.py
 venv/
 htmlcov
 .flaskenv
+.DS_Store
+kubernetes/secrets/dev/tokens.txt

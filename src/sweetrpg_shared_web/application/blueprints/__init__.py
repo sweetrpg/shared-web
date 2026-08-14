@@ -14,9 +14,29 @@ import os
 from sweetrpg_shared_web.application import constants
 import analytics
 import datetime
+from sweetrpg_web_core import constants as core_constants
 
 
 blueprint = Blueprint("web", __name__)
+
+
+@blueprint.before_request
+def _check_maintenance():
+    # Health checks must never be gated by maintenance mode, or readiness/liveness probes
+    # would start failing during a maintenance window.
+    if request.endpoint and "health" in request.endpoint:
+        return None
+
+    admin_client = getattr(current_app, "admin_client", None)
+    if admin_client is None:
+        return None
+
+    modes = admin_client.fetch_maintenance_modes(["platform", "service:shared"])
+    if not modes:
+        return None
+
+    mode = modes[0]
+    return render_template("maintenance.html", mode=mode), 503
 
 
 @blueprint.before_request
@@ -88,6 +108,32 @@ def _track():
         analytics.track(user_id, request.full_path, {
             'user_agent': request.headers.get('User-Agent')
         })
+
+
+def render_page(page:str, context:dict={}):
+    """Call `render_template` for the specified page, and merge the
+    provided context into an initialized, common context.
+
+    :param str page:
+    :param dict context:
+    :returns:
+    """
+    show_cookie_message = True
+    if request.cookies.get("cookies-accepted"):
+        show_cookie_message = False
+    context.update({
+       "showCookieMessage": show_cookie_message,
+    })
+
+    userinfo = session.get(core_constants.PROFILE_KEY)
+    if userinfo:
+        context.update({
+            "user_info": userinfo,
+            "segment_write_key": os.environ.get(constants.SEGMENT_WRITE_KEY, "")
+        })
+
+    current_app.logger.debug(f"context: {context}")
+    return render_template(page, **context)
 
 
 @blueprint.errorhandler(Exception)

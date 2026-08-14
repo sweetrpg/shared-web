@@ -1,75 +1,92 @@
 name: Docker Build
 
-concurrency: docker
+concurrency: docker-${{ github.ref }}
 
 on:
-    create:
-        tags:
-            - '*'
-    release:
-        types:
-            - published
-            - created
-    push:
-        branches:
-            - develop
-        tags:
-            - '*'
-        paths:
-            - "src/**"
-            - "tests/**"
-            - setup.cfg
-            - setup.py
-            - tox.ini
-            - "requirements/**"
-            - Dockerfile
-            - scripts/entrypoint.sh
-    workflow_run:
-        workflows: ["CI"]
-        branches: [develop]
-        types:
-            - completed
+  push:
+    tags:
+      - "v*"
+    branches:
+      - develop
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
 
 jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
-      - name: Docker meta
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: "Get Previous tag"
+        id: previoustag
+        uses: actions-ecosystem/action-get-latest-tag@v1
+        with:
+          semver_only: true
+          initial_version: v0.0.0
+          with_initial_version: true
+      - name: Get current date
+        id: getbuilddate
+        run: |
+          echo "date=$(date -u)" >> $GITHUB_OUTPUT
+          echo "isodate=$(date -u '+%Y-%m-%dT%H:%M:%S')" >> $GITHUB_OUTPUT
+          echo "tagdate=$(date -u '+%Y%m%d%H%M%S')" >> $GITHUB_OUTPUT
+      - name: Docker metadata
         id: meta
-        uses: docker/metadata-action@v3
+        uses: docker/metadata-action@v6
         with:
           images: |
-            registry.sweetrpg.com/sweetrpg-shared-web
+            ghcr.io/sweetrpg/shared-web
           tags: |
             type=raw,value=latest
-            type=ref,event=branch
             type=ref,event=tag
+            type=ref,event=branch
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
             type=semver,pattern={{major}}
             type=sha
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@v1
+        uses: docker/setup-qemu-action@v4
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
+        uses: docker/setup-buildx-action@v4
       - name: Login to registry
-        uses: docker/login-action@v1
+        uses: docker/login-action@v4.5.2
         with:
-          registry: registry.sweetrpg.com
-          username: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
-          password: ${{ secrets.DOCKER_REGISTRY_TOKEN }}
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build and push
         id: docker_build
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v7
         with:
-          # context: .
           push: true
           no-cache: true
+          platforms: linux/amd64,linux/arm64
           tags: ${{ steps.meta.outputs.tags }}
-      # - name: Scan image
-      #   uses: sysdiglabs/scan-action@v1
-      #   with:
-      #     image-tag: registry.sweetrpg.com/sweetrpg-library-api:latest
-      #     sysdig-secure-token: ${{ secrets.SYSDIG_SECURE_TOKEN }}
+          build-args: |
+            BUILD_NUMBER=${{ github.run_number }}
+            BUILD_JOB=${{ github.job }}
+            BUILD_SHA=${{ github.sha }}
+            BUILD_DATE=${{ steps.getbuilddate.outputs.isodate }}
+            BUILD_VERSION=${{ steps.previoustag.outputs.tag }}
+      - name: Create Sentry release
+        uses: getsentry/action-release@v1
+        env:
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+          SENTRY_ORG: ${{ vars.SENTRY_ORG }}
+          SENTRY_PROJECT: ${{ vars.SENTRY_PROJECT }}
+        with:
+          environment: ${{ vars.SENTRY_ENV }}
+
+  update-deployment:
+    needs: docker
+    if: startsWith(github.ref, 'refs/tags/v')
+    uses: sweetrpg/github-actions/.github/workflows/argocd-update-deployment.yaml@master
+    with:
+      image-name: shared-web
+      manifest-path: clusters/dev/shared/web.yaml
+    secrets: inherit
