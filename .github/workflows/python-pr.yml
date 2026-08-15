@@ -2,7 +2,7 @@ name: PR
 
 on:
     pull_request:
-        branches: [develop]
+        branches: [develop, master]
         paths:
             - "src/**"
             - "tests/**"
@@ -11,6 +11,7 @@ on:
             - tox.ini
             - "requirements/**"
             - "docs/**"
+            - ".github/workflows/**"
 
 jobs:
     tests:
@@ -32,20 +33,20 @@ jobs:
                 include:
                     - {
                           name: Linux,
-                          python: "3.11",
+                          python: "3.13",
                           os: ubuntu-latest,
-                          tox: py311,
+                          tox: py313,
                       }
                     # - {
                     #       name: Windows,
-                    #       python: "3.11",
+                    #       python: "3.13",
                     #       os: windows-latest,
-                    #       tox: py311,
+                    #       tox: py313,
                     #   }
-                    # - { name: Mac, python: "3.11", os: macos-latest, tox: py311 }
+                    # - { name: Mac, python: "3.13", os: macos-latest, tox: py313 }
         steps:
-            - uses: actions/checkout@v4
-            - uses: actions/setup-python@v5
+            - uses: actions/checkout@v7
+            - uses: actions/setup-python@v7
               with:
                   python-version: ${{ matrix.python }}
             - name: update-pip
@@ -57,13 +58,13 @@ jobs:
               id: pip-cache
               run: echo "::set-output name=dir::$(pip cache dir)"
             - name: cache-pip
-              uses: actions/cache@v4
+              uses: actions/cache@v6
               with:
                   path: ${{ steps.pip-cache.outputs.dir }}
                   key: pip|${{ runner.os }}|${{ matrix.python }}|${{ hashFiles('setup.py') }}|${{ hashFiles('requirements/*.txt') }}
             - name: install-utils
               run: pip install tox
             # - name: lint
-            #   run: black --check -t py311 --diff --color src
+            #   run: black --check -t py313 --diff --color src
             - name: tests
               run: tox -e ${{ matrix.tox }}

@@ -11,6 +11,7 @@ on:
             - tox.ini
             - "requirements/**"
             - "docs/**"
+            - ".github/workflows/**"
     workflow_run:
         workflows: ["Update Requirements"]
         types: [completed]
@@ -36,20 +37,20 @@ jobs:
                 include:
                     - {
                           name: Linux,
-                          python: "3.11",
+                          python: "3.13",
                           os: ubuntu-latest,
-                          tox: py311,
+                          tox: py313,
                       }
                     # - {
                     #       name: Windows,
-                    #       python: "3.11",
+                    #       python: "3.13",
                     #       os: windows-latest,
-                    #       tox: py311,
+                    #       tox: py313,
                     #   }
-                    # - { name: Mac, python: "3.11", os: macos-latest, tox: py311 }
+                    # - { name: Mac, python: "3.13", os: macos-latest, tox: py313 }
         steps:
-            - uses: actions/checkout@v4
-            - uses: actions/setup-python@v5
+            - uses: actions/checkout@v7
+            - uses: actions/setup-python@v7
               with:
                   python-version: ${{ matrix.python }}
             - name: update-pip
@@ -60,7 +61,7 @@ jobs:
               id: pip-cache
               run: echo "::set-output name=dir::$(pip cache dir)"
             - name: cache-pip
-              uses: actions/cache@v4
+              uses: actions/cache@v6
               with:
                   path: ${{ steps.pip-cache.outputs.dir }}
                   key: pip|${{ runner.os }}|${{ matrix.python }}|${{ hashFiles('setup.py') }}|${{ hashFiles('requirements/*.txt') }}
@@ -74,10 +75,10 @@ jobs:
         runs-on: ubuntu-latest
         concurrency: docs
         steps:
-            - uses: actions/checkout@v4
-            - uses: actions/setup-python@v5
+            - uses: actions/checkout@v7
+            - uses: actions/setup-python@v7
               with:
-                  python-version: "3.11"
+                  python-version: "3.13"
             - name: install-deps
               run: pip install -r requirements/docs.txt
             - name: make-docs
@@ -87,17 +88,3 @@ jobs:
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
                   publish_dir: ./docs/_build/html
-
-    tag:
-        needs: [tests]
-        runs-on: ubuntu-latest
-        concurrency: publish
-        steps:
-            - uses: actions/checkout@v4
-              with:
-                  fetch-depth: 0
-            - name: publish
-              uses: elekang/python-semantic-release@v7.34.6
-              with:
-                  additional_options: "--patch"
-                  github_token: ${{ secrets.GITHUB_TOKEN }}

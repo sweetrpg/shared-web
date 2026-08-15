@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{{ heading }} - SweetRPG</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="{{ shared_assets_url }}/static/img/main/favicon.png">
+    <link rel="stylesheet" href="{{ shared_assets_url }}/static/css/broadsheet.css">
+    <link rel="stylesheet" href="{{ shared_assets_url }}/static/css/main.css">
+    <script>
+    /* Applied synchronously, before first paint, so the page never flashes the wrong theme -
+       same anti-flash bootstrap every other frontend runs (see main-web's templates/main.html). */
+    (function () {
+      var stored = null;
+      try { stored = localStorage.getItem('sweetrpg_theme_v1'); } catch (e) {}
+      var theme = stored || 'system';
+      var dark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+    })();
+    </script>
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .error-page {
+            max-width: 480px;
+            padding: 0 clamp(20px, 5vw, 64px);
+            text-align: center;
+        }
+        .error-logo { margin: 0 auto 24px; }
+        [data-theme="light"] .error-logo-dark { display: none; }
+        [data-theme="dark"] .error-logo-light { display: none; }
+        .error-status { font-size: 72px; }
+        .error-page h1 { margin: 0 0 12px; }
+        .error-meta {
+            margin-top: 28px;
+            font-size: 13px;
+            color: color-mix(in srgb, var(--color-text) 55%, transparent);
+        }
+    </style>
+</head>
+<body>
+    <div class="error-page">
+        <img class="error-logo error-logo-light" src="{{ shared_assets_url }}/static/img/sweetrpg-logo-black.svg" alt="SweetRPG">
+        <img class="error-logo error-logo-dark" src="{{ shared_assets_url }}/static/img/sweetrpg-logo-white.svg" alt="SweetRPG">
+        <span class="section-label error-status">{{ status_code }}</span>
+        <h1>{{ heading }}</h1>
+        <p class="text-muted">{{ description }}</p>
+        {% if service or request_id %}
+        <p class="error-meta">
+            {% if service %}{{ service }}{% endif %}
+            {% if service and request_id %} &middot; {% endif %}
+            {% if request_id %}Request ID: {{ request_id }}{% endif %}
+        </p>
+        {% endif %}
+    </div>
+</body>
+</html>
