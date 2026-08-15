@@ -36,6 +36,7 @@ def error_page(status_code):
         "description": description,
         "service": request.args.get("service"),
         "request_id": request.args.get("request_id"),
-        "shared_assets_url": current_app.config.get("SHARED_ASSETS_URL"),
+        "shared_url": current_app.config.get("SHARED_URL"),
+        "assets_url": current_app.config.get("ASSETS_URL"),
     }
     return render_template("error.html", **context), status_code

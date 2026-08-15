@@ -63,4 +63,5 @@ APPLICATION_BASE_PATH = 'APPLICATION_BASE_PATH'
 ADMIN_API_URL = 'ADMIN_API_URL'
 
 # shared branding assets (logo, favicon, stylesheet) - see docs/frontend-conventions.md
-SHARED_ASSETS_URL = 'SHARED_ASSETS_URL'
+SHARED_URL = 'SHARED_URL'
+ASSETS_URL = 'ASSETS_URL'
