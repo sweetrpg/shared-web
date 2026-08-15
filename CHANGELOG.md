@@ -1,3 +1,15 @@
+## [0.4.1] - 2026-08-15
+
+### 🧪 Testing
+
+- Remove unused test file
+- Add SHARED_URL env var to conftest.py
+- Use relative paths in error template assertions
+
+### ⚙️ Miscellaneous Tasks
+
+- Upgrade to Python 3.14, switch to uv, add coverage reporting
+- Remove docs CI job and update Sphinx dependencies
 ## [0.4.0] - 2026-08-15
 
 ### 🚀 Features
