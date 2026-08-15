@@ -9,4 +9,4 @@ data:
     PORT: "8081"
     APPLICATION_BASE_PATH: "/shared"
     BUILD_INFO_PATH: /app/build-info.json
-    SHARED_ASSETS_URL: https://dev.sweetrpg.com/assets
+    ASSETS_URL: https://dev.sweetrpg.com/assets

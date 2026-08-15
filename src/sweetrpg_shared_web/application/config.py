@@ -54,4 +54,5 @@ class BaseConfig(object):
     # base URL for shared branding assets (logo, favicon, stylesheet) - see
     # docs/frontend-conventions.md. Defaults to a local assets-web instance's own address,
     # matching every other frontend's fallback.
-    SHARED_ASSETS_URL = os.environ.get(constants.SHARED_ASSETS_URL) or "http://localhost:8081"
+    SHARED_URL = os.environ.get(constants.SHARED_URL) or "http://localhost:8081"
+    ASSETS_URL = os.environ.get(constants.ASSETS_URL) or "http://localhost:8081"
