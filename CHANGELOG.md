@@ -1,3 +1,9 @@
+## [0.4.0] - 2026-08-15
+
+### 🚀 Features
+
+- *(dev)* Update configmap with shared assets and base path
+- *(kubernetes)* Add local overlay for shared-web
 # Changelog
 
 <!--next-version-placeholder-->
