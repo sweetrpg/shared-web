@@ -10,6 +10,7 @@ import pytest
 
 os.environ.setdefault("REDIS_HOST", "localhost")
 os.environ.setdefault("SENTRY_DSN", "")
+os.environ.setdefault("SHARED_URL", "localhost:8081")
 
 from sweetrpg_shared_web.application.main import create_app  # noqa: E402
 

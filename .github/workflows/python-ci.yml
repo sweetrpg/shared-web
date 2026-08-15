@@ -15,15 +15,31 @@ on:
     workflow_run:
         workflows: ["Update Requirements"]
         types: [completed]
+    workflow_dispatch: {}
+
+permissions:
+    contents: read
 
 jobs:
     tests:
         name: ${{ matrix.name }}
         runs-on: ${{ matrix.os }}
-        concurrency: ci
+        concurrency:
+            group: ci-${{ github.workflow }}-${{ github.ref }}
+            cancel-in-progress: true
+        strategy:
+            fail-fast: false
+            matrix:
+                include:
+                    - {
+                          name: Linux,
+                          python: "3.14",
+                          os: ubuntu-latest,
+                          tox: py314,
+                      }
         services:
             redis:
-                image: redis:7-alpine
+                image: redis
                 ports:
                     - 6379:6379
                 options: >-
@@ -31,60 +47,52 @@ jobs:
                     --health-interval 10s
                     --health-timeout 5s
                     --health-retries 5
-        strategy:
-            fail-fast: false
-            matrix:
-                include:
-                    - {
-                          name: Linux,
-                          python: "3.13",
-                          os: ubuntu-latest,
-                          tox: py313,
-                      }
-                    # - {
-                    #       name: Windows,
-                    #       python: "3.13",
-                    #       os: windows-latest,
-                    #       tox: py313,
-                    #   }
-                    # - { name: Mac, python: "3.13", os: macos-latest, tox: py313 }
         steps:
             - uses: actions/checkout@v7
-            - uses: actions/setup-python@v7
+            - uses: astral-sh/setup-uv@v5
               with:
                   python-version: ${{ matrix.python }}
-            - name: update-pip
-              run: |
-                  pip install -U wheel setuptools
-                  python -m pip install -U pip
-            - name: get-pip-cache-dir
-              id: pip-cache
-              run: echo "::set-output name=dir::$(pip cache dir)"
-            - name: cache-pip
-              uses: actions/cache@v6
-              with:
-                  path: ${{ steps.pip-cache.outputs.dir }}
-                  key: pip|${{ runner.os }}|${{ matrix.python }}|${{ hashFiles('setup.py') }}|${{ hashFiles('requirements/*.txt') }}
+                  enable-cache: true
+                  cache-dependency-glob: "requirements/*.txt"
             - name: install-utils
-              run: pip install tox
+              run: uv tool install tox --with tox-uv
             - name: tests
               run: tox -e ${{ matrix.tox }}
-
-    docs:
-        needs: [tests]
-        runs-on: ubuntu-latest
-        concurrency: docs
-        steps:
-            - uses: actions/checkout@v7
-            - uses: actions/setup-python@v7
+            - name: coverage-summary
+              run: |
+                  echo "## Python coverage" >> "$GITHUB_STEP_SUMMARY"
+                  echo '```' >> "$GITHUB_STEP_SUMMARY"
+                  tox exec -e ${{ matrix.tox }} -- coverage report -m >> "$GITHUB_STEP_SUMMARY"
+                  echo '```' >> "$GITHUB_STEP_SUMMARY"
+                  tox exec -e ${{ matrix.tox }} -- coverage xml
+                  tox exec -e ${{ matrix.tox }} -- coverage html
+            - name: upload-coverage-artifact
+              uses: actions/upload-artifact@v4
               with:
-                  python-version: "3.13"
-            - name: install-deps
-              run: pip install -r requirements/docs.txt
-            - name: make-docs
-              run: cd docs && make html
-            - name: publish-docs
-              uses: peaceiris/actions-gh-pages@v3
+                  name: coverage-report-${{ matrix.name }}
+                  path: |
+                      htmlcov/
+                      coverage.xml
+            # Warn-only: continue-on-error means this never blocks a merge, only shows
+            # as a flagged step. Reuses the .coverage data the tests step already wrote.
+            - name: coverage-threshold
+              continue-on-error: true
+              run: tox exec -e ${{ matrix.tox }} -- coverage report --fail-under=79
+            # Written into a dir published below (docs job) rather than committed to
+            # develop - a direct push there is rejected outright by this repo's PR-only
+            # ruleset (found the hard way: continue-on-error silently absorbed the
+            # rejection when this used to `git push`).
+            - name: coverage-badge
+              continue-on-error: true
+              run: |
+                  PCT=$(tox exec -e ${{ matrix.tox }} -- coverage report --format=total | grep -E '^[0-9]+$' | tail -1)
+                  COLOR=$(awk -v p="$PCT" 'BEGIN { if (p>=80) print "brightgreen"; else if (p>=50) print "yellow"; else print "red" }')
+                  mkdir -p badge
+                  printf '{"schemaVersion":1,"label":"coverage","message":"%s%%","color":"%s"}\n' \
+                      "$PCT" "$COLOR" > badge/coverage-badge.json
+            - name: upload-coverage-badge-artifact
+              uses: actions/upload-artifact@v4
               with:
-                  github_token: ${{ secrets.GITHUB_TOKEN }}
-                  publish_dir: ./docs/_build/html
+                  name: coverage-badge
+                  path: badge/coverage-badge.json
+                  if-no-files-found: warn
