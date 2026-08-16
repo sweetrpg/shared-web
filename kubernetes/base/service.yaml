@@ -15,7 +15,7 @@ spec:
         component: web
         package: shared
         version: v1
-    type: LoadBalancer
+    type: ClusterIP
     ports:
         - name: http
           port: 8081
