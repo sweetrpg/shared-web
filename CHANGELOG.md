@@ -7,6 +7,8 @@
 ### ⚙️ Miscellaneous Tasks
 
 - Remove unneeded secrets
+
+
 ## [0.5.0] - 2026-08-16
 
 ### 🚀 Features
@@ -25,6 +27,8 @@
 
 - *(release)* Merge master into develop after v0.4.1
 - *(workflow)* Install pip-tools in update-reqs workflow
+
+
 ## [0.4.1] - 2026-08-15
 
 ### 🧪 Testing
@@ -37,6 +41,8 @@
 
 - Upgrade to Python 3.14, switch to uv, add coverage reporting
 - Remove docs CI job and update Sphinx dependencies
+
+
 ## [0.4.0] - 2026-08-15
 
 ### 🚀 Features
