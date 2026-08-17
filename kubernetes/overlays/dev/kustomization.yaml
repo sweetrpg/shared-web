@@ -7,6 +7,10 @@ namespace: sweetrpg-shared
 resources:
     - ../../base
     - configmaps.yaml
+    - ingress.yaml
+    - middlewares/errors.yaml
+    - middlewares/strip.yaml
+    - pod-monitor.yaml
     - secrets/misc.yaml
     - secrets/cache.yaml
 
