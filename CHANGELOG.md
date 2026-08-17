@@ -1,3 +1,12 @@
+## [0.5.1] - 2026-08-17
+
+### 🎨 Styling
+
+- *(css)* Add hub page layout and dark theme styles
+
+### ⚙️ Miscellaneous Tasks
+
+- Remove unneeded secrets
 ## [0.5.0] - 2026-08-16
 
 ### 🚀 Features
