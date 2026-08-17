@@ -10,3 +10,4 @@ data:
     APPLICATION_BASE_PATH: "/shared"
     BUILD_INFO_PATH: /app/build-info.json
     ASSETS_URL: https://dev.sweetrpg.com/assets
+    SHARED_URL: https://dev.sweetrpg.com/shared
