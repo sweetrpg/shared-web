@@ -7,6 +7,24 @@
 ### ⚙️ Miscellaneous Tasks
 
 - Remove unneeded secrets
+## [0.5.0] - 2026-08-16
+
+### 🚀 Features
+
+- *(error)* Style error status and meta in error template
+
+### 🐛 Bug Fixes
+
+- *(template)* Replace shared_assets_url with shared_url in error template
+
+### 🎨 Styling
+
+- *(error)* Increase error status font size to 120px
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Merge master into develop after v0.4.1
+- *(workflow)* Install pip-tools in update-reqs workflow
 ## [0.4.1] - 2026-08-15
 
 ### 🧪 Testing
