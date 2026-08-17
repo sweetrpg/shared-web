@@ -26,6 +26,8 @@ spec:
                 component: web
                 package: shared
                 version: v1
+            annotations:
+                reloader.stakater.com/auto: "true"
         spec:
             serviceAccountName: web
             imagePullSecrets:
