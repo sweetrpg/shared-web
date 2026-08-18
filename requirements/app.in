@@ -13,6 +13,7 @@ prometheus-flask-exporter~=0.22
 python-dateutil~=2.0
 python-dotenv~=1.0
 python-editor~=1.0
+python-json-logger~=4.1
 python-logstash-async~=2.5
 PyYAML~=6.0
 hiredis~=3.0
