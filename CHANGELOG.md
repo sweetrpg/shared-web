@@ -1,3 +1,19 @@
+## [0.6.0] - 2026-08-18
+
+### 🚀 Features
+
+- *(observability)* Add structured JSON logging and OTel tracing
+- *(theme)* Add theme.css with brand accent color override
+- Merge broadsheet.css design tokens into main.css
+- *(catalog)* Style the license detail page's two-column layout
+
+### 🐛 Bug Fixes
+
+- *(deployment)* Remove unused secret and config, enable health probes
+
+### 🎨 Styling
+
+- Add theme.css files with consistent color-accent override
 ## [0.4.1] - 2026-08-15
 
 ### 🧪 Testing
