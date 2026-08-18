@@ -10,3 +10,5 @@ data:
     APPLICATION_BASE_PATH: "/shared"
     BUILD_INFO_PATH: /app/build-info.json
     ASSETS_URL: https://sweetrpg.local/assets
+    # OTEL_EXPORTER_OTLP_ENDPOINT: http://tempo-distributor.observability.svc.cluster.local:4318
+    LOG_LEVEL: INFO
