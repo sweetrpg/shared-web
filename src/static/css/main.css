@@ -109,7 +109,7 @@ h4 { font-size: 20px; }
 h5 { font-size: 16px; }
 h6 { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; }
 p { margin: 0 0 var(--space-3); }
-a { color: var(--color-accent-700); text-decoration: none; }
+a { color: color-mix(in srgb, var(--color-accent) 80%, black); text-decoration: none; }
 a:hover { color: var(--color-accent); text-decoration: underline; }
 img { display: block; max-width: 100%; }
 figure { margin: 0; }
@@ -307,8 +307,12 @@ textarea.input { min-height: 90px; resize: vertical; }
 .btn svg { display: block; }
 .btn:disabled { opacity: 0.45; cursor: not-allowed; }
 .btn-primary { background: var(--color-accent); color: var(--color-bg); }
-.btn-primary:hover { background: var(--color-accent-600); }
-.btn-primary:active { background: var(--color-accent-700); }
+/* Derived from --color-accent via color-mix, not the fixed --color-accent-600/700 ramp steps -
+ * those don't track a per-app --color-accent override (see requirements/../catalog/theme.css),
+ * so a hover/active state on an overridden accent (e.g. catalog-web's green) rendered in the
+ * shared ramp's unrelated teal instead. */
+.btn-primary:hover { background: color-mix(in srgb, var(--color-accent) 85%, black); }
+.btn-primary:active { background: color-mix(in srgb, var(--color-accent) 70%, black); }
 .btn-secondary { border-color: var(--color-divider); }
 .btn-secondary:hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
 .btn-secondary:active { background: color-mix(in srgb, var(--color-text) 14%, transparent); }
@@ -412,7 +416,7 @@ textarea.input { min-height: 90px; resize: vertical; }
 	 * rendering everywhere pre-merge (main.css's own value always won this property). */
 	border-radius: 999px;
 }
-.tag-accent { background: var(--color-accent-100); color: var(--color-accent-800); }
+.tag-accent { background: color-mix(in srgb, var(--color-accent) 12%, var(--color-bg)); color: color-mix(in srgb, var(--color-accent) 70%, black); }
 .tag-accent-2 { background: var(--color-accent-2-100); color: var(--color-accent-2-800); }
 .tag-neutral { background: var(--color-neutral-100); color: var(--color-neutral-800); }
 .tag-outline { border: 1px solid var(--color-accent); color: var(--color-accent); }
