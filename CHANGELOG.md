@@ -1,3 +1,8 @@
+## [0.6.1] - 2026-08-18
+
+### 🐛 Bug Fixes
+
+- *(deps)* Add opentelemetry packages to deploy requirements
 ## [0.6.0] - 2026-08-18
 
 ### 🚀 Features
