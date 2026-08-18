@@ -6,6 +6,7 @@
 [![Issues](https://img.shields.io/github/issues/sweetrpg/shared-web.svg)](https://img.shields.io/github/issues/sweetrpg/shared-web.svg)
 [![PRs](https://img.shields.io/github/issues-pr/sweetrpg/shared-web.svg)](https://img.shields.io/github/issues-pr/sweetrpg/shared-web.svg)
 [![Dependabot](https://badgen.net/github/dependabot/sweetrpg/shared-web)](https://badgen.net/github/dependabot/sweetrpg/shared-web)
+[![Deployment](https://argocd.dev.pilgrimagesoftware.com/api/badge?name=sweetrpg-shared-web&revision=true&showAppName=true&namespace=sweetrpg-system)](https://argocd.dev.pilgrimagesoftware.com/applications/sweetrpg-shared-web)
 
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 [![Built with love](https://ForTheBadge.com/images/badges/built-with-love.svg)](https://ForTheBadge.com/images/badges/built-with-love.svg)
