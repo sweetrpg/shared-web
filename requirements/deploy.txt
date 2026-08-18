@@ -119,8 +119,6 @@ protobuf==7.35.1
     # via
     #   googleapis-common-protos
     #   opentelemetry-proto
-pyjwt==2.13.0
-    # via redis
 pylogbeat==2.1.0
     # via python-logstash-async
 python-dateutil==2.9.0.post0
@@ -137,7 +135,7 @@ python-logstash-async==2.7.2
     # via -r requirements/app.in
 pyyaml==6.0.3
     # via -r requirements/app.in
-redis==5.3.1
+redis==8.1.0
     # via -r requirements/app.in
 requests==2.34.2
     # via
