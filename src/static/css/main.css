@@ -1,229 +1,230 @@
 /*
- * Placeholder styling. The real design lives in Claude Design's "SweetRPG catalog app" project
- * (RPG Catalogue.dc.html, using the "Broadsheet" design system) - this file exists so the
- * server-rendered pages are readable and structurally correct while that design gets ported
- * over, not as a final visual pass. Variable names below are chosen to match the design's own
- * CSS custom properties so porting is a copy of values, not a rename.
+ * Broadsheet design system - the canonical token set and shared component classes for every
+ * SweetRPG frontend. Ported from Claude Design's "SweetRPG catalog app" project (RPG
+ * Catalogue.dc.html), merged here with the app-specific additions (banners, tags, tables, forms,
+ * main-web's landing layout) that grew up around the earlier placeholder version of this file.
+ * See sweetrpg/platform's openspec/changes/consolidate-shared-design-system for the merge
+ * decisions - notably: `.card`/`.card-title`/`.card-body`/`.card-meta`/`.card-grid`/
+ * `.card-cover*` and `.nav`/`.nav-brand`/`.nav-logo*` keep their pre-merge definitions rather
+ * than Broadsheet's, since catalog-web's card grid (10 templates) and every app's top nav
+ * already render against them in production - swapping either would be a visible regression,
+ * not a fidelity improvement.
  */
 
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap');
 
 :root {
-	--color-bg: #fdfaf5;
-	--color-surface: #ffffff;
-	--color-text: #1a1a1a;
-	--color-accent: #b5442e;
-	--color-accent-700: #8f3524;
-	--color-neutral-300: #ddd6c9;
-	--color-neutral-600: #6b6355;
+	--color-bg: #f3f2f2;
+	--color-surface: #eae9e9;
+	--color-text: #201e1d;
+	--color-accent: #0088b0;
+	--color-accent-2: #d6006c;
+	--color-divider: color-mix(in srgb, #201e1d 16%, transparent);
+
+	--color-neutral-100: #f8f4f4;
+	--color-neutral-200: #eae7e7;
+	--color-neutral-300: #d7d3d3;
+	--color-neutral-400: #bab6b6;
+	--color-neutral-500: #9b9797;
+	--color-neutral-600: #7d7979;
+	--color-neutral-700: #605d5d;
+	--color-neutral-800: #444141;
+	--color-neutral-900: #2d2b2b;
+
+	--color-accent-100: #e9f8ff;
+	--color-accent-200: #cbeeff;
+	--color-accent-300: #99e0ff;
+	--color-accent-400: #62c5ee;
+	--color-accent-500: #38a6cf;
+	--color-accent-600: #1186ac;
+	--color-accent-700: #006786;
+	--color-accent-800: #004961;
+	--color-accent-900: #0a303e;
+
+	--color-accent-2-100: #fff1f4;
+	--color-accent-2-200: #ffdee6;
+	--color-accent-2-300: #ffc0d0;
+	--color-accent-2-400: #ff90b1;
+	--color-accent-2-500: #ff458e;
+	--color-accent-2-600: #d82071;
+	--color-accent-2-700: #aa0b56;
+	--color-accent-2-800: #790e3d;
+	--color-accent-2-900: #4b1528;
+
+	--color-process-yellow: #edbb00;
 
 	--font-heading: "Source Serif 4", system-ui, sans-serif;
 	--font-heading-weight: 600;
 	--font-body: "Source Serif 4", system-ui, sans-serif;
+
+	--space-1: 5.0px;
+	--space-2: 10.0px;
+	--space-3: 15.0px;
+	--space-4: 20.0px;
+	--space-6: 30.0px;
+	--space-8: 40.0px;
+
+	--radius-sm: 1px;
+	--radius-md: 2px;
+	--radius-lg: 4px;
+
+	--shadow-sm: 0 1px 2px color-mix(in srgb, #2d2b2b 14%, transparent);
+	--shadow-md: 0 3px 10px color-mix(in srgb, #2d2b2b 16%, transparent);
+	--shadow-lg: 0 12px 32px color-mix(in srgb, #2d2b2b 22%, transparent);
 }
 
 /* Dark-theme overrides, applied via `data-theme="dark"` on <html> - set by the anti-flash
  * bootstrap script each consuming frontend's <head> runs before first paint (see main-web's
- * templates/main.html for the reference implementation). Only overrides what this shared
- * stylesheet itself defines above - accent colors are left as-is since they already have
- * enough contrast against the dark background.
+ * templates/main.html for the reference implementation). Covers every token/component this file
+ * defines above; accent colors are left as-is since they already have enough contrast against
+ * the dark background.
  */
 [data-theme="dark"] {
 	--color-bg: #1a1918;
 	--color-surface: #26241f;
 	--color-text: #f0efee;
+	--color-divider: #423f3b;
+
+	--color-neutral-100: #26241f;
+	--color-neutral-200: #302d28;
 	--color-neutral-300: #3a3836;
+	--color-neutral-400: #4c4844;
+	--color-neutral-500: #666158;
 	--color-neutral-600: #a39d92;
+	--color-neutral-700: #bcb6ab;
+	--color-neutral-800: #d8d3c9;
+	--color-neutral-900: #f0efee;
 }
 
-* { box-sizing: border-box; }
-/* Hub page layout, adapted from the "SweetRPG Hub" Claude Design prototype's inline <style>
- * block and top-level element styles. Broadsheet (broadsheet.css) supplies the design tokens
- * and component classes (.card, .tag, .btn, --color-*); this file only adds the page's own
- * layout and the dark-theme token overrides the prototype defined locally.
- */
-
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-size: 15px; line-height: 1.55; font-weight: 400; background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); }
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+	line-height: 1.12; letter-spacing: -0.015em; margin: 0 0 var(--space-2);
+}
+h1 { font-size: 42px; }
+h2 { font-size: 32px; }
+h3 { font-size: 25px; }
+h4 { font-size: 20px; }
+h5 { font-size: 16px; }
+h6 { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; }
+p { margin: 0 0 var(--space-3); }
 a { color: var(--color-accent-700); text-decoration: none; }
 a:hover { color: var(--color-accent); text-decoration: underline; }
+img { display: block; max-width: 100%; }
+figure { margin: 0; }
+figcaption {
+	font-size: 11px; margin-top: var(--space-1);
+	color: color-mix(in srgb, var(--color-text) 55%, transparent);
+}
+.text-muted { color: color-mix(in srgb, var(--color-text) 55%, transparent); }
+:focus { outline: none; }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+::selection { background: color-mix(in srgb, var(--color-accent) 30%, transparent); }
 
-[data-theme="dark"] {
-  --color-bg: #1a1918;
-  --color-surface: #26241f;
-  --color-text: #f0efee;
-  --color-neutral-300: #3a3836;
-  --color-divider: #423f3b;
+.hr {
+	height: 1px; border: 0; margin: var(--space-4) 0;
+	background: var(--color-divider);
 }
 
+/* main-web's landing page layout (hero, card grid, footer) - not part of the shared design
+ * system itself, kept here only because it's already served from this file; see design.md's
+ * non-goals for why relocating it is out of scope for this change. */
 .landing {
-  min-height: 100vh;
-  background: var(--color-bg);
-  color: var(--color-text);
-  transition: background 0.2s, color 0.2s;
+	min-height: 100vh;
+	background: var(--color-bg);
+	color: var(--color-text);
+	transition: background 0.2s, color 0.2s;
 }
-
 .landing-container {
-  max-width: 1160px;
-  margin: 0 auto;
-  padding: 0 clamp(20px, 5vw, 64px) 100px;
+	max-width: 1160px;
+	margin: 0 auto;
+	padding: 0 clamp(20px, 5vw, 64px) 100px;
 }
-
 .landing-hero {
-  padding: min(14vh, 140px) 0 60px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+	padding: min(14vh, 140px) 0 60px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
-
 .landing-hero > a {
-  display: block;
-  text-decoration: none !important;
-  margin-bottom: 8px;
+	display: block;
+	text-decoration: none !important;
+	margin-bottom: 8px;
 }
-
 .landing-logo {
-  width: min(220px, 32vw);
-  height: auto;
-  display: block;
+	width: min(220px, 32vw);
+	height: auto;
+	display: block;
 }
-
 [data-theme="light"] .landing-logo-dark { display: none; }
 [data-theme="dark"] .landing-logo-light { display: none; }
-
 .landing-title {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: clamp(56px, 9vw, 110px);
-  line-height: 0.95;
-  letter-spacing: -0.02em;
+	font-family: var(--font-heading);
+	font-weight: 700;
+	font-size: clamp(56px, 9vw, 110px);
+	line-height: 0.95;
+	letter-spacing: -0.02em;
 }
 .landing-title-sweet { color: var(--color-text); }
 .landing-title-rpg { color: #0a9845; }
-
 .landing-tagline {
-  font-size: 19px;
-  font-style: italic;
-  max-width: 52ch;
-  margin: 20px 0 0;
-  opacity: 0.8;
+	font-size: 19px;
+	font-style: italic;
+	max-width: 52ch;
+	margin: 20px 0 0;
+	opacity: 0.8;
 }
-
 .landing-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
-  grid-auto-rows: 1fr;
-  align-items: stretch;
-  column-gap: 28px;
-  row-gap: clamp(28px, 6vw, 56px);
-  padding-top: 20px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+	grid-auto-rows: 1fr;
+	align-items: stretch;
+	column-gap: 28px;
+	row-gap: clamp(28px, 6vw, 56px);
+	padding-top: 20px;
 }
-
 .landing-card-link { text-decoration: none; color: inherit; }
 .landing-card-link:hover { text-decoration: none; color: inherit; }
-
 .landing-card {
-  position: relative;
-  height: calc(100% + 20px);
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  cursor: pointer;
-  overflow: hidden;
-  border-radius: 8px;
+	position: relative;
+	height: calc(100% + 20px);
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+	cursor: pointer;
+	overflow: hidden;
+	border-radius: 8px;
 }
-
 .landing-card-title { font-size: 30px; color: #0a9845; }
 .landing-card-body { margin-top: 8px; }
 .landing-card-spacer { flex: 1; }
 .landing-card-tag { align-self: flex-start; }
-
 .landing-footer-sentinel {
-  height: 1px;
+	height: 1px;
 }
-
 .landing-footer {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 14px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-  pointer-events: none;
-  opacity: 1;
-  transition: opacity 0.2s;
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 14px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2px;
+	pointer-events: none;
+	opacity: 1;
+	transition: opacity 0.2s;
 }
 .landing-footer--faded {
-  opacity: 0;
+	opacity: 0;
 }
 .landing-footer-line {
-  font-size: 12px;
-  opacity: 0.55;
-  pointer-events: auto;
+	font-size: 12px;
+	opacity: 0.55;
+	pointer-events: auto;
 }
-
-.banner-region {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 8px 16px 0;
-  max-width: 80%;
-  margin-inline: auto;
-}
-.banner {
-  border-radius: var(--radius-md);
-  padding: 10px 16px;
-  font-size: 0.9rem;
-  border: 1px solid transparent;
-}
-.banner-info {
-  background: #e6f2ff;
-  border-color: #99c9ff;
-  color: #0a3d7a;
-}
-.banner-warning {
-  background: #fff6e0;
-  border-color: #f0c669;
-  color: #7a5a00;
-}
-.banner-critical {
-  background: #fde8e8;
-  border-color: #f0a3a3;
-  color: #7a1212;
-  font-weight: 600;
-}
-[data-theme="dark"] .banner-info {
-  background: #16273d;
-  border-color: #2c4d7a;
-  color: #a9cdfa;
-}
-[data-theme="dark"] .banner-warning {
-  background: #3d3312;
-  border-color: #7a6425;
-  color: #f5d78a;
-}
-[data-theme="dark"] .banner-critical {
-  background: #3d1414;
-  border-color: #7a2e2e;
-  color: #f5a3a3;
-}
-
-.nav-user { font-size: 14px; color: var(--color-neutral-600); }
-.nav-logout-form { margin: 0; }
-.nav-logout-form .btn { font: inherit; }
-
-body {
-	margin: 0;
-	background: var(--color-bg);
-	color: var(--color-text);
-	font-family: var(--font-body);
-}
-
-h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: var(--font-heading-weight); }
-
-a { color: var(--color-accent-700); text-decoration: none; }
-a:hover { color: var(--color-accent); text-decoration: underline; }
 
 .nav {
 	display: flex;
@@ -245,25 +246,74 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
 [data-theme="dark"] .nav-logo-light { display: none; }
 .nav-spacer { flex: 1; }
 .nav-search .input { max-width: 240px; }
-.nav-user { font-size: 14px; white-space: nowrap; }
+.nav-user { font-size: 14px; white-space: nowrap; color: var(--color-neutral-600); }
+.nav-logout-form { margin: 0; }
+.nav-logout-form .btn { font: inherit; }
 
 .input {
-	padding: 8px 10px;
-	border: 1px solid var(--color-neutral-300);
-	border-radius: 6px;
-	font-size: 14px;
+	width: 100%; min-height: 36px; padding: 6px 10px; font: inherit;
+	font-size: 14px; color: var(--color-text); caret-color: var(--color-accent);
+	background: var(--color-surface);
+	border: 1px solid var(--color-divider); border-radius: var(--radius-md);
 }
+.input::placeholder { color: color-mix(in srgb, var(--color-text) 65%, transparent); opacity: 1; }
+.input:hover { border-color: color-mix(in srgb, var(--color-text) 45%, transparent); }
+.input:focus-visible { border-color: var(--color-accent); outline-offset: 0; }
+textarea.input { min-height: 90px; resize: vertical; }
+
+.field > label {
+	display: block; font-size: 12px; margin-bottom: 5px;
+	color: color-mix(in srgb, var(--color-text) 70%, transparent);
+}
+.radio { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-size: 14px; }
+.radio input, .seg-opt input {
+	position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none;
+}
+.radio .dot {
+	width: 16px; height: 16px; flex: none; border-radius: 50%;
+	border: 1.5px solid var(--color-divider);
+}
+.radio:hover .dot { border-color: var(--color-accent); }
+.radio input:checked + .dot {
+	border-color: var(--color-accent); background: var(--color-accent);
+	box-shadow: inset 0 0 0 4px var(--color-bg);
+}
+.radio input:focus-visible + .dot { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.seg {
+	display: inline-flex; overflow: hidden;
+	border: 1px solid var(--color-divider); border-radius: var(--radius-md);
+}
+.seg-opt {
+	display: inline-flex; align-items: center; gap: 6px;
+	padding: 7px 12px; font-size: 13px; cursor: pointer;
+}
+.seg-opt + .seg-opt { border-left: 1px solid var(--color-divider); }
+.seg-opt:has(input:checked) { background: var(--color-accent); color: var(--color-bg); }
+.seg-opt:not(:has(input:checked)):hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
+.seg-opt:has(input:focus-visible) { outline: 2px solid var(--color-accent); outline-offset: -2px; }
 
 .btn {
-	padding: 8px 16px;
-	border-radius: 6px;
-	border: 1px solid transparent;
-	font-size: 14px;
-	cursor: pointer;
-	display: inline-block;
+	display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+	cursor: pointer; text-decoration: none;
+	font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+	font-size: 14px; line-height: 1.2; color: var(--color-text);
+	background: transparent; border: 1px solid transparent;
+	padding: var(--space-2) calc(var(--space-3) * 1.2);
+	border-radius: var(--radius-md);
 }
-.btn-primary { background: var(--color-accent); color: white; }
-.btn-ghost { background: transparent; border-color: var(--color-neutral-300); color: var(--color-text); }
+.btn svg { display: block; }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.btn-primary { background: var(--color-accent); color: var(--color-bg); }
+.btn-primary:hover { background: var(--color-accent-600); }
+.btn-primary:active { background: var(--color-accent-700); }
+.btn-secondary { border-color: var(--color-divider); }
+.btn-secondary:hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
+.btn-secondary:active { background: color-mix(in srgb, var(--color-text) 14%, transparent); }
+.btn-ghost { color: var(--color-accent); padding-inline: var(--space-1); background: transparent; border-color: var(--color-neutral-300); }
+.btn-ghost:hover { background: color-mix(in srgb, var(--color-accent) 10%, transparent); }
+.btn-ghost:active { background: color-mix(in srgb, var(--color-accent) 18%, transparent); }
+.btn-icon { width: 36px; height: 36px; padding: 0; }
+.btn-block { width: 100%; margin-top: var(--space-2); }
 
 .page { max-width: 1160px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 64px) 80px; }
 
@@ -298,6 +348,8 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
 .page-header { padding: 48px 0 24px; }
 .page-header h2 { font-size: 34px; margin: 0 0 20px; }
 
+/* catalog-web's cover-image card grid - kept as its own definition rather than Broadsheet's
+ * (unrelated, padding-based) .card; see this file's header comment. */
 .card-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -345,25 +397,37 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
 .card-body { padding: 14px 16px 18px; }
 .card-title { font-size: 17px; font-weight: 600; }
 .card-meta { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
+.card-kicker { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent); }
+.elev-sm { box-shadow: var(--shadow-sm); }
+.elev-md { box-shadow: var(--shadow-md); }
+.elev-lg { box-shadow: var(--shadow-lg); }
 
 .tag {
-	display: inline-block;
-	padding: 3px 10px;
-	border-radius: 999px;
-	font-size: 12px;
-	text-decoration: none !important;
+	display: inline-flex; align-items: center; font-size: 11px;
+	letter-spacing: 0.02em; padding: 3px 10px;
+	border-radius: calc(var(--radius-md) * 0.75);
 }
-.tag-neutral { background: var(--color-neutral-300); color: var(--color-text); }
-.tag-accent { background: var(--color-accent); color: white; }
-.tag-outline { border: 1px solid var(--color-neutral-300); color: var(--color-text); }
+.tag-accent { background: var(--color-accent-100); color: var(--color-accent-800); }
+.tag-accent-2 { background: var(--color-accent-2-100); color: var(--color-accent-2-800); }
+.tag-neutral { background: var(--color-neutral-100); color: var(--color-neutral-800); }
+.tag-outline { border: 1px solid var(--color-accent); color: var(--color-accent); }
 .tag-cloud { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+/* Distinct from .tag-outline: red border reads as "currently down", not "forthcoming". */
+.tag-danger { border: 1px solid #f0a3a3; color: #7a1212; cursor: help; }
+[data-theme="dark"] .tag-danger { border-color: #7a2e2e; color: #f5a3a3; }
+/* Severity-style tag variants, matching .banner-critical/.banner-warning's palette below via the
+ * same color-mix approach as .tag-danger, so a status chip and a banner agree on what "critical"
+ * or "warning" looks like. */
+.tag-critical { background: color-mix(in srgb, #f0a3a3 25%, transparent); border: 1px solid #f0a3a3; color: #7a1212; }
+[data-theme="dark"] .tag-critical { background: color-mix(in srgb, #7a2e2e 45%, transparent); border-color: #7a2e2e; color: #f5a3a3; }
+.tag-status-expired { background: color-mix(in srgb, #f0c669 25%, transparent); border: 1px solid #f0c669; color: #7a5a00; }
+[data-theme="dark"] .tag-status-expired { background: color-mix(in srgb, #7a5a00 45%, transparent); border-color: #7a5a00; color: #f0c669; }
 
 /* admin-api banner messages (severity info/warning/critical), rendered by every frontend that
- * shows them. Previously duplicated inline per app (catalog-web's base.leaf had its own copy
- * in a <style> block) rather than living here once - centralized so a severity's color only
- * has one definition to keep in sync with the .tag-critical/.tag-status-expired variants below. */
-.banner-region { display: flex; flex-direction: column; gap: 4px; padding: 8px 16px 0; }
-.banner { border-radius: 6px; padding: 10px 16px; font-size: 0.9rem; border: 1px solid transparent; }
+ * shows them - centralized so a severity's color only has one definition to keep in sync with
+ * the .tag-critical/.tag-status-expired variants above. */
+.banner-region { display: flex; flex-direction: column; gap: 4px; padding: 8px 16px 0; max-width: 80%; margin-inline: auto; }
+.banner { border-radius: var(--radius-md); padding: 10px 16px; font-size: 0.9rem; border: 1px solid transparent; }
 .banner-info { background: #e6f2ff; border-color: #99c9ff; color: #0a3d7a; }
 .banner-warning { background: #fff6e0; border-color: #f0c669; color: #7a5a00; }
 .banner-critical { background: #fde8e8; border-color: #f0a3a3; color: #7a1212; font-weight: 600; }
@@ -371,34 +435,24 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
 [data-theme="dark"] .banner-warning { background: #3d3312; border-color: #7a6425; color: #f5d78a; }
 [data-theme="dark"] .banner-critical { background: #3d1414; border-color: #7a2e2e; color: #f5a3a3; }
 
-/* Severity-style tag variants, matching the banner palette above so a status chip and a banner
- * agree on what "critical" or "warning" looks like. Referenced by admin-web's maintenance-modes
- * list but never previously defined here - those chips rendered with no color at all. */
-.tag-critical { background: #fde8e8; border: 1px solid #f0a3a3; color: #7a1212; }
-[data-theme="dark"] .tag-critical { background: #3a1f1f; border-color: #7a2e2e; color: #f5a3a3; }
-.tag-status-expired { background: #fff6e0; border: 1px solid #f0c669; color: #7a5a00; }
-[data-theme="dark"] .tag-status-expired { background: #3a2f10; border-color: #7a5a00; color: #f0c669; }
-
 .empty-state { opacity: 0.6; padding: 20px 0; }
 .empty-state-inline { opacity: 0.55; font-style: italic; font-size: 14px; }
 
-/* Data tables (admin-web's banners/users/maintenance-modes lists) - previously entirely
- * unstyled, browser-default dense rendering with no cell padding read as "squished." */
-.table { width: 100%; border-collapse: collapse; margin-top: 16px; }
-.table th, .table td { padding: 10px 14px; text-align: left; vertical-align: middle; }
+/* Data tables (admin-web's banners/users/maintenance-modes lists). */
+.table { width: 100%; border-collapse: collapse; font-size: 14px; }
 .table th {
-	font-size: 12px;
-	text-transform: uppercase;
-	letter-spacing: 0.04em;
-	opacity: 0.65;
-	border-bottom: 1px solid var(--color-neutral-300);
+	text-align: left; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+	color: color-mix(in srgb, var(--color-text) 60%, transparent);
+	padding: var(--space-2); border-bottom: 1px solid var(--color-divider);
 }
-.table td { border-bottom: 1px solid var(--color-neutral-300); font-size: 14px; }
-.table tr:last-child td { border-bottom: none; }
+.table td {
+	padding: var(--space-2);
+	border-bottom: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent);
+}
+.table tbody tr:hover { background: color-mix(in srgb, var(--color-text) 4%, transparent); }
 .table-actions { display: flex; gap: 8px; align-items: center; }
 
-/* Admin forms (admin-web's banner/maintenance-mode create-edit forms) - previously entirely
- * unstyled, labels and inputs just stacked as default block elements with no column alignment. */
+/* Admin forms (admin-web's banner/maintenance-mode create-edit forms). */
 .form {
 	display: grid;
 	grid-template-columns: 160px minmax(0, 1fr);
@@ -465,3 +519,20 @@ a:hover { color: var(--color-accent); text-decoration: underline; }
 }
 .footer-links { display: flex; gap: 16px; }
 .footer-build { margin: 0; font-size: 12px; font-weight: 400; color: var(--color-neutral-600); }
+
+.dialog-backdrop {
+	position: fixed; inset: 0; display: grid; place-items: center;
+	padding: var(--space-4);
+	background: color-mix(in srgb, var(--color-neutral-900) 50%, transparent);
+}
+.dialog {
+	width: min(440px, 100%); display: flex; flex-direction: column; gap: var(--space-3);
+	padding: var(--space-4); border-radius: var(--radius-lg);
+	background: var(--color-surface); box-shadow: var(--shadow-lg);
+}
+.dialog-title {
+	font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+	font-size: 20px;
+}
+.dialog-body { font-size: 14px; opacity: 0.85; }
+.dialog-actions { display: flex; justify-content: flex-end; gap: var(--space-2); margin-top: var(--space-2); }
