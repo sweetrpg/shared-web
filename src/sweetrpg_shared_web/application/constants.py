@@ -65,3 +65,6 @@ ADMIN_API_URL = 'ADMIN_API_URL'
 # shared branding assets (logo, favicon, stylesheet) - see docs/frontend-conventions.md
 SHARED_URL = 'SHARED_URL'
 ASSETS_URL = 'ASSETS_URL'
+
+# Tracing
+OTEL_EXPORTER_OTLP_ENDPOINT = "OTEL_EXPORTER_OTLP_ENDPOINT"
