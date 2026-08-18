@@ -1,3 +1,30 @@
+## [0.6.0] - 2026-08-18
+
+### 🚀 Features
+
+- *(observability)* Add structured JSON logging and OTel tracing
+- *(theme)* Add theme.css with brand accent color override
+- Merge broadsheet.css design tokens into main.css
+- *(catalog)* Style the license detail page's two-column layout
+- *(config)* Add SHARED_URL to dev configmap
+- *(kubernetes)* Add auto-reload annotation to web deployment
+
+### 🐛 Bug Fixes
+
+- *(deployment)* Remove unused secret and config, enable health probes
+- *(deployment)* Remove unused secret and config, enable health probes
+
+### 📚 Documentation
+
+- *(readme)* Add ArgoCD deployment status badge
+
+### 🎨 Styling
+
+- Add theme.css files with consistent color-accent override
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* 0.5.1
 ## [0.5.1] - 2026-08-17
 
 ### 🎨 Styling
