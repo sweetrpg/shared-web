@@ -556,14 +556,21 @@ textarea.input { min-height: 90px; resize: vertical; }
 	display: inline-flex;
 	align-items: center;
 	vertical-align: middle;
-	border-radius: 4px;
+	border-radius: 50%;
 }
+/* Every rule above sets `display` unconditionally, which beats the UA `[hidden]{display:none}`
+ * default on specificity ties (author stylesheets always win ties over UA ones) - without this,
+ * a hidden .icon-btn/.field-input still renders. Same fix needed wherever a page's own CSS also
+ * forces `display` on one of these classes (see catalog-web's edit.leaf `.cover-overlay-controls
+ * .icon-btn`, `.tag-picker`, `.contributor-dialog`) - each needs its own `[hidden]` override too. */
+.icon-btn[hidden] { display: none; }
 .icon-btn:hover { background: var(--color-neutral-300); }
 .icon-btn img { width: 16px; height: 16px; display: block; }
 .field-row { display: flex; align-items: baseline; gap: 6px; }
 .field-row-block { align-items: flex-start; }
 .field-actions { display: inline-flex; gap: 2px; }
 .field-input { display: block; width: 100%; max-width: 60ch; margin: 4px 0; }
+.field-input[hidden] { display: none; }
 
 .auth-page { padding: 48px 0; max-width: 480px; }
 
