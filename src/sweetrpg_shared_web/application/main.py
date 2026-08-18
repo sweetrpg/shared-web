@@ -12,6 +12,7 @@ from flask_session import Session
 from dotenv import load_dotenv, find_dotenv
 from sweetrpg_shared_web.application.cache import cache
 from sweetrpg_shared_web.application import constants
+from sweetrpg_shared_web.application.tracing import setup_tracing
 from logging.config import dictConfig
 from redis.client import Redis
 from sentry_sdk.integrations.wsgi import SentryWsgiMiddleware
@@ -41,23 +42,23 @@ def create_app(app_name=constants.APPLICATION_NAME):
         {
             "version": 1,
             "formatters": {
-                "default": {
-                    "format": "[%(asctime)s] %(levelname)s %(module)s/%(funcName)s: %(message)s",
+                # One JSON object per line to stdout - matches the Go/Swift services'
+                # structured-logging convention so log aggregation parses all of them the same
+                # way.
+                "json": {
+                    "class": "pythonjsonlogger.json.JsonFormatter",
+                    "format": "%(asctime)s %(levelname)s %(module)s %(funcName)s %(message)s",
                 },
-                "logstash": {
-                    "class": "logstash_async.formatter.FlaskLogstashFormatter",
-                    "metadata": {"beat": "sweetrpg-shared-web"},
-                }
             },
-            "handlers": {"wsgi": {"class": "logging.StreamHandler", "stream": "ext://flask.logging.wsgi_errors_stream", "formatter": "default"},
-                         # "logstash": {"class": "logstash_async.handler.AsynchronousLogstashHandler", "formatter": "logstash",
-                         #              "host": os.environ[constants.LOGSTASH_HOST],
-                         #              "port": int(os.environ[constants.LOGSTASH_PORT]),
-                         #              "database_path": "/tmp/sweetrpg_shared_web_flask_logstash.db",
-                         #              "transport": "logstash_async.transport.BeatsTransport",
-                         #              },
-                         },
-            "root": {"level": os.environ.get(constants.LOG_LEVEL) or "INFO", "handlers": ["wsgi", ]}, # "logstash"]},
+            "handlers": {
+                "wsgi": {"class": "logging.StreamHandler", "stream": "ext://flask.logging.wsgi_errors_stream", "formatter": "json"},
+            },
+            "root": {
+                "level": os.environ.get(constants.LOG_LEVEL) or "INFO",
+                "handlers": [
+                    "wsgi",
+                ],
+            },
         }
     )
 
@@ -66,12 +67,16 @@ def create_app(app_name=constants.APPLICATION_NAME):
     app.config.from_object("sweetrpg_shared_web.application.config.BaseConfig")
     # env = DotEnv(app)
 
+    app.logger.info("Setting up cache...")
+    cache.init_app(app)
+
+    app.logger.info("Setting up metrics...")
     metrics = PrometheusMetrics(app)
     # static information as metric
     metrics.info('app_info', sweetrpg_shared_web.__name__, version=sweetrpg_shared_web.__version__, build=sweetrpg_shared_web.__build__)
 
-    app.logger.info("Setting up cache...")
-    cache.init_app(app)
+    app.logger.info("Setting up tracing...")
+    setup_tracing(app)
 
     app.logger.info("Setting up admin-api client...")
     # constructed once and reused; fail-open (returns [] on any error, including no base_url set)
