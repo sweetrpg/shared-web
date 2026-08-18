@@ -1,13 +1,14 @@
 /*
- * assets-web's shared main.css is explicitly a placeholder stylesheet (see its own header
- * comment) - its --color-accent is main.css's own default, not this app's brand color, and
- * main-web never inherits it because main-web layers its own local broadsheet.css on top. This
- * app had no equivalent override, so the avatar-menu-trigger badge (avatar-menu.css, background:
- * var(--color-accent)) rendered in main.css's placeholder red instead of the brand accent
- * main-web uses, making the same logged-in user's badge a different color on each app. Matching
- * main-web's --color-accent here, not picking a new value - see the catalog-web-theming-
- * inconsistencies OpenSpec change (sweetrpg/platform) design.md decision.
+ * catalog-web's brand accent, distinct from the shared design system's default teal - overrides
+ * --color-accent for this app only (avatar-menu badge, links, primary buttons, etc.).
+ * Dark-mode gets its own lighter value: main.css's [data-theme="dark"] block never touches
+ * --color-accent (its own default has enough contrast on dark backgrounds already), but a
+ * per-app override that's this dark to begin with needs an explicit lighter counterpart or it's
+ * unreadable against the dark theme's near-black background.
  */
 :root {
 	--color-accent: #108000;
+}
+[data-theme="dark"] {
+	--color-accent: #4ade80;
 }

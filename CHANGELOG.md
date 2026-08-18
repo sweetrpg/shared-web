@@ -1,3 +1,14 @@
+## [0.6.3] - 2026-08-18
+
+### 🐛 Bug Fixes
+
+- *(deps)* Add opentelemetry packages to deploy requirements
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Merge master into develop after v0.6.0
+- *(release)* Merge master into develop after v0.6.1
+- *(release)* Merge master into develop after v0.6.2
 ## [0.6.2] - 2026-08-18
 
 ### 🐛 Bug Fixes

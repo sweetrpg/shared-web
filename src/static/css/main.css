@@ -109,7 +109,7 @@ h4 { font-size: 20px; }
 h5 { font-size: 16px; }
 h6 { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; }
 p { margin: 0 0 var(--space-3); }
-a { color: var(--color-accent-700); text-decoration: none; }
+a { color: color-mix(in srgb, var(--color-accent) 80%, black); text-decoration: none; }
 a:hover { color: var(--color-accent); text-decoration: underline; }
 img { display: block; max-width: 100%; }
 figure { margin: 0; }
@@ -193,6 +193,9 @@ figcaption {
 	display: flex;
 	flex-direction: column;
 	gap: 14px;
+	/* Pre-merge this came from broadsheet.css's coexisting .card padding (main.css's own
+	 * .card never set it, so it wasn't overridden); lost when .card was merged without it. */
+	padding: var(--space-3);
 	cursor: pointer;
 	overflow: hidden;
 	border-radius: 8px;
@@ -304,8 +307,12 @@ textarea.input { min-height: 90px; resize: vertical; }
 .btn svg { display: block; }
 .btn:disabled { opacity: 0.45; cursor: not-allowed; }
 .btn-primary { background: var(--color-accent); color: var(--color-bg); }
-.btn-primary:hover { background: var(--color-accent-600); }
-.btn-primary:active { background: var(--color-accent-700); }
+/* Derived from --color-accent via color-mix, not the fixed --color-accent-600/700 ramp steps -
+ * those don't track a per-app --color-accent override (see requirements/../catalog/theme.css),
+ * so a hover/active state on an overridden accent (e.g. catalog-web's green) rendered in the
+ * shared ramp's unrelated teal instead. */
+.btn-primary:hover { background: color-mix(in srgb, var(--color-accent) 85%, black); }
+.btn-primary:active { background: color-mix(in srgb, var(--color-accent) 70%, black); }
 .btn-secondary { border-color: var(--color-divider); }
 .btn-secondary:hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
 .btn-secondary:active { background: color-mix(in srgb, var(--color-text) 14%, transparent); }
@@ -405,9 +412,11 @@ textarea.input { min-height: 90px; resize: vertical; }
 .tag {
 	display: inline-flex; align-items: center; font-size: 11px;
 	letter-spacing: 0.02em; padding: 3px 10px;
-	border-radius: calc(var(--radius-md) * 0.75);
+	/* Capsule, not broadsheet.css's near-square radius-md - this was the shape actually
+	 * rendering everywhere pre-merge (main.css's own value always won this property). */
+	border-radius: 999px;
 }
-.tag-accent { background: var(--color-accent-100); color: var(--color-accent-800); }
+.tag-accent { background: color-mix(in srgb, var(--color-accent) 12%, var(--color-bg)); color: color-mix(in srgb, var(--color-accent) 70%, black); }
 .tag-accent-2 { background: var(--color-accent-2-100); color: var(--color-accent-2-800); }
 .tag-neutral { background: var(--color-neutral-100); color: var(--color-neutral-800); }
 .tag-outline { border: 1px solid var(--color-accent); color: var(--color-accent); }
@@ -547,14 +556,21 @@ textarea.input { min-height: 90px; resize: vertical; }
 	display: inline-flex;
 	align-items: center;
 	vertical-align: middle;
-	border-radius: 4px;
+	border-radius: 50%;
 }
+/* Every rule above sets `display` unconditionally, which beats the UA `[hidden]{display:none}`
+ * default on specificity ties (author stylesheets always win ties over UA ones) - without this,
+ * a hidden .icon-btn/.field-input still renders. Same fix needed wherever a page's own CSS also
+ * forces `display` on one of these classes (see catalog-web's edit.leaf `.cover-overlay-controls
+ * .icon-btn`, `.tag-picker`, `.contributor-dialog`) - each needs its own `[hidden]` override too. */
+.icon-btn[hidden] { display: none; }
 .icon-btn:hover { background: var(--color-neutral-300); }
 .icon-btn img { width: 16px; height: 16px; display: block; }
 .field-row { display: flex; align-items: baseline; gap: 6px; }
 .field-row-block { align-items: flex-start; }
 .field-actions { display: inline-flex; gap: 2px; }
 .field-input { display: block; width: 100%; max-width: 60ch; margin: 4px 0; }
+.field-input[hidden] { display: none; }
 
 .auth-page { padding: 48px 0; max-width: 480px; }
 
