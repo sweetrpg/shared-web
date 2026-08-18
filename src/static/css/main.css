@@ -193,6 +193,9 @@ figcaption {
 	display: flex;
 	flex-direction: column;
 	gap: 14px;
+	/* Pre-merge this came from broadsheet.css's coexisting .card padding (main.css's own
+	 * .card never set it, so it wasn't overridden); lost when .card was merged without it. */
+	padding: var(--space-3);
 	cursor: pointer;
 	overflow: hidden;
 	border-radius: 8px;
@@ -405,7 +408,9 @@ textarea.input { min-height: 90px; resize: vertical; }
 .tag {
 	display: inline-flex; align-items: center; font-size: 11px;
 	letter-spacing: 0.02em; padding: 3px 10px;
-	border-radius: calc(var(--radius-md) * 0.75);
+	/* Capsule, not broadsheet.css's near-square radius-md - this was the shape actually
+	 * rendering everywhere pre-merge (main.css's own value always won this property). */
+	border-radius: 999px;
 }
 .tag-accent { background: var(--color-accent-100); color: var(--color-accent-800); }
 .tag-accent-2 { background: var(--color-accent-2-100); color: var(--color-accent-2-800); }
