@@ -482,6 +482,57 @@ textarea.input { min-height: 90px; resize: vertical; }
 .detail-description-empty { opacity: 0.55; font-style: italic; }
 .detail-notes { font-size: 14px; line-height: 1.6; max-width: 60ch; opacity: 0.75; }
 .detail-block { margin: 24px 0; }
+
+/* licenses/detail.leaf's two-column layout: metadata list on the left, volumes on the right,
+ * both clipped to the same height so neither column's length pushes the license text down. */
+.license-columns {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 320px);
+	gap: 40px;
+	margin: 24px 0;
+	align-items: start;
+}
+.license-meta {
+	display: grid;
+	grid-template-columns: max-content minmax(0, 1fr);
+	gap: 10px 16px;
+	max-height: 360px;
+	overflow-y: auto;
+	padding-right: 8px;
+}
+.license-meta-label { text-align: right; font-size: 13px; font-weight: 600; opacity: 0.7; white-space: nowrap; }
+.license-meta-value { font-size: 14px; }
+.license-notes {
+	max-height: 120px;
+	overflow-y: auto;
+	white-space: pre-wrap;
+	line-height: 1.5;
+	padding: 8px 10px;
+	border: 1px solid var(--color-neutral-300);
+	border-radius: 6px;
+}
+.license-volumes-panel { max-height: 360px; overflow-y: auto; padding-right: 8px; }
+.license-volumes-panel .card-grid { grid-template-columns: 1fr; padding-bottom: 0; gap: 12px; }
+.license-text-panel {
+	max-height: 50vh;
+	overflow-y: auto;
+	white-space: pre-wrap;
+	font-size: 14px;
+	line-height: 1.6;
+	padding: 16px;
+	border: 1px solid var(--color-neutral-300);
+	border-radius: 8px;
+}
+.license-text-panel details { margin-bottom: 12px; }
+.license-text-panel details:last-child { margin-bottom: 0; }
+.license-text-panel summary {
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	opacity: 0.7;
+	cursor: pointer;
+}
 .review { margin-bottom: 16px; }
 .review-stars { color: var(--color-accent); letter-spacing: 1px; }
 
