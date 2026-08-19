@@ -1,3 +1,12 @@
+## [0.9.0] - 2026-08-19
+
+### 🚀 Features
+
+- Add shared app-switcher grid JS/CSS
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Merge master into develop after v0.8.1
 ## [0.8.1] - 2026-08-19
 
 ### 🐛 Bug Fixes
