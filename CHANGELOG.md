@@ -1,3 +1,12 @@
+## [0.8.0] - 2026-08-19
+
+### 🚀 Features
+
+- *(icons)* Add history icon, matching edit.svg's style
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Merge master into develop after v0.7.0
 ## [0.7.0] - 2026-08-19
 
 ### 🚀 Features
