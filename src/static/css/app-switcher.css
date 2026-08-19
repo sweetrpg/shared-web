@@ -1,0 +1,57 @@
+/*
+ * Shared app-switcher grid, consumed by main-web, catalog-web, and admin-web - see the
+ * suite-app-switcher-nav OpenSpec change in sweetrpg/platform. Sibling to avatar-menu.css's
+ * component: same trigger sizing and panel treatment, referencing the same Broadsheet custom
+ * properties (--color-accent, --color-bg, --color-text, --color-neutral-*).
+ */
+
+.app-switcher { position: relative; display: inline-block; }
+
+.app-switcher-trigger {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	border-radius: 999px;
+	border: 1px solid var(--color-neutral-300);
+	background: transparent;
+	color: var(--color-accent);
+	cursor: pointer;
+	padding: 0;
+}
+.app-switcher-trigger:hover { background: var(--color-neutral-200); }
+.app-switcher-trigger:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.app-switcher-trigger svg { width: 18px; height: 18px; fill: currentColor; }
+
+.app-switcher-panel {
+	position: absolute;
+	top: calc(100% + 8px);
+	right: 0;
+	min-width: 180px;
+	background: var(--color-bg);
+	border: 1px solid var(--color-neutral-300);
+	border-radius: 8px;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+	padding: 6px;
+	z-index: 100;
+}
+.app-switcher-panel[hidden] { display: none; }
+
+.app-switcher-item {
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 8px 10px;
+	border-radius: 4px;
+	color: var(--color-text);
+	font-size: 14px;
+	text-align: left;
+	text-decoration: none !important;
+	cursor: pointer;
+}
+.app-switcher-item:hover,
+.app-switcher-item:focus-visible {
+	background: var(--color-neutral-300);
+	outline: none;
+}
