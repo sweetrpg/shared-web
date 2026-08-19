@@ -18,6 +18,8 @@ STATUS_COPY = {
     401: ("Halt, Traveler", "Thou must prove thy identity before passing this gate."),
     403: ("The Gate Is Sealed", "Thy credentials do not grant passage beyond this ward."),
     404: ("Lost in the Mists", "No such chamber exists within these halls - the path thou seek has vanished."),
+    409: ("Two Hands, One Scroll", "Another has already altered this record - thy changes clash with theirs."),
+    413: ("Thy Scroll Overflows", "The missive thou hast sent is too vast for our couriers to bear."),
     500: ("A Curse Upon the Keep", "Something has gone dreadfully wrong within our walls."),
     502: ("The Messenger Was Waylaid", "The realm beyond could not be reached."),
     503: ("The Keep Is Under Siege", "Our halls are overwhelmed and cannot receive thee just now."),
