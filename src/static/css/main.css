@@ -555,6 +555,7 @@ textarea.input { min-height: 90px; resize: vertical; }
 	cursor: pointer;
 	display: inline-flex;
 	align-items: center;
+	justify-content: center;
 	vertical-align: middle;
 	border-radius: 50%;
 }
