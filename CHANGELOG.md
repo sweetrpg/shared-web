@@ -1,3 +1,12 @@
+## [0.7.0] - 2026-08-19
+
+### 🚀 Features
+
+- *(errors)* Add branded copy for 409 Conflict and 413 Payload Too Large
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Merge master into develop after v0.6.3
 ## [0.6.3] - 2026-08-18
 
 ### 🐛 Bug Fixes
