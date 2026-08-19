@@ -1,3 +1,12 @@
+## [0.8.1] - 2026-08-19
+
+### 🐛 Bug Fixes
+
+- *(css)* Use secondary text opacity for volume detail description
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Merge master into develop after v0.8.0
 ## [0.8.0] - 2026-08-19
 
 ### 🚀 Features
