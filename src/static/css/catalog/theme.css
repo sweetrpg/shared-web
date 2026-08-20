@@ -18,9 +18,9 @@
 	color: var(--color-accent);
 }
 
-/* catalog-web's own button shape - capsule, not the shared design system's sharp
- * --radius-md corners. volume edit.leaf already had its own local override for this;
- * applying it app-wide here keeps every page's buttons consistent with it. */
+/* catalog-web's own button shape - a round rect, not the shared design system's sharp
+ * --radius-md corners. Not a full capsule (999px): tags/chips (.chip, .tag) already own
+ * that fully-pill shape, so buttons need their own distinct, still-rounded corner. */
 .btn {
-	border-radius: 999px;
+	border-radius: 10px;
 }
