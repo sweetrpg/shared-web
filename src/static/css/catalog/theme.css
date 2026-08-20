@@ -17,3 +17,10 @@
 .page h2 {
 	color: var(--color-accent);
 }
+
+/* catalog-web's own button shape - capsule, not the shared design system's sharp
+ * --radius-md corners. volume edit.leaf already had its own local override for this;
+ * applying it app-wide here keeps every page's buttons consistent with it. */
+.btn {
+	border-radius: 999px;
+}
