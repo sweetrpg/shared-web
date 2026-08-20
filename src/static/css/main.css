@@ -249,6 +249,24 @@ figcaption {
 [data-theme="dark"] .nav-logo-light { display: none; }
 .nav-spacer { flex: 1; }
 .nav-search .input { max-width: 240px; }
+
+/* Browse pages' header toolbar (search + sort on the left, Add/Bulk-add buttons clumped on
+ * the far right) - persons/publishers/studios/licenses browse.leaf all use this class but it
+ * had no layout rule at all, so the search form, sort select, and action buttons just stacked
+ * in document order with no relationship to each other. */
+.page-header-toolbar {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 12px;
+	margin-bottom: 16px;
+}
+.page-header-toolbar .nav-search {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-right: auto;
+}
 .nav-user { font-size: 14px; white-space: nowrap; color: var(--color-neutral-600); }
 .nav-logout-form { margin: 0; }
 .nav-logout-form .btn { font: inherit; }
