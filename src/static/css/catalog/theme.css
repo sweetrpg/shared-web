@@ -12,3 +12,8 @@
 [data-theme="dark"] {
 	--color-accent: #4ade80;
 }
+
+.page h1,
+.page h2 {
+	color: var(--color-accent);
+}

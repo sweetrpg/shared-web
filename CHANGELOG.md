@@ -1,3 +1,18 @@
+## [0.10.0] - 2026-08-20
+
+### 🚀 Features
+
+- *(catalog)* Color page titles with catalog's accent
+
+### 🐛 Bug Fixes
+
+- *(css)* Center icon-btn contents horizontally, not just vertically
+- *(kubernetes)* Fix cpu resource limit quantity that never matched ArgoCD's applied manifest
+- *(css)* Center icon-btn contents, add page-header-toolbar layout
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Merge master into develop after v0.9.0
 ## [0.9.0] - 2026-08-19
 
 ### 🚀 Features
