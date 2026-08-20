@@ -24,3 +24,8 @@
 .btn {
 	border-radius: 10px;
 }
+
+/* catalog-web doesn't use the shared design system's divider line under the top nav. */
+.nav {
+	border-bottom: none;
+}
