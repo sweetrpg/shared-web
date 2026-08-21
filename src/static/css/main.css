@@ -589,12 +589,30 @@ textarea.input { min-height: 90px; resize: vertical; }
 .icon-btn img { width: 16px; height: 16px; display: block; }
 /* Destructive action variant (delete/restore) - the same danger red used for
  * .form-error/.tag-danger elsewhere, not the accent-tinted background every other icon button
- * gets. FontAwesome icon SVGs default to a black fill, so this also inverts the icon to white -
- * hand-drawn icons with their own explicit stroke color (edit.svg, history.svg) don't need this
- * and shouldn't get .icon-btn-danger. */
-.icon-btn-danger { background: color-mix(in srgb, #7a1212 14%, transparent); }
-.icon-btn-danger:hover { background: color-mix(in srgb, #7a1212 26%, transparent); }
-.icon-btn-danger img { filter: invert(1); }
+ * gets. Hand-drawn icons with their own explicit stroke color (edit.svg, history.svg) don't
+ * need the .icon-mask treatment below and shouldn't get .icon-btn-danger. */
+.icon-btn-danger { background: color-mix(in srgb, #7a1212 20%, transparent); }
+.icon-btn-danger:hover { background: color-mix(in srgb, #7a1212 32%, transparent); }
+/* `filter: invert(1)` (turning a black-fill FontAwesome icon white) read as flat/washed-out
+ * against the tinted red background - a CSS mask paints the icon in the same danger red used
+ * for .tag-danger/.tag-critical elsewhere (#f0a3a3, the lighter member of that pair) instead,
+ * so foreground and background read as the same color family. Needs an empty, content-less
+ * element (an <img>'s own painted pixels can't be recolored by mask-image the way a masked
+ * background-color can) - see catalog-web's icon-mask markup at each .icon-btn-danger call site.
+ */
+.icon-btn-danger img { display: none; }
+.icon-mask {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-color: #f0a3a3;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
 /* Generic fix for the same default-black-fill problem on a non-destructive FontAwesome icon
  * (e.g. plus.svg) - use directly on the <img> where .icon-btn-danger's semantics don't apply. */
 .icon-invert { filter: invert(1); }
