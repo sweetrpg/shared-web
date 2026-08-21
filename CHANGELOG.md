@@ -1,3 +1,19 @@
+## [0.12.0] - 2026-08-21
+
+### 🚀 Features
+
+- *(assets)* Add sweetrpg error SVG images
+- *(errors)* Add themed error icons to error pages
+- *(css)* Add .icon-btn-danger for destructive icon-button actions
+
+### 🐛 Bug Fixes
+
+- *(tests)* Match STATUS_COPY's 3-tuple shape and the actual error-page icon asset
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Merge master into develop after v0.11.0
+- *(static)* Remove build-info.json file
 ## [0.11.0] - 2026-08-21
 
 ### 🚀 Features
