@@ -1,3 +1,13 @@
+## [0.13.2] - 2026-08-21
+
+### 🐛 Bug Fixes
+
+- Move CSS from catalog into here
+- *(ci)* Potential fix for code scanning alert no. 1: Workflow does not contain permissions
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Merge master into develop after v0.13.1
 ## [0.13.1] - 2026-08-21
 
 ### 🐛 Bug Fixes
