@@ -52,5 +52,5 @@ def test_renders_shared_branding_assets(app, client):
 
     body = response.get_data(as_text=True)
     # shared_url = app.config["SHARED_URL"]
-    assert f"/static/css/main.css" in body
+    assert "/static/css/main.css" in body
     assert f"/static/img/sweetrpg-error-3-black.svg" in body
