@@ -16,7 +16,7 @@ def test_supported_status_code_renders(client, status_code):
     response = client.get(f"/errors/{status_code}")
 
     assert response.status_code == status_code
-    heading, description = STATUS_COPY[status_code]
+    heading, description, _icon = STATUS_COPY[status_code]
     body = response.get_data(as_text=True)
     assert heading in body
     assert str(escape(description)) in body
@@ -53,4 +53,4 @@ def test_renders_shared_branding_assets(app, client):
     body = response.get_data(as_text=True)
     # shared_url = app.config["SHARED_URL"]
     assert f"/static/css/main.css" in body
-    assert f"/static/img/sweetrpg-logo-black.svg" in body
+    assert f"/static/img/sweetrpg-error-3-black.svg" in body
