@@ -1,3 +1,12 @@
+## [0.13.1] - 2026-08-21
+
+### 🐛 Bug Fixes
+
+- *(css)* Recolor destructive icon-btn icons with the danger palette, brighten background
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Merge master into develop after v0.13.0
 ## [0.13.0] - 2026-08-21
 
 ### 🚀 Features
