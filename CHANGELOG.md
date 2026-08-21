@@ -1,3 +1,17 @@
+## [0.13.0] - 2026-08-21
+
+### 🚀 Features
+
+- *(static)* Add cover placeholder images for catalog-web
+- *(css)* Add pagination footer styles for browse pages
+
+### 🐛 Bug Fixes
+
+- *(tests)* Update error-page tests for the 3-tuple STATUS_COPY
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Merge master into develop after v0.12.0
 ## [0.12.0] - 2026-08-21
 
 ### 🚀 Features

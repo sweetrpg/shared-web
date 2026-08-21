@@ -410,10 +410,9 @@ textarea.input { min-height: 90px; resize: vertical; }
 	overflow: hidden;
 }
 /*
- * A cover image, when a volume has one stored (assets-web's /asset/<kind>/<id> route).
- * Absolutely positioned so it stacks above the (statically positioned) "Cover pending"
- * fallback text without needing z-index - consuming templates' inline
- * `onerror="this.style.display='none'"` reveals the fallback on a 404 (no cover on file).
+ * A cover image - live if the volume has one stored (assets-web's /asset/<kind>/<id> route),
+ * otherwise a placeholder (img/catalog/cover-placeholder-*.png) swapped in by consuming
+ * templates' inline `onerror` handler on a 404 (no cover on file).
  */
 .card-cover-img {
 	position: absolute;
@@ -422,7 +421,6 @@ textarea.input { min-height: 90px; resize: vertical; }
 	height: 100%;
 	object-fit: cover;
 }
-.card-cover-fallback { position: relative; }
 .card-body { padding: 14px 16px 18px; }
 .card-title { font-size: 17px; font-weight: 600; }
 .card-meta { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
@@ -637,3 +635,39 @@ textarea.input { min-height: 90px; resize: vertical; }
 }
 .dialog-body { font-size: 14px; opacity: 0.85; }
 .dialog-actions { display: flex; justify-content: flex-end; gap: var(--space-2); margin-top: var(--space-2); }
+
+/* Browse-page pagination footer (persons/publishers/studios/licenses/volumes) - Prev/Next plus a
+ * small window of page-number links, all pre-built server-side (see catalog-web's
+ * EntityBrowsePagination.swift) so this is pure rendering, no client-side page math. */
+.pagination {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 6px;
+	margin-top: 32px;
+	flex-wrap: wrap;
+}
+.pagination-link, .pagination-page {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 2rem;
+	height: 2rem;
+	padding: 0 10px;
+	border-radius: 10px;
+	font-size: 14px;
+	text-decoration: none;
+	color: var(--color-text);
+}
+.pagination-page:hover, .pagination-link:hover {
+	background: var(--color-neutral-300);
+}
+.pagination-link-disabled {
+	opacity: 0.35;
+	pointer-events: none;
+}
+.pagination-page-current {
+	background: var(--color-accent);
+	color: var(--color-on-accent, #fff);
+	font-weight: var(--font-heading-weight);
+}
