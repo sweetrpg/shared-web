@@ -1,3 +1,19 @@
+## [0.11.0] - 2026-08-21
+
+### 🚀 Features
+
+- *(catalog)* Use capsule button shape app-wide, not just volume edit
+
+### 🐛 Bug Fixes
+
+- *(css)* Add missing .page-header-toolbar layout rule
+- *(catalog)* Use a round rect for buttons, not a full capsule
+- *(catalog)* Remove the top nav's divider line
+- *(tracing)* Use bare "shared-web" for the OTel service.name
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Merge master into develop after v0.10.0
 ## [0.10.0] - 2026-08-20
 
 ### 🚀 Features
