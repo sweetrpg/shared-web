@@ -3,7 +3,9 @@
 # Licensed under the MIT License. See https://go.microsoft.com/fwlink/?linkid=2090316 for license information.
 #-------------------------------------------------------------------------------------------------------------
 
-FROM python:3.13
+FROM python:3.14
+
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /usr/local/bin/
 
 # Avoid warnings by switching to noninteractive
 ENV DEBIAN_FRONTEND=noninteractive
@@ -12,22 +14,20 @@ ENV PYTHONUNBUFFERED 1
 
 # This Dockerfile adds a non-root 'vscode' user with sudo access. However, for Linux,
 # this user's GID/UID must match your local user UID/GID to avoid permission issues
-# with bind mounts. Update USER_UID / USER_GID if yours is not 1000. See
+# with bind mounts. Update USER_UID/USER_GID if yours is not 1000. See
 # https://aka.ms/vscode-remote/containers/non-root-user for details.
 ARG USERNAME=sweetrpg
 ARG USER_UID=1001
 ARG USER_GID=$USER_UID
-ARG REQUIREMENTS=requirements/deploy.txt
 ARG BUILD_NUMBER=unset
 ARG BUILD_JOB=unset
 ARG BUILD_SHA=unset
 ARG BUILD_DATE=unset
 ARG BUILD_VERSION=unset
 
-# Uncomment the following COPY line and the corresponding lines in the `RUN` command if you wish to
-# include your requirements in the image itself. It is suggested that you only do this if your
-# requirements rarely (if ever) change.
-COPY $REQUIREMENTS /tmp/pip-tmp/requirements.txt
+# Export the frozen lockfile to a plain requirements.txt for the pip-style system install
+# below (the git-pinned dependency resolves to a locked commit hash).
+COPY pyproject.toml uv.lock /tmp/uv-project/
 
 # Configure apt and install packages
 RUN apt-get update \
@@ -42,9 +42,10 @@ RUN apt-get update \
     # Other stuff
     # && apt-get install -y postgresql-client \
     #
-    # Update Python environment based on requirements.txt
-    && pip --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/requirements.txt \
-    && rm -rf /tmp/pip-tmp \
+    # Update Python environment based on uv.lock
+    && uv export --project /tmp/uv-project --frozen --no-hashes --no-emit-project -o /tmp/uv-project/requirements.txt \
+    && pip --disable-pip-version-check --no-cache-dir install -r /tmp/uv-project/requirements.txt \
+    && rm -rf /tmp/uv-project \
     #
     # Create a non-root user to use if preferred - see https://aka.ms/vscode-remote/containers/non-root-user.
     && groupadd --gid $USER_GID $USERNAME \
