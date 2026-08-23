@@ -4,6 +4,7 @@ __author__ = "Paul Schifferer <dm@sweetrpg.com>"
 """
 
 from functools import wraps
+from urllib.parse import urlencode
 from flask import redirect, session, render_template, request
 from sweetrpg_shared_web.application import constants
 import jinja2
@@ -36,7 +37,19 @@ def _check_maintenance():
         return None
 
     mode = modes[0]
-    return render_template("maintenance.html", mode=mode), 503
+    # Redirect (not render in-place): maintenance is a deliberate state, not a 503 error.
+    # The target is a fixed first-party shared-web URL built here - never user input -
+    # and the record's content rides along as query parameters so the shared page
+    # renders without re-querying admin-api. `/maintenance` itself lives on the app-level
+    # maintenance blueprint, outside this blueprint, so it can't redirect to itself.
+    params = {k: v for k, v in {
+        "service": "shared-web",
+        "label": mode.label,
+        "description": mode.description,
+        "starts_at": mode.starts_at,
+        "ends_at": mode.ends_at,
+    }.items() if v}
+    return redirect(f"{current_app.config['SHARED_URL']}/maintenance?{urlencode(params)}", 302)
 
 
 @blueprint.before_request
