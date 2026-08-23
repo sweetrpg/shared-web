@@ -53,7 +53,7 @@
         <h6 class="error-meta">
             {% if service %}{{ service }}{% endif %}
             {% if service and request_id %} &middot; {% endif %}
-            {% if request_id %}Request ID: {{ request_id }}{% endif %}
+            {% if request_id %}{{ request_id_label }} {{ request_id }}{% endif %}
         </h6>
         {% endif %}
     </div>
