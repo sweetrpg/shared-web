@@ -30,9 +30,14 @@ Git-flow (see `docs/git-flow.md` in `sweetrpg/platform`): `develop` is the integ
 
 ## Running Checks Locally
 
+This project uses [uv](https://docs.astral.sh/uv/) for dependency management and task running
+(`pyproject.toml` + committed `uv.lock`); `uv` is the required Python tool on this platform -
+do not use `pip`/`tox` directly.
+
 ```bash
-pip install -r requirements/tests.txt -e .
-python -m pytest tests
+uv sync --group test   # create .venv and install deps
+uv run pytest          # run tests
+uv lock --upgrade      # update dependencies
 ```
 
 Requires a local Redis (`redis-server` on `localhost:6379`, no auth needed) - used for caching
