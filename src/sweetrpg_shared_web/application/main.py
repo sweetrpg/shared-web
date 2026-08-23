@@ -67,6 +67,11 @@ def create_app(app_name=constants.APPLICATION_NAME):
     app.config.from_object("sweetrpg_shared_web.application.config.BaseConfig")
     # env = DotEnv(app)
 
+    app.logger.info("Setting up localization...")
+    from sweetrpg_shared_web.application.i18n import init_app as setup_i18n
+
+    setup_i18n(app)
+
     app.logger.info("Setting up cache...")
     cache.init_app(app)
 

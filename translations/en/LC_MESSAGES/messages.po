@@ -1,0 +1,86 @@
+# Locale resources for shared-web. English is the default/fallback locale; add
+# new locales as `translations/<code>/LC_MESSAGES/messages.po`.
+msgid ""
+msgstr ""
+"Project-Id-Version: sweetrpg-shared-web\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Under Maintenance"
+msgstr "Under Maintenance"
+
+msgid "Started:"
+msgstr "Started:"
+
+msgid "Expected back:"
+msgstr "Expected back:"
+
+msgid "Request ID:"
+msgstr "Request ID:"
+
+msgid "errors.400.heading"
+msgstr "A Garbled Missive"
+
+msgid "errors.400.description"
+msgstr "Thy scroll bears words even our sages cannot parse."
+
+msgid "errors.401.heading"
+msgstr "Halt, Traveler"
+
+msgid "errors.401.description"
+msgstr "Thou must prove thy identity before passing this gate."
+
+msgid "errors.403.heading"
+msgstr "The Gate Is Sealed"
+
+msgid "errors.403.description"
+msgstr "Thy credentials do not grant passage beyond this ward."
+
+msgid "errors.404.heading"
+msgstr "Lost in the Mists"
+
+msgid "errors.404.description"
+msgstr ""
+"No such chamber exists within these halls - the path thou seek has vanished."
+
+msgid "errors.409.heading"
+msgstr "Two Hands, One Scroll"
+
+msgid "errors.409.description"
+msgstr ""
+"Another has already altered this record - thy changes clash with theirs."
+
+msgid "errors.413.heading"
+msgstr "Thy Scroll Overflows"
+
+msgid "errors.413.description"
+msgstr "The missive thou hast sent is too vast for our couriers to bear."
+
+msgid "errors.500.heading"
+msgstr "A Curse Upon the Keep"
+
+msgid "errors.500.description"
+msgstr "Something has gone dreadfully wrong within our walls."
+
+msgid "errors.502.heading"
+msgstr "The Messenger Was Waylaid"
+
+msgid "errors.502.description"
+msgstr "The realm beyond could not be reached."
+
+msgid "errors.503.heading"
+msgstr "The Keep Is Under Siege"
+
+msgid "errors.503.description"
+msgstr "Our halls are overwhelmed and cannot receive thee just now."
+
+msgid "errors.504.heading"
+msgstr "The Herald Never Returned"
+
+msgid "errors.504.description"
+msgstr "We awaited word from afar, but none arrived in time."
+
+msgid "errors.default.heading"
+msgstr "By the Gods, Something Went Awry"
+
+msgid "errors.default.description"
+msgstr "An unforeseen mishap has befallen this realm."
