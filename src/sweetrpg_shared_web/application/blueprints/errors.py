@@ -6,6 +6,9 @@ frontend's Traefik `errors` middleware rather than per-frontend code.
 """
 
 from flask import Blueprint, current_app, render_template, request
+from flask_babel import force_locale, gettext as _
+
+from sweetrpg_shared_web.application.i18n import SUPPORTED_LOCALES
 
 
 # Registered directly on the app (not nested under the `web` blueprint), so it never runs
@@ -13,33 +16,51 @@ from flask import Blueprint, current_app, render_template, request
 # render from static content only, never depend on admin-api or any other external call.
 blueprint = Blueprint("errors", __name__)
 
-STATUS_COPY = {
-    400: ("A Garbled Missive", "Thy scroll bears words even our sages cannot parse.", 2),
-    401: ("Halt, Traveler", "Thou must prove thy identity before passing this gate.", 1),
-    403: ("The Gate Is Sealed", "Thy credentials do not grant passage beyond this ward.", 1),
-    404: ("Lost in the Mists", "No such chamber exists within these halls - the path thou seek has vanished.", 3),
-    409: ("Two Hands, One Scroll", "Another has already altered this record - thy changes clash with theirs.", 1),
-    413: ("Thy Scroll Overflows", "The missive thou hast sent is too vast for our couriers to bear.", 2),
-    500: ("A Curse Upon the Keep", "Something has gone dreadfully wrong within our walls.", 1),
-    502: ("The Messenger Was Waylaid", "The realm beyond could not be reached.", 2),
-    503: ("The Keep Is Under Siege", "Our halls are overwhelmed and cannot receive thee just now.", 1),
-    504: ("The Herald Never Returned", "We awaited word from afar, but none arrived in time.", 3),
+# Per-status locale keys (`errors.<code>.heading` / `errors.<code>.description` in
+# translations/<locale>/LC_MESSAGES/messages.po) and the error-icon variant to render.
+STATUS_KEYS = {
+    400: 2,
+    401: 1,
+    403: 1,
+    404: 3,
+    409: 1,
+    413: 2,
+    500: 1,
+    502: 2,
+    503: 1,
+    504: 3,
 }
 
-DEFAULT_COPY = ("By the Gods, Something Went Awry", "An unforeseen mishap has befallen this realm.", 0)
+DEFAULT_ICON = 0
 
 
 @blueprint.route("/errors/<int:status_code>")
 def error_page(status_code):
-    heading, description, icon = STATUS_COPY.get(status_code, DEFAULT_COPY)
-    context = {
-        "status_code": status_code,
-        "icon": icon,
-        "heading": heading,
-        "description": description,
-        "service": request.args.get("service"),
-        "request_id": request.args.get("request_id"),
-        "shared_url": current_app.config.get("SHARED_URL"),
-        "assets_url": current_app.config.get("ASSETS_URL"),
-    }
-    return render_template("error.html", **context), status_code
+    # Unmapped status codes fall back to the generic copy rather than rendering a raw
+    # locale key - gettext returns the key itself for a missing translation.
+    key = status_code if status_code in STATUS_KEYS else "default"
+    icon = STATUS_KEYS.get(status_code, DEFAULT_ICON)
+    # Traefik proxies these requests server-to-server, so there's no browser cookie for the
+    # visitor's locale - the proxying frontend passes it explicitly as a query parameter
+    # (see the `shared-error-pages` spec delta). Falls back to the normal resolution order.
+
+    def render():
+        context = {
+            "status_code": status_code,
+            "icon": icon,
+            "heading": _(f"errors.{key}.heading"),
+            "description": _(f"errors.{key}.description"),
+            "service": request.args.get("service"),
+            "request_id": request.args.get("request_id"),
+            "request_id_label": _("Request ID:"),
+            "shared_url": current_app.config.get("SHARED_URL"),
+        }
+        return render_template("error.html", **context), status_code
+
+    locale = request.args.get("locale")
+    if locale in SUPPORTED_LOCALES:
+        # Only force a supported locale - babel raises UnknownLocaleError on an
+        # unrecognized code, and an attacker-supplied query param must not 500 the page.
+        with force_locale(locale):
+            return render()
+    return render()

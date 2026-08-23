@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>{{ mode.label or "Under Maintenance" }}</title>
+    <title>{{ mode.label or _('Under Maintenance') }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body {
@@ -27,15 +27,15 @@
 </head>
 <body>
     <div class="card">
-        <h1>{{ mode.label or "Under Maintenance" }}</h1>
+        <h1>{{ mode.label or _('Under Maintenance') }}</h1>
         {% if mode.description %}
         <p>{{ mode.description }}</p>
         {% endif %}
         {% if mode.starts_at or mode.ends_at %}
         <p class="window">
-            {% if mode.starts_at %}Started: {{ mode.starts_at }}{% endif %}
+            {% if mode.starts_at %}{{ _('Started:') }} {{ mode.starts_at }}{% endif %}
             {% if mode.starts_at and mode.ends_at %} - {% endif %}
-            {% if mode.ends_at %}Expected back: {{ mode.ends_at }}{% endif %}
+            {% if mode.ends_at %}{{ _('Expected back:') }} {{ mode.ends_at }}{% endif %}
         </p>
         {% endif %}
     </div>
