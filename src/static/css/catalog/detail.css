@@ -33,3 +33,13 @@
 .detail-description :last-child {
     margin-bottom: 0;
 }
+/* Volume detail page's system/publisher/studio/license sections sit side by side (wrapping
+ * when they don't fit) instead of stacking - each is a short label-plus-chips group. */
+.detail-associations {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin: 24px 0;
+}
+.detail-associations .detail-block { margin: 0; }
