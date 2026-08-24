@@ -33,3 +33,47 @@
 .detail-description :last-child {
     margin-bottom: 0;
 }
+
+/* Volume detail page's tabbed area below the cover/description header: a centered strip of
+	 tab buttons plus one panel per tab, with only the .active panel shown. Scoped under
+	 .volume-tabs so a future platform-wide pattern can graduate to main.css without collision. */
+.volume-tabs {
+    width: 100%;
+    margin-top: 32px;
+}
+.volume-tabs .tab-strip {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+    border-bottom: 1px solid var(--color-divider);
+    margin-bottom: 20px;
+}
+.volume-tabs .tab-btn {
+    appearance: none;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 8px 16px;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    color: color-mix(in srgb, var(--color-text) 65%, transparent);
+    cursor: pointer;
+}
+.volume-tabs .tab-btn:hover {
+    color: var(--color-accent);
+}
+.volume-tabs .tab-btn:focus-visible {
+    outline-offset: -2px;
+}
+.volume-tabs .tab-btn.active {
+    color: var(--color-accent);
+    border-bottom-color: var(--color-accent);
+    font-weight: 600;
+}
+.volume-tabs .tab-panel {
+    display: none;
+}
+.volume-tabs .tab-panel.active {
+    display: block;
+}
