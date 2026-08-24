@@ -34,6 +34,17 @@
     margin-bottom: 0;
 }
 
+/* Volume detail page's system/publisher/studio/license sections sit side by side (wrapping
+ * when they don't fit) instead of stacking - each is a short label-plus-chips group. */
+.detail-associations {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin: 24px 0;
+}
+.detail-associations .detail-block { margin: 0; }
+
 /* Volume detail page's tabbed area below the cover/description header: a centered strip of
 	 tab buttons plus one panel per tab, with only the .active panel shown. Scoped under
 	 .volume-tabs so a future platform-wide pattern can graduate to main.css without collision. */
