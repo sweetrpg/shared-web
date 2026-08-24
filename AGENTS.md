@@ -19,6 +19,22 @@ Depends on `sweetrpg/admin-api-client.py` (the maintenance-mode/banner client) a
 `sweetrpg/web-core` (`sweetrpg-web-core`, shared Flask helpers used across the platform's Python
 frontends).
 
+## Localization
+
+User-facing strings come from `translations/<code>/LC_MESSAGES/messages.po` via Flask-Babel,
+never hardcoded in templates (`{{ _('...') }}` in Jinja, `_('...')` in view code). English is
+the default/fallback locale; add a new locale by creating a new catalog under
+`translations/<code>/` (compile with `pybabel compile`) and adding its code to
+`SUPPORTED_LOCALES` in `src/sweetrpg_shared_web/application/i18n.py`. Locale resolution per
+request: `locale` query parameter (error pages - they're rendered server-to-server via
+Traefik's errors middleware, so there's no browser cookie), then `locale` cookie override,
+then `Accept-Language`, then English. Error-page copy is keyed per status code
+(`errors.<code>.heading`/`.description`, with `errors.default.*` for unmapped codes) - see the
+`web-frontend-localization` and `shared-error-pages` specs in `sweetrpg/platform`'s
+`openspec/changes/full-localization-web-apps`. CI runs `scripts/check-template-strings.sh`
+(`locale-lint` job), which fails on literal text between HTML tags that isn't a whitelisted
+brand string or wrapped in a gettext call.
+
 ## Committing Code
 
 [Conventional Commits](https://www.conventionalcommits.org/): `<type>(<scope>): <description>`.
@@ -30,9 +46,14 @@ Git-flow (see `docs/git-flow.md` in `sweetrpg/platform`): `develop` is the integ
 
 ## Running Checks Locally
 
+This project uses [uv](https://docs.astral.sh/uv/) for dependency management and task running
+(`pyproject.toml` + committed `uv.lock`); `uv` is the required Python tool on this platform -
+do not use `pip`/`tox` directly.
+
 ```bash
-pip install -r requirements/tests.txt -e .
-python -m pytest tests
+uv sync --group test   # create .venv and install deps
+uv run pytest          # run tests
+uv lock --upgrade      # update dependencies
 ```
 
 Requires a local Redis (`redis-server` on `localhost:6379`, no auth needed) - used for caching

@@ -1,3 +1,25 @@
+## [0.14.0] - 2026-08-24
+
+### 🚀 Features
+
+- *(css)* Add .form-hint helper style (sweetrpg/admin-web#22)
+- *(i18n)* Extract user-facing strings into Flask-Babel catalogs
+- *(maintenance)* Redirect to shared maintenance page instead of rendering 503 in-place
+
+### 🐛 Bug Fixes
+
+- *(ci)* Generate coverage data for the report steps
+- *(css)* Horizontal layout for volume detail association blocks
+
+### 💼 Other
+
+- *(deps)* Migrate to uv for dependency management and task running
+- Resolve conflicts with develop (i18n); port flask-babel dep to pyproject
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Merge master into develop after v0.13.2
+- Clean up a bunch of old static files
 ## [0.13.2] - 2026-08-21
 
 ### 🐛 Bug Fixes
