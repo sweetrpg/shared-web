@@ -22,5 +22,5 @@ jobs:
       # This repo manages dependencies with uv (pyproject.toml + uv.lock) - the reusable
       # workflow's pip-requirements defaults don't apply (there is no requirements/tests.txt).
       install-command: uv sync --group test
-      test-command: uv run pytest
+      test-command: uv run pytest tests
     secrets: inherit
