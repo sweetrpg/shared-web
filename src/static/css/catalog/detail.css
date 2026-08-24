@@ -88,3 +88,14 @@
 .volume-tabs .tab-panel.active {
     display: block;
 }
+
+/* Credits are short "person - role" lines; flowing them into as many columns as fit keeps a
+	 long credit roll from becoming one tall strip inside the tab. */
+.volume-tabs .credit-columns {
+    columns: 220px auto;
+    column-gap: 40px;
+}
+.volume-tabs .credit-columns p {
+    margin: 0 0 8px;
+    break-inside: avoid;
+}
