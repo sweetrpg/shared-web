@@ -41,7 +41,7 @@ dependencies = [
     "python-json-logger~=4.1",
     "python-logstash-async~=2.5",
     "PyYAML~=6.0",
-    "redis~=5.0",
+    "redis>=5,<9",
     "requests~=2.0",
     "sentry-sdk[flask]~=2.0",
     "sweetrpg-web-core",
