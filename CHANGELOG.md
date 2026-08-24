@@ -1,3 +1,12 @@
+## [0.15.0] - 2026-08-24
+
+### 🚀 Features
+
+- *(css)* Add volume tab strip and panel styles for catalog detail page
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Merge master into develop after v0.14.1
 ## [0.14.1] - 2026-08-24
 
 ### 🐛 Bug Fixes
