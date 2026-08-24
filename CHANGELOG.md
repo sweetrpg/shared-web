@@ -1,3 +1,14 @@
+## [0.14.1] - 2026-08-24
+
+### 🐛 Bug Fixes
+
+- *(ci)* Use uv install/test commands in the release workflow
+- *(ci)* Scope release test command to the tests directory
+- *(deps)* Restore uwsgi runtime dependency lost in the uv migration
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Merge master into develop after v0.14.0
 ## [0.14.0] - 2026-08-24
 
 ### 🚀 Features
