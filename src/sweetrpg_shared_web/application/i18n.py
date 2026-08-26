@@ -9,8 +9,17 @@ an explicit `locale` query parameter - they're rendered server-to-server via
 Traefik's errors middleware, so there's no browser session to carry a cookie.
 """
 
+from pathlib import Path
+
 from flask import request
 from flask_babel import Babel
+
+# Flask-Babel's default translation directory is `<app.root_path>/translations`, and
+# app.root_path is unreliable here (see main.py's TEMPLATE_DIR comment - Flask is constructed
+# with a plain app_name string, not this module's __name__, so it can't infer root_path and
+# falls back to the process's cwd). Resolve the same way TEMPLATE_DIR does: relative to this
+# file, independent of cwd.
+TRANSLATIONS_DIR = str(Path(__file__).resolve().parent.parent.parent / "translations")
 
 DEFAULT_LOCALE = "en"
 LOCALE_COOKIE_NAME = "locale"
@@ -39,4 +48,5 @@ babel = Babel(locale_selector=_resolve_locale)
 
 
 def init_app(app):
+    app.config.setdefault("BABEL_TRANSLATION_DIRECTORIES", TRANSLATIONS_DIR)
     babel.init_app(app)

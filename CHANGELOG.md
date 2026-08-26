@@ -1,3 +1,22 @@
+## [0.16.0] - 2026-08-26
+
+### 🚀 Features
+
+- Add favicon icons for game-room and game-systems
+- *(css)* Flow volume credits into multiple columns
+
+### 🐛 Bug Fixes
+
+- *(catalog)* Inherit font-family on volume detail tab buttons
+- Name for cache instance
+- *(i18n)* Ship translations/ inside src/ so the Docker image includes it
+- *(catalog)* Match volume detail tab font to section headers
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Merge master into develop after v0.15.0
+- Update Trove classifier dev status
+- Add annotations for flagd
 ## [0.15.0] - 2026-08-24
 
 ### 🚀 Features
