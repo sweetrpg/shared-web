@@ -9,8 +9,5 @@ data:
     FLASK_PORT: "8081"
     FLASK_APP: sweetrpg_shared_web.application.main:create_app
     FLASK_ENV: production
-    NEW_RELIC_CONFIG_FILE: /config/newrelic.ini
-    # Matches shared/cache's Valkey Service (fullnameOverride: redis), deployed into this same
-    # namespace (sweetrpg-shared) - see support/infrastructure's shared/cache module.
-    REDIS_HOST: redis
+    REDIS_HOST: cache
     REDIS_PORT: "6379"
