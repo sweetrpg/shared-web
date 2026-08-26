@@ -21,10 +21,13 @@ frontends).
 
 ## Localization
 
-User-facing strings come from `translations/<code>/LC_MESSAGES/messages.po` via Flask-Babel,
-never hardcoded in templates (`{{ _('...') }}` in Jinja, `_('...')` in view code). English is
-the default/fallback locale; add a new locale by creating a new catalog under
-`translations/<code>/` (compile with `pybabel compile`) and adding its code to
+User-facing strings come from `src/translations/<code>/LC_MESSAGES/messages.po` via Flask-Babel,
+never hardcoded in templates (`{{ _('...') }}` in Jinja, `_('...')` in view code). Lives under
+`src/` (not the repo root) so the Dockerfile's `COPY src /app` actually ships it - the app's
+`root_path` can't be trusted to find a repo-root `translations/` directory (see
+`i18n.py`'s `TRANSLATIONS_DIR`, resolved from `__file__` the same way `main.py`'s `TEMPLATE_DIR`
+is). English is the default/fallback locale; add a new locale by creating a new catalog under
+`src/translations/<code>/` (compile with `pybabel compile`) and adding its code to
 `SUPPORTED_LOCALES` in `src/sweetrpg_shared_web/application/i18n.py`. Locale resolution per
 request: `locale` query parameter (error pages - they're rendered server-to-server via
 Traefik's errors middleware, so there's no browser cookie), then `locale` cookie override,
