@@ -466,6 +466,7 @@ textarea.input { min-height: 90px; resize: vertical; }
 
 .empty-state { opacity: 0.6; padding: 20px 0; }
 .empty-state-inline { opacity: 0.55; font-style: italic; font-size: 14px; }
+.table-empty { text-align: center; border-bottom: none; }
 
 /* Data tables (admin-web's banners/users/maintenance-modes lists). */
 .table { width: 100%; border-collapse: collapse; font-size: 14px; }
