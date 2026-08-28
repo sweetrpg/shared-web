@@ -36,9 +36,7 @@
 
 /*
  * A Gravatar image, when the visitor's session has an email. Absolutely positioned so it
- * stacks above the (statically positioned) fallback letter below without needing z-index;
- * each consuming frontend's inline `onerror="this.style.display='none'"` reveals the fallback
- * on a 404 (no registered Gravatar) rather than showing Gravatar's generic mystery-person icon.
+ * stacks above the (statically positioned) fallback letter below without needing z-index.
  */
 .avatar-menu-avatar {
 	position: absolute;
@@ -50,6 +48,15 @@
 
 .avatar-menu-fallback {
 	position: relative;
+}
+
+/*
+ * Hidden by default whenever a Gravatar img is also present, so the two never render at once -
+ * each consuming frontend's inline `onerror` on the img reveals this on a 404 (no registered
+ * Gravatar) rather than showing Gravatar's generic mystery-person icon.
+ */
+.avatar-menu-avatar + .avatar-menu-fallback {
+	display: none;
 }
 
 .avatar-menu-panel {
