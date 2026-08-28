@@ -1,3 +1,12 @@
+## [0.16.1] - 2026-08-28
+
+### 🐛 Bug Fixes
+
+- *(styles)* Add table-empty modifier to center empty-state rows in data tables
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Merge master into develop after v0.16.0
 ## [0.16.0] - 2026-08-26
 
 ### 🚀 Features
