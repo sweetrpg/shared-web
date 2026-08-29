@@ -1,3 +1,14 @@
+## [0.16.2] - 2026-08-29
+
+### 🐛 Bug Fixes
+
+- *(avatar-menu)* Hide fallback initial by default when a gravatar image is present
+- *(dialog)* Honor the hidden attribute on .dialog-backdrop
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Merge master into develop after v0.16.1
+- Update to standard labels
 ## [0.16.1] - 2026-08-28
 
 ### 🐛 Bug Fixes
