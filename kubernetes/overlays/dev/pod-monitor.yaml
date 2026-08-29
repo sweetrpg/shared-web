@@ -15,7 +15,7 @@ spec:
         - port: http
     selector:
         matchLabels:
-            app: web
-            platform: sweetrpg
-            package: shared
-            component: web
+            app.kubernetes.io/name: shared-web
+            app.kubernetes.io/version: v1
+            app.kubernetes.io/component: web
+            app.kubernetes.io/part-of: shared

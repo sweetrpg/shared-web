@@ -10,11 +10,10 @@ metadata:
 
 spec:
     selector:
-        platform: sweetrpg
-        app: web
-        component: web
-        package: shared
-        version: v1
+        app.kubernetes.io/name: shared-web
+        app.kubernetes.io/version: v1
+        app.kubernetes.io/component: web
+        app.kubernetes.io/part-of: shared
     type: ClusterIP
     ports:
         - name: http
