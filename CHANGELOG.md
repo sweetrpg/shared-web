@@ -1,3 +1,12 @@
+## [0.17.0] - 2026-09-01
+
+### 🚀 Features
+
+- *(css)* Rich hover/focus tooltip component
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Merge master into develop after v0.16.2
 ## [0.16.2] - 2026-08-29
 
 ### 🐛 Bug Fixes
