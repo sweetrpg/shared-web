@@ -18,13 +18,6 @@
 	color: var(--color-accent);
 }
 
-/* catalog-web's own button shape - a round rect, not the shared design system's sharp
- * --radius-md corners. Not a full capsule (999px): tags/chips (.chip, .tag) already own
- * that fully-pill shape, so buttons need their own distinct, still-rounded corner. */
-.btn {
-	border-radius: 10px;
-}
-
 /* catalog-web doesn't use the shared design system's divider line under the top nav. */
 .nav {
 	border-bottom: none;
