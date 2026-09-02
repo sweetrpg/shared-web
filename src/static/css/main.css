@@ -694,15 +694,21 @@ textarea.input { min-height: 90px; resize: vertical; }
 	font-weight: var(--font-heading-weight);
 }
 
-/* Rich hover/focus tooltip - pure CSS, no JS. Put `.tooltip-host` on the trigger (make it
- * focusable: add tabindex="0" if it isn't already a button/link) and nest a `.tooltip` inside
- * it holding a `.tooltip-title` and an optional `.tooltip-body`, or any block content. It
- * shows above the trigger on hover or keyboard focus (including focus landing on a nested
- * control, e.g. a radio inside a label).
+/* Rich hover/focus tooltip - pure CSS, no JS. Put `.tooltip-host` on the trigger itself (make
+ * it focusable: add tabindex="0" if it isn't already a button/link) and nest a `.tooltip`
+ * inside it holding a `.tooltip-title` and an optional `.tooltip-body` (omit the body when a
+ * one-word title is the whole story), or any block content. It shows above the trigger on
+ * hover or keyboard focus, including focus landing on a nested control (e.g. a radio inside a
+ * label). Adding a tooltip never removes the trigger's `aria-label`.
+ *
+ * Copy: name the thing in `.tooltip-title`, one plain sentence in `.tooltip-body`.
  *
  * Limitation: the panel is positioned relative to `.tooltip-host`, so a host inside an
  * `overflow: hidden`/`auto` ancestor is clipped. Those call sites need a JS-positioned
  * tooltip instead - out of scope for this CSS-only component.
+ *
+ * When to use this vs a bare `title` attribute: see `docs/visual-design-conventions.md` in
+ * sweetrpg/platform ("Rich tooltips over bare title attributes").
  */
 .tooltip-host { position: relative; }
 .tooltip {
