@@ -452,6 +452,8 @@ textarea.input { min-height: 90px; resize: vertical; }
 [data-theme="dark"] .tag-critical { background: color-mix(in srgb, #7a2e2e 45%, transparent); border-color: #7a2e2e; color: #f5a3a3; }
 .tag-status-expired { background: color-mix(in srgb, #f0c669 25%, transparent); border: 1px solid #f0c669; color: #7a5a00; }
 [data-theme="dark"] .tag-status-expired { background: color-mix(in srgb, #7a5a00 45%, transparent); border-color: #7a5a00; color: #f0c669; }
+.tag-success { background: color-mix(in srgb, #a3d9a3 25%, transparent); border: 1px solid #a3d9a3; color: #1b5e1b; }
+[data-theme="dark"] .tag-success { background: color-mix(in srgb, #2e7a3a 45%, transparent); border-color: #2e7a3a; color: #a3f0b8; }
 
 /* admin-api banner messages (severity info/warning/critical), rendered by every frontend that
  * shows them - centralized so a severity's color only has one definition to keep in sync with
