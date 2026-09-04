@@ -1,3 +1,17 @@
+## [0.17.1] - 2026-09-04
+
+### 🐛 Bug Fixes
+
+- *(design)* Round button corners via --radius-control token
+- *(css)* Add tag-success green variant
+
+### 📚 Documentation
+
+- *(css)* Tighten .tooltip comment to match design-system convention (#273)
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Merge master into develop after v0.17.0
 ## [0.17.0] - 2026-09-01
 
 ### 🚀 Features

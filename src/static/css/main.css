@@ -67,6 +67,7 @@
 	--radius-sm: 1px;
 	--radius-md: 2px;
 	--radius-lg: 4px;
+	--radius-control: 8px;
 
 	--shadow-sm: 0 1px 2px color-mix(in srgb, #2d2b2b 14%, transparent);
 	--shadow-md: 0 3px 10px color-mix(in srgb, #2d2b2b 16%, transparent);
@@ -320,7 +321,7 @@ textarea.input { min-height: 90px; resize: vertical; }
 	font-size: 14px; line-height: 1.2; color: var(--color-text);
 	background: transparent; border: 1px solid transparent;
 	padding: var(--space-2) calc(var(--space-3) * 1.2);
-	border-radius: var(--radius-md);
+	border-radius: var(--radius-control);
 }
 .btn svg { display: block; }
 .btn:disabled { opacity: 0.45; cursor: not-allowed; }
@@ -451,6 +452,8 @@ textarea.input { min-height: 90px; resize: vertical; }
 [data-theme="dark"] .tag-critical { background: color-mix(in srgb, #7a2e2e 45%, transparent); border-color: #7a2e2e; color: #f5a3a3; }
 .tag-status-expired { background: color-mix(in srgb, #f0c669 25%, transparent); border: 1px solid #f0c669; color: #7a5a00; }
 [data-theme="dark"] .tag-status-expired { background: color-mix(in srgb, #7a5a00 45%, transparent); border-color: #7a5a00; color: #f0c669; }
+.tag-success { background: color-mix(in srgb, #a3d9a3 25%, transparent); border: 1px solid #a3d9a3; color: #1b5e1b; }
+[data-theme="dark"] .tag-success { background: color-mix(in srgb, #2e7a3a 45%, transparent); border-color: #2e7a3a; color: #a3f0b8; }
 
 /* admin-api banner messages (severity info/warning/critical), rendered by every frontend that
  * shows them - centralized so a severity's color only has one definition to keep in sync with
@@ -693,15 +696,21 @@ textarea.input { min-height: 90px; resize: vertical; }
 	font-weight: var(--font-heading-weight);
 }
 
-/* Rich hover/focus tooltip - pure CSS, no JS. Put `.tooltip-host` on the trigger (make it
- * focusable: add tabindex="0" if it isn't already a button/link) and nest a `.tooltip` inside
- * it holding a `.tooltip-title` and an optional `.tooltip-body`, or any block content. It
- * shows above the trigger on hover or keyboard focus (including focus landing on a nested
- * control, e.g. a radio inside a label).
+/* Rich hover/focus tooltip - pure CSS, no JS. Put `.tooltip-host` on the trigger itself (make
+ * it focusable: add tabindex="0" if it isn't already a button/link) and nest a `.tooltip`
+ * inside it holding a `.tooltip-title` and an optional `.tooltip-body` (omit the body when a
+ * one-word title is the whole story), or any block content. It shows above the trigger on
+ * hover or keyboard focus, including focus landing on a nested control (e.g. a radio inside a
+ * label). Adding a tooltip never removes the trigger's `aria-label`.
+ *
+ * Copy: name the thing in `.tooltip-title`, one plain sentence in `.tooltip-body`.
  *
  * Limitation: the panel is positioned relative to `.tooltip-host`, so a host inside an
  * `overflow: hidden`/`auto` ancestor is clipped. Those call sites need a JS-positioned
  * tooltip instead - out of scope for this CSS-only component.
+ *
+ * When to use this vs a bare `title` attribute: see `docs/visual-design-conventions.md` in
+ * sweetrpg/platform ("Rich tooltips over bare title attributes").
  */
 .tooltip-host { position: relative; }
 .tooltip {
