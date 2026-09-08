@@ -42,11 +42,29 @@
 	}
 }
 .metrics-page .metric-card {
+	position: relative;
 	background: var(--color-surface);
 	border: 1px solid var(--color-neutral-300);
 	border-radius: 8px;
 	padding: 14px 16px 16px;
 	min-width: 0;
+	transition: border-color 0.12s ease;
+}
+/*
+ * A whole-card link: an absolutely-positioned overlay anchor so the count/label markup stays
+ * plain text. Cards without a destination render no .metric-card-link and get no hover state.
+ */
+.metrics-page .metric-card-link {
+	position: absolute;
+	inset: 0;
+	border-radius: inherit;
+}
+.metrics-page .metric-card:has(> .metric-card-link):hover {
+	border-color: var(--color-accent);
+}
+.metrics-page .metric-card-link:focus-visible {
+	outline: 2px solid var(--color-accent);
+	outline-offset: 2px;
 }
 .metrics-page .metric-card-label {
 	font-size: 10px;
@@ -59,14 +77,6 @@
 	font-weight: 700;
 	margin-top: 4px;
 	line-height: 1.1;
-}
-.metrics-page .metric-card-sub {
-	margin-top: 6px;
-	font-size: 13px;
-	overflow-wrap: anywhere;
-}
-.metrics-page .metric-card-sub a {
-	color: var(--color-accent);
 }
 .metrics-page .metric-card-note {
 	margin-top: 6px;
