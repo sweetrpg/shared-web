@@ -87,3 +87,23 @@
 	color: var(--color-neutral-600);
 	font-weight: 500;
 }
+
+/*
+ * The 30-day user-history bar chart, full width under the Users row's cards. Chart.js draws
+ * into the <canvas>; this just frames it and pins a height (Chart.js is responsive on width).
+ */
+.metrics-page .metrics-chart {
+	background: var(--color-surface);
+	border: 1px solid var(--color-neutral-300);
+	border-radius: 8px;
+	padding: 16px;
+	margin: 0 0 30px;
+}
+.metrics-page .metrics-chart canvas {
+	width: 100% !important;
+	height: 220px !important;
+}
+.metrics-page .metrics-chart-empty {
+	color: var(--color-neutral-600);
+	font-size: 13px;
+}
