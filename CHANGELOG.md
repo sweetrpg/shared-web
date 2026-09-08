@@ -1,3 +1,16 @@
+## [0.18.0] - 2026-09-08
+
+### 🚀 Features
+
+- *(admin)* Add metrics dashboard card-grid styles
+
+### 🐛 Bug Fixes
+
+- Refresh interval
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Merge master into develop after v0.17.1
 ## [0.17.1] - 2026-09-04
 
 ### 🐛 Bug Fixes
