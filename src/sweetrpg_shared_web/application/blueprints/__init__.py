@@ -162,8 +162,6 @@ def main_page():
     context = {
         'user_info': session.get(constants.SWEETRPG_AUTH_KEY)
     }
-
-    print(f"context: {context}")
     return render_page("index.html", context)
 
 
