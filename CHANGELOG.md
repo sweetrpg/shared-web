@@ -1,3 +1,13 @@
+## [0.19.1] - 2026-09-09
+
+### 🐛 Bug Fixes
+
+- *(web)* Add placeholder landing page at /
+- *(kubernetes)* Label shared-web error pages as shared-web
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Merge master into develop after v0.19.0
 ## [0.19.0] - 2026-09-08
 
 ### 🚀 Features
