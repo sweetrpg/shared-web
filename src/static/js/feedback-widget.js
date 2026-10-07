@@ -284,7 +284,7 @@
       body: body,
       source: config.source,
       website: dialogState.honeypot.value,
-      started_at: new Date(dialogState.openedAt).toISOString(),
+      rendered_at: new Date(dialogState.openedAt).toISOString(),
     };
 
     var email = dialogState.emailInput.value.trim();

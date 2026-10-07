@@ -104,14 +104,14 @@ On submit, the widget `POST`s this JSON body to `data-api-url`:
   "reporter_email": "optional",
   "source": "catalog-web/volumes/123",
   "website": "",
-  "started_at": "2026-10-06T22:00:00.000Z"
+  "rendered_at": "2026-10-06T22:00:00.000Z"
 }
 ```
 
 - `type` is `"bug"` or `"feature"`.
 - `website` is a honeypot field - always empty for a real user; a non-empty value indicates a
   bot that filled every field.
-- `started_at` is when the dialog was opened (ISO 8601) - the backend computes elapsed time
+- `rendered_at` is when the dialog was opened (ISO 8601) - the backend computes elapsed time
   against the request's arrival to reject submissions completed faster than a human plausibly
   could.
 - `title` is capped at 200 characters, `body` at 5000, enforced client-side via `maxlength` and
