@@ -1,3 +1,16 @@
+## [0.20.0] - 2026-10-07
+
+### 🚀 Features
+
+- *(feedback)* Add embeddable feedback-form widget
+
+### 🐛 Bug Fixes
+
+- *(feedback)* Rename timing field to rendered_at to match admin-api contract
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Merge master into develop after v0.19.1
 ## [0.19.1] - 2026-09-09
 
 ### 🐛 Bug Fixes

@@ -105,6 +105,7 @@ def create_app(app_name=constants.APPLICATION_NAME):
     from sweetrpg_shared_web.application.blueprints import blueprint as main_blueprint
     from sweetrpg_shared_web.application.blueprints.errors import blueprint as errors_blueprint
     from sweetrpg_shared_web.application.blueprints.maintenance import blueprint as maintenance_blueprint
+    from sweetrpg_shared_web.application.blueprints.feedback_widget import blueprint as feedback_widget_blueprint
 
     from sweetrpg_web_core.blueprints.health import blueprint as health_blueprint
     main_blueprint.register_blueprint(health_blueprint)
@@ -112,6 +113,7 @@ def create_app(app_name=constants.APPLICATION_NAME):
     app.register_blueprint(main_blueprint)
     app.register_blueprint(errors_blueprint)
     app.register_blueprint(maintenance_blueprint)
+    app.register_blueprint(feedback_widget_blueprint)
 
     # app.wsgi_app = SassMiddleware(app.wsgi_app, {
     #     'application': ('static/sass', 'static/css', '/static/css')

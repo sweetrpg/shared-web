@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{{ _('Feedback widget preview') }} - SweetRPG</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="{{ shared_url }}/static/img/main/favicon.png">
+    <link rel="stylesheet" href="{{ shared_url }}/static/css/main.css">
+    <link rel="stylesheet" href="{{ shared_url }}/static/css/feedback-widget.css">
+    <script>
+    (function () {
+      var stored = null;
+      try { stored = localStorage.getItem('sweetrpg_theme_v1'); } catch (e) {}
+      var theme = stored || 'system';
+      var dark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+    })();
+    </script>
+</head>
+<body>
+    <main style="max-width: 640px; margin: 60px auto; padding: 0 20px;">
+        <h1>{{ _('Feedback widget preview') }}</h1>
+        <p class="text-muted">
+            {{ _('This page embeds the shared feedback widget exactly as documented in shared-web\'s README. Use the floating button in the corner to open it.') }}
+        </p>
+    </main>
+    <script src="{{ shared_url }}/static/js/feedback-widget.js" data-api-url="{{ feedback_api_url }}" defer></script>
+</body>
+</html>
