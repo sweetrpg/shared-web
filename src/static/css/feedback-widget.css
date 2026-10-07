@@ -21,6 +21,12 @@
 	padding: 20px;
 }
 
+/* Same specificity as .feedback-backdrop, so without this rule the [hidden] attribute set by
+ * closeDialog() has no effect and the dialog stays on screen - this is the actual fix. */
+.feedback-backdrop[hidden] {
+	display: none;
+}
+
 .feedback-dialog {
 	background: var(--color-bg);
 	color: var(--color-text);
