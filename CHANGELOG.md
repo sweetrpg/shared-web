@@ -1,3 +1,8 @@
+## [0.20.1] - 2026-10-07
+
+### 🐛 Bug Fixes
+
+- *(feedback-widget)* Fix dialog close and submit/cancel button states
 ## [0.20.0] - 2026-10-07
 
 ### 🚀 Features
