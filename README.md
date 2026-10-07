@@ -59,6 +59,81 @@ active maintenance-mode record exists for the `platform`/`service:shared` scopes
 `admin-api`). This is `shared-web`'s own maintenance display, gating access to `shared-web`
 itself - distinct from the generic error pages above.
 
+## Feedback form widget
+
+A shared "Report a problem / request a feature" widget, embeddable by any `*-web` frontend
+regardless of its own templating stack (Flask, Rust+Askama, etc.) - see
+`openspec/changes/add-anonymous-feedback-reporting` in `sweetrpg/platform`. The widget mounts
+its own markup via plain JS (`static/js/feedback-widget.js` + `static/css/feedback-widget.css`),
+so the host frontend only needs to include two tags:
+
+```html
+<link rel="stylesheet" href="https://shared.dev.sweetrpg.com/static/css/feedback-widget.css">
+<script
+  src="https://shared.dev.sweetrpg.com/static/js/feedback-widget.js"
+  data-api-url="https://api.admin.dev.sweetrpg.com/api/0/feedback"
+  defer
+></script>
+```
+
+With nothing else, the widget injects a floating "Report a problem / request a feature" button
+in the bottom-right corner that opens the form in a modal. Live preview: `GET
+/widgets/feedback-preview` on this service (also the page these docs are verified against).
+
+### Config (script tag `data-*` attributes)
+
+| Attribute | Required | Description |
+| --- | --- | --- |
+| `data-api-url` | yes | Full URL of `admin-api`'s `POST /feedback` endpoint |
+| `data-trigger-selector` | no | CSS selector for a host-provided trigger element; when set, the widget wires clicks on matching elements instead of injecting its own floating button |
+| `data-trigger-label` | no | Label for the auto-injected trigger button (default: "Report a problem / request a feature") |
+| `data-source` | no | Value sent as the submission's `source` field (default: `location.hostname + location.pathname`) |
+
+A host can also open the dialog programmatically (e.g. from a nav menu item) via
+`window.SweetRPGFeedbackWidget.open()`.
+
+### Request contract
+
+On submit, the widget `POST`s this JSON body to `data-api-url`:
+
+```json
+{
+  "type": "bug",
+  "title": "...",
+  "body": "...",
+  "reporter_email": "optional",
+  "source": "catalog-web/volumes/123",
+  "website": "",
+  "started_at": "2026-10-06T22:00:00.000Z"
+}
+```
+
+- `type` is `"bug"` or `"feature"`.
+- `website` is a honeypot field - always empty for a real user; a non-empty value indicates a
+  bot that filled every field.
+- `started_at` is when the dialog was opened (ISO 8601) - the backend computes elapsed time
+  against the request's arrival to reject submissions completed faster than a human plausibly
+  could.
+- `title` is capped at 200 characters, `body` at 5000, enforced client-side via `maxlength` and
+  expected to be enforced again server-side (never trust client-side limits alone).
+
+### States
+
+- **Success**: shows a `banner-success` confirmation inside the dialog and clears the title,
+  body, email, and honeypot fields for a fresh submission.
+- **Error**: shows a `banner-error` message inside the dialog (validation, rate limit, or
+  backend failure) and preserves whatever the user typed.
+
+### Accessibility and theming
+
+- Every control (type selector, title, body, email, submit, cancel) is reachable and operable
+  via keyboard alone; `Tab`/`Shift+Tab` is trapped within the open dialog, `Escape` closes it,
+  and focus returns to whatever triggered it on close.
+- Colors come entirely from `main.css`'s `--color-*` custom properties and existing
+  `.input`/`.btn`/`.banner-*` classes, so the widget inherits the host's light/dark theme and
+  the same contrast guarantees as the rest of the design system rather than carrying its own
+  palette.
+
 ## Documentation
 
 Documentation for this package can be found [here](https://sweetrpg.github.io/shared-web).
