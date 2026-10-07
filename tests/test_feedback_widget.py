@@ -30,3 +30,8 @@ def test_preview_page_defaults_api_url_when_unconfigured(app, client):
 
     body = response.get_data(as_text=True)
     assert 'data-api-url="/api/0/feedback"' in body
+
+
+def test_feedback_preview_route_returns_html(client):
+    response = client.get("/widgets/feedback-preview")
+    assert response.content_type.startswith("text/html")
