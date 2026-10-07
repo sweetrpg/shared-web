@@ -116,6 +116,7 @@
       cancelBtn: cancelBtn,
       openedAt: null,
       lastFocused: null,
+      submitted: false,
     };
   }
 
@@ -201,12 +202,23 @@
     dialogState.emailInput.value = '';
     dialogState.honeypot.value = '';
     setStatus(null, '');
+    dialogState.submitted = false;
+    dialogState.cancelBtn.hidden = false;
+    dialogState.cancelBtn.disabled = false;
+    dialogState.submitBtn.disabled = false;
+    dialogState.submitBtn.textContent = 'Submit';
   }
 
   function openDialog() {
     if (!dialogState) {
       dialogState = buildDialog();
       wireDialog();
+    }
+
+    // A prior open ended in a successful submission - start the next one fresh rather than
+    // reopening onto the "Close" button and hidden Cancel from that submission.
+    if (dialogState.submitted) {
+      resetForm();
     }
 
     dialogState.lastFocused = document.activeElement;
@@ -265,6 +277,11 @@
 
     dialogState.form.addEventListener('submit', function (event) {
       event.preventDefault();
+      if (dialogState.submitted) {
+        // Submit button has become "Close" after a successful submission.
+        closeDialog();
+        return;
+      }
       submitForm();
     });
   }
@@ -293,6 +310,7 @@
     }
 
     dialogState.submitBtn.disabled = true;
+    dialogState.cancelBtn.disabled = true;
     setStatus(null, '');
 
     fetch(config.apiUrl, {
@@ -301,15 +319,20 @@
       body: JSON.stringify(payload),
     })
       .then(function (response) {
-        dialogState.submitBtn.disabled = false;
         if (response.ok) {
           dialogState.titleInput.value = '';
           dialogState.bodyInput.value = '';
           dialogState.emailInput.value = '';
           dialogState.honeypot.value = '';
           setStatus('success', "Thanks - we've logged this.");
+          dialogState.submitted = true;
+          dialogState.cancelBtn.hidden = true;
+          dialogState.submitBtn.textContent = 'Close';
+          dialogState.submitBtn.disabled = false;
           return;
         }
+        dialogState.submitBtn.disabled = false;
+        dialogState.cancelBtn.disabled = false;
         if (response.status === 429) {
           setStatus('error', "You've submitted a few of these recently - please try again in a bit.");
           return;
@@ -318,6 +341,7 @@
       })
       .catch(function () {
         dialogState.submitBtn.disabled = false;
+        dialogState.cancelBtn.disabled = false;
         setStatus('error', "That didn't go through. Please check your connection and try again.");
       });
   }
