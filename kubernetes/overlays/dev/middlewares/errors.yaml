@@ -16,7 +16,7 @@ spec:
             - "502"
             - "503"
             - "504"
-        query: /errors/{status}?service=assets-web
+        query: /errors/{status}?service=shared-web
         service:
             name: web-v1
             namespace: sweetrpg-shared

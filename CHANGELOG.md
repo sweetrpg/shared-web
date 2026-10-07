@@ -1,3 +1,37 @@
+## [0.19.1] - 2026-09-09
+
+### 🐛 Bug Fixes
+
+- *(web)* Add placeholder landing page at /
+- *(kubernetes)* Label shared-web error pages as shared-web
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Merge master into develop after v0.19.0
+## [0.19.0] - 2026-09-08
+
+### 🚀 Features
+
+- *(admin)* Make metric cards linkable, drop the sub-line style
+- *(admin)* Vendor Chart.js + metrics chart container styles
+- *(admin)* Add metrics-chart.js init script
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Merge master into develop after v0.18.0
+## [0.18.0] - 2026-09-08
+
+### 🚀 Features
+
+- *(admin)* Add metrics dashboard card-grid styles
+
+### 🐛 Bug Fixes
+
+- Refresh interval
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Merge master into develop after v0.17.1
 ## [0.17.1] - 2026-09-04
 
 ### 🐛 Bug Fixes
