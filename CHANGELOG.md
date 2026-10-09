@@ -1,3 +1,23 @@
+## [0.21.0] - 2026-10-09
+
+### 🚀 Features
+
+- *(css)* Add banner-error and banner-success severity classes
+- *(errors)* Add home link to branded error pages
+
+### 🐛 Bug Fixes
+
+- *(feedback-widget)* Fix dialog close and submit/cancel button states
+
+### 🧪 Testing
+
+- *(feedback-widget)* Cover preview route content-type
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Merge master into develop after v0.20.0
+- Retrigger CI (dropped webhook on previous push)
+- *(release)* Merge master into develop after v0.20.1
 ## [0.20.1] - 2026-10-07
 
 ### 🐛 Bug Fixes

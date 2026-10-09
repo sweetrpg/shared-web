@@ -56,3 +56,7 @@ class BaseConfig(object):
     # matching every other frontend's fallback.
     SHARED_URL = os.environ.get(constants.SHARED_URL) or "http://localhost:8081"
     ASSETS_URL = os.environ.get(constants.ASSETS_URL) or "http://localhost:8081"
+    # main-web origin for the error page's home link; unset falls back to "/" (see errors.py) -
+    # not a bare constant default, since unlike SHARED_URL there's no meaningful local instance
+    # to point at.
+    MAIN_URL = os.environ.get(constants.MAIN_URL)
