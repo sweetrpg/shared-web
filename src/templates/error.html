@@ -49,6 +49,7 @@
         <span class="section-label error-status">{{ status_code }}</span>
         <h1>{{ heading }}</h1>
         <p class="text-muted">{{ description }}</p>
+        <p class="error-home-link"><a href="{{ main_url }}">{{ home_link_label }}</a></p>
         {% if service or request_id %}
         <h6 class="error-meta">
             {% if service %}{{ service }}{% endif %}

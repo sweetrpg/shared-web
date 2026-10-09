@@ -66,5 +66,8 @@ ADMIN_API_URL = 'ADMIN_API_URL'
 SHARED_URL = 'SHARED_URL'
 ASSETS_URL = 'ASSETS_URL'
 
+# main-web origin, used for the error page's home link
+MAIN_URL = 'MAIN_URL'
+
 # Tracing
 OTEL_EXPORTER_OTLP_ENDPOINT = "OTEL_EXPORTER_OTLP_ENDPOINT"

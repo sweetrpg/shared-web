@@ -54,6 +54,10 @@ def error_page(status_code):
             "request_id": request.args.get("request_id"),
             "request_id_label": _("Request ID:"),
             "shared_url": current_app.config.get("SHARED_URL"),
+            # Falls back to "/" rather than omitting the link when MAIN_URL is unset - see
+            # design.md's Decisions in the link-error-pages-to-home change.
+            "main_url": current_app.config.get("MAIN_URL") or "/",
+            "home_link_label": _("Return to the Hearth"),
         }
         return render_template("error.html", **context), status_code
 
