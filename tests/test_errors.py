@@ -70,3 +70,34 @@ def test_renders_shared_branding_assets(app, client):
     # shared_url = app.config["SHARED_URL"]
     assert "/static/css/main.css" in body
     assert "/static/img/sweetrpg-error-3-black.svg" in body
+
+
+def test_home_link_falls_back_to_root_when_main_url_unset(app, client):
+    app.config["MAIN_URL"] = None
+    try:
+        response = client.get("/errors/404")
+        body = response.get_data(as_text=True)
+        assert 'href="/"' in body
+    finally:
+        app.config.pop("MAIN_URL", None)
+
+
+def test_home_link_uses_configured_main_url(app, client):
+    app.config["MAIN_URL"] = "https://dev.sweetrpg.com"
+    try:
+        response = client.get("/errors/404")
+        body = response.get_data(as_text=True)
+        assert 'href="https://dev.sweetrpg.com"' in body
+    finally:
+        app.config.pop("MAIN_URL", None)
+
+
+@pytest.mark.parametrize("status_code", [404, 418])
+def test_home_link_present_for_mapped_and_unmapped_status_codes(app, client, status_code):
+    app.config["MAIN_URL"] = "https://dev.sweetrpg.com"
+    try:
+        response = client.get(f"/errors/{status_code}")
+        body = response.get_data(as_text=True)
+        assert 'href="https://dev.sweetrpg.com"' in body
+    finally:
+        app.config.pop("MAIN_URL", None)

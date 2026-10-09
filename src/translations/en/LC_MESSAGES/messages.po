@@ -17,6 +17,9 @@ msgstr "Expected back:"
 msgid "Request ID:"
 msgstr "Request ID:"
 
+msgid "Return to the Hearth"
+msgstr "Return to the Hearth"
+
 msgid "errors.400.heading"
 msgstr "A Garbled Missive"
 
