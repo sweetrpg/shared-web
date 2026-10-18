@@ -1,3 +1,18 @@
+## [0.21.1] - 2026-10-18
+
+### 🐛 Bug Fixes
+
+- *(health)* Keep probes independent of the session store
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Merge master into develop after v0.21.0
+
+### 💼 Other
+
+- *(deps)* Bump urllib3 from 2.7.0 to 2.8.0
+- *(deps)* Bump pyjwt from 2.13.0 to 2.15.0
+- *(deps)* Bump werkzeug from 3.1.8 to 3.1.9
 ## [0.21.0] - 2026-10-09
 
 ### 🚀 Features
