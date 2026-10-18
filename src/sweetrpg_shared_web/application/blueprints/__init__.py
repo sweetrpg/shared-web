@@ -21,11 +21,15 @@ from sweetrpg_web_core import constants as core_constants
 blueprint = Blueprint("web", __name__)
 
 
+def _is_health_request() -> bool:
+    return bool(request.endpoint) and "health" in request.endpoint
+
+
 @blueprint.before_request
 def _check_maintenance():
     # Health checks must never be gated by maintenance mode, or readiness/liveness probes
     # would start failing during a maintenance window.
-    if request.endpoint and "health" in request.endpoint:
+    if _is_health_request():
         return None
 
     admin_client = getattr(current_app, "admin_client", None)
@@ -54,6 +58,12 @@ def _check_maintenance():
 
 @blueprint.before_request
 def _populate():
+    # Writing to the session makes Flask-Session save it to Redis on the response. Health
+    # probes must not touch the session, or a Redis outage fails the probe and the pod
+    # crash-loops instead of just degrading.
+    if _is_health_request():
+        return None
+
     # Host: dev.sweetrpg.com
     # X-Real-Ip: 10.32.0.7
     # Connection: close
@@ -97,6 +107,9 @@ def _populate():
 
 @blueprint.before_request
 def _store_user():
+    if _is_health_request():
+        return None
+
     email = session.get(constants.SESSION_EMAIL)
     print(f"email: {email}")
     user_id = session.get(constants.SESSION_USER_ID)
@@ -108,6 +121,9 @@ def _store_user():
 
 @blueprint.before_request
 def _track():
+    if _is_health_request():
+        return None
+
     email = session.get(constants.SESSION_EMAIL)
     print(f"email: {email}")
     user_id = session.get(constants.SESSION_USER_ID)
