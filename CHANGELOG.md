@@ -1,3 +1,12 @@
+## [0.22.0] - 2026-11-03
+
+### 🚀 Features
+
+- *(footer)* Add standard three-line footer style
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Merge master into develop after v0.21.1
 ## [0.21.1] - 2026-10-18
 
 ### 🐛 Bug Fixes
