@@ -5,9 +5,13 @@ Branded HTML error pages for the platform's *-web frontends, reached via each
 frontend's Traefik `errors` middleware rather than per-frontend code.
 """
 
+import datetime
+import json
+
 from flask import Blueprint, current_app, render_template, request
 from flask_babel import force_locale, gettext as _
 
+from sweetrpg_shared_web import __version__
 from sweetrpg_shared_web.application.i18n import SUPPORTED_LOCALES
 
 
@@ -34,6 +38,16 @@ STATUS_KEYS = {
 DEFAULT_ICON = 0
 
 
+def _load_build_info():
+    """Returns (date, short sha) from the image's build-info.json, or "unknown" for both."""
+    try:
+        with open(current_app.config["BUILD_INFO_PATH"]) as f:
+            info = json.load(f)
+            return info.get("date", "unknown"), info.get("sha", "unknown")[:8]
+    except Exception:
+        return "unknown", "unknown"
+
+
 @blueprint.route("/errors/<int:status_code>")
 def error_page(status_code):
     # Unmapped status codes fall back to the generic copy rather than rendering a raw
@@ -43,6 +57,8 @@ def error_page(status_code):
     # Traefik proxies these requests server-to-server, so there's no browser cookie for the
     # visitor's locale - the proxying frontend passes it explicitly as a query parameter
     # (see the `shared-error-pages` spec delta). Falls back to the normal resolution order.
+
+    build_timestamp, build_hash = _load_build_info()
 
     def render():
         context = {
@@ -58,6 +74,12 @@ def error_page(status_code):
             # design.md's Decisions in the link-error-pages-to-home change.
             "main_url": current_app.config.get("MAIN_URL") or "/",
             "home_link_label": _("Return to the Hearth"),
+            # Legal links use the site root, never this app's own path prefix.
+            "site_root": (current_app.config.get("MAIN_URL") or "").rstrip("/"),
+            "current_year": datetime.datetime.now(datetime.timezone.utc).year,
+            "version": __version__,
+            "build_timestamp": build_timestamp,
+            "build_hash": build_hash,
         }
         return render_template("error.html", **context), status_code
 
