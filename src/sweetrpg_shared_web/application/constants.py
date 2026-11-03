@@ -68,6 +68,7 @@ ASSETS_URL = 'ASSETS_URL'
 
 # main-web origin, used for the error page's home link
 MAIN_URL = 'MAIN_URL'
+BUILD_INFO_PATH = 'BUILD_INFO_PATH'
 
 # Tracing
 OTEL_EXPORTER_OTLP_ENDPOINT = "OTEL_EXPORTER_OTLP_ENDPOINT"

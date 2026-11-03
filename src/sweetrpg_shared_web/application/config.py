@@ -60,3 +60,4 @@ class BaseConfig(object):
     # not a bare constant default, since unlike SHARED_URL there's no meaningful local instance
     # to point at.
     MAIN_URL = os.environ.get(constants.MAIN_URL)
+    BUILD_INFO_PATH = os.environ.get(constants.BUILD_INFO_PATH)
