@@ -645,6 +645,12 @@ textarea.input { min-height: 90px; resize: vertical; }
 }
 .footer-links { display: flex; gap: 16px; }
 .footer-build { margin: 0; font-size: 12px; font-weight: 400; color: var(--color-neutral-600); }
+/* Standard three-line footer (.footer > .footer-line x3, last also .footer-build). Matches
+ * main-web's landing footer: 12px lines at 0.55 opacity, 2px apart, in the theme text color.
+ * The :has() scope leaves the legacy .footer-links layout untouched until every app migrates. */
+.footer:has(> .footer-line) { gap: 2px; font-size: 12px; opacity: 1; }
+.footer-line { margin: 0; font-size: 12px; opacity: 0.55; }
+.footer-line.footer-build { color: inherit; }
 
 .dialog-backdrop {
 	position: fixed; inset: 0; display: grid; place-items: center;
