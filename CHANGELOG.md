@@ -1,3 +1,12 @@
+## [0.24.0] - 2026-11-04
+
+### 🚀 Features
+
+- *(css)* Add styled select, removable tag and native dialog
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Merge master into develop after v0.23.0
 ## [0.23.0] - 2026-11-04
 
 ### 🚀 Features
