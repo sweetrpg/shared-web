@@ -283,6 +283,20 @@ figcaption {
 .input:focus-visible { border-color: var(--color-accent); outline-offset: 0; }
 textarea.input { min-height: 90px; resize: vertical; }
 
+/* Native <select> in the same look as .input: the platform arrow is dropped (appearance: none)
+ * and a chevron added, so it matches text fields in both themes and stays keyboard operable. */
+select.input {
+	appearance: none; -webkit-appearance: none; cursor: pointer; padding-right: 32px;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' fill='none' stroke='%235a5754' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+	background-repeat: no-repeat; background-position: right 10px center; background-size: 12px;
+}
+[data-theme="dark"] select.input {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' fill='none' stroke='%23cfcdca' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+select.input:disabled { opacity: 0.6; cursor: not-allowed; }
+/* .input is full width; inside a table cell or toolbar a control usually wants its own width. */
+.input-inline { width: auto; }
+
 .field > label {
 	display: block; font-size: 12px; margin-bottom: 5px;
 	color: color-mix(in srgb, var(--color-text) 70%, transparent);
@@ -442,6 +456,16 @@ textarea.input { min-height: 90px; resize: vertical; }
 .tag-neutral { background: var(--color-neutral-100); color: var(--color-neutral-800); }
 .tag-outline { border: 1px solid var(--color-accent); color: var(--color-accent); }
 .tag-cloud { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+/* A removable tag: the remove control sits inside the capsule with its own padding, so the label
+ * never touches it. Use a <button class="tag-remove"> with an aria-label naming the tag. */
+.tag-removable { padding-right: 4px; }
+.tag-remove {
+	display: inline-flex; align-items: center; justify-content: center;
+	width: 20px; height: 20px; margin-left: 6px; padding: 0; border: 0; border-radius: 50%;
+	background: transparent; color: inherit; font: inherit; font-size: 14px; line-height: 1; cursor: pointer;
+}
+.tag-remove:hover { background: color-mix(in srgb, currentColor 18%, transparent); }
+.tag-remove:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 1px; }
 /* Distinct from .tag-outline: red border reads as "currently down", not "forthcoming". */
 .tag-danger { border: 1px solid #f0a3a3; color: #7a1212; cursor: help; }
 [data-theme="dark"] .tag-danger { border-color: #7a2e2e; color: #f5a3a3; }
@@ -669,6 +693,12 @@ textarea.input { min-height: 90px; resize: vertical; }
 }
 .dialog-body { font-size: 14px; opacity: 0.85; }
 .dialog-actions { display: flex; justify-content: flex-end; gap: var(--space-2); margin-top: var(--space-2); }
+/* Native <dialog class="dialog">: opened with showModal() for the focus trap and Escape to close.
+ * .dialog sets display unconditionally, so a closed dialog needs the explicit rule below. */
+dialog.dialog { margin: auto; border: 0; color: var(--color-text); max-height: 90vh; overflow: auto; }
+dialog.dialog:not([open]) { display: none; }
+dialog.dialog::backdrop { background: color-mix(in srgb, var(--color-neutral-900) 50%, transparent); }
+dialog.dialog-wide { width: min(680px, 100%); }
 
 /* Browse-page pagination footer (persons/publishers/studios/licenses/volumes) - Prev/Next plus a
  * small window of page-number links, all pre-built server-side (see catalog-web's
