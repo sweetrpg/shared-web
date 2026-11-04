@@ -110,3 +110,23 @@ footer > div:last-child {
   font-size: 11px;
   margin-top: 8px;
 }
+
+/* Standard three-line footer (see main.css's .footer-line): same look as the landing footer. */
+footer.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 24px;
+  font-size: 12px;
+  color: inherit;
+}
+
+footer.footer .footer-line {
+  font-size: 12px;
+  opacity: 0.55;
+}
+
+footer.footer a {
+  color: inherit;
+}

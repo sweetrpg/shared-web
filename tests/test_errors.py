@@ -101,3 +101,33 @@ def test_home_link_present_for_mapped_and_unmapped_status_codes(app, client, sta
         assert 'href="https://dev.sweetrpg.com"' in body
     finally:
         app.config.pop("MAIN_URL", None)
+
+
+def _footer_lines(body):
+    import re
+
+    return re.findall(r'<span class="(footer-line[^"]*)">(.*?)</span>', body, re.S)
+
+
+def test_footer_has_three_lines_in_order(client):
+    import datetime
+
+    lines = _footer_lines(client.get("/errors/404").get_data(as_text=True))
+
+    assert len(lines) == 3
+    assert f"&copy; {datetime.datetime.now(datetime.timezone.utc).year} Pilgrimage Software" in lines[0][1]
+    assert lines[1][1].index("Terms of Service") < lines[1][1].index("Privacy Policy") < lines[1][1].index("Support")
+    assert lines[2][0] == "footer-line footer-build"
+    assert "built" in lines[2][1]
+
+
+@pytest.mark.parametrize(
+    "main_url,expected",
+    [(None, "/terms"), ("https://dev.sweetrpg.com/", "https://dev.sweetrpg.com/terms")],
+)
+def test_footer_terms_link_is_site_root(app, client, monkeypatch, main_url, expected):
+    monkeypatch.setitem(app.config, "MAIN_URL", main_url)
+
+    body = client.get("/errors/404").get_data(as_text=True)
+
+    assert f'<a href="{expected}">Terms of Service</a>' in body

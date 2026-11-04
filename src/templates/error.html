@@ -58,5 +58,10 @@
         </h6>
         {% endif %}
     </div>
+    <footer class="footer">
+        <span class="footer-line">&copy; {{ current_year }} {{ _('Pilgrimage Software') }} &middot; <a href="https://github.com/sweetrpg" target="_blank" rel="noopener">{{ _('GitHub') }}</a></span>
+        <span class="footer-line"><a href="{{ site_root }}/terms">{{ _('Terms of Service') }}</a> &middot; <a href="{{ site_root }}/privacy">{{ _('Privacy Policy') }}</a> &middot; <a href="{{ site_root }}/support">{{ _('Support') }}</a></span>
+        <span class="footer-line footer-build">v{{ version }} &middot; built {{ build_timestamp }} / {{ build_hash }}</span>
+    </footer>
 </body>
 </html>
