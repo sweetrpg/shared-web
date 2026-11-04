@@ -1,3 +1,12 @@
+## [0.23.0] - 2026-11-04
+
+### 🚀 Features
+
+- *(footer)* Add standard footer to the error pages and page.css
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Merge master into develop after v0.22.0
 ## [0.22.0] - 2026-11-03
 
 ### 🚀 Features
