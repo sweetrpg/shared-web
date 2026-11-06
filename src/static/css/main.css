@@ -638,9 +638,7 @@ select.input:disabled { opacity: 0.6; cursor: not-allowed; }
   display: block;
   width: 16px;
   height: 16px;
-  /* Light theme: dark red on the tinted .icon-btn-danger background (about 6.7:1). The earlier
-   * pink was about 1.2:1 there. The dark theme keeps the lighter pink below. */
-  background-color: #7a1212;
+  background-color: #f0a3a3;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-position: center;
@@ -651,7 +649,11 @@ select.input:disabled { opacity: 0.6; cursor: not-allowed; }
 /* Generic fix for the same default-black-fill problem on a non-destructive FontAwesome icon
  * (e.g. plus.svg) - use directly on the <img> where .icon-btn-danger's semantics don't apply. */
 .icon-invert { filter: invert(1); }
-[data-theme="dark"] .icon-mask { background-color: #f0a3a3; }
+/* On the tinted .icon-btn-danger background the pink was about 1.2:1 in the light theme; dark red
+ * is about 6.7:1 there. The dark theme keeps pink. Scoped to the danger button so a bare .icon-mask
+ * elsewhere keeps its own color. */
+.icon-btn-danger .icon-mask { background-color: #7a1212; }
+[data-theme="dark"] .icon-btn-danger .icon-mask { background-color: #f0a3a3; }
 /* A neutral (non-danger) icon button paints its glyph in the text color in both themes. */
 .icon-btn:not(.icon-btn-danger) .icon-mask { background-color: var(--color-text); }
 .field-row { display: flex; align-items: baseline; gap: 6px; }
