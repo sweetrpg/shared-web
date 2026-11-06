@@ -1,3 +1,12 @@
+## [0.24.1] - 2026-11-06
+
+### 🐛 Bug Fixes
+
+- *(css)* Make icon-mask readable in the light theme and theme-aware for neutral icons
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Merge master into develop after v0.24.0
 ## [0.24.0] - 2026-11-04
 
 ### 🚀 Features
