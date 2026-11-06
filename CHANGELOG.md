@@ -1,3 +1,12 @@
+## [0.24.2] - 2026-11-06
+
+### 🐛 Bug Fixes
+
+- *(css)* Scope the dark icon-mask color to the danger button
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Merge master into develop after v0.24.1
 ## [0.24.1] - 2026-11-06
 
 ### 🐛 Bug Fixes
