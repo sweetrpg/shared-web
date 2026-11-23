@@ -683,8 +683,11 @@ select.input:disabled { opacity: 0.6; cursor: not-allowed; }
 .footer-line { margin: 0; font-size: 12px; opacity: 0.55; }
 .footer-line.footer-build { color: inherit; }
 
+/* z-index 1000 keeps every modal above page content that sets its own z-index (card overlay
+ * links, tooltips at 200) and above the sticky footer's opacity stacking context. The
+ * feedback widget stays below at 900/950. */
 .dialog-backdrop {
-	position: fixed; inset: 0; display: grid; place-items: center;
+	position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center;
 	padding: var(--space-4);
 	background: color-mix(in srgb, var(--color-neutral-900) 50%, transparent);
 }
