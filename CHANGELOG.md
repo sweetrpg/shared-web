@@ -1,3 +1,12 @@
+## [0.24.3] - 2026-11-23
+
+### 🐛 Bug Fixes
+
+- *(css)* Stack .dialog-backdrop above page content
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Merge master into develop after v0.24.2
 ## [0.24.2] - 2026-11-06
 
 ### 🐛 Bug Fixes
