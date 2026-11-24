@@ -1,0 +1,12 @@
+{
+  "name": "shared-web-js-tests",
+  "private": true,
+  "type": "module",
+  "description": "Test harness for shared-web's browser scripts. Dev and CI only; never shipped in the image.",
+  "scripts": {
+    "test": "node --test tests/js/"
+  },
+  "devDependencies": {
+    "jsdom": "31.0.1"
+  }
+}

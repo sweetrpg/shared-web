@@ -8,6 +8,9 @@ on:
             - "tests/**"
             - pyproject.toml
             - uv.lock
+            - package.json
+            - package-lock.json
+            - .node-version
             - "docs/**"
             - ".github/workflows/**"
     workflow_run:
@@ -100,3 +103,15 @@ jobs:
             - uses: actions/checkout@v7
             - name: Check for hardcoded user-facing template strings
               run: ./scripts/check-template-strings.sh
+
+    js-tests:
+        name: JS tests
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v7
+            - uses: actions/setup-node@v7
+              with:
+                  node-version-file: .node-version
+                  cache: npm
+            - name: js-tests
+              run: make test-js
