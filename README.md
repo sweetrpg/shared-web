@@ -134,6 +134,28 @@ On submit, the widget `POST`s this JSON body to `data-api-url`:
   the same contrast guarantees as the rest of the design system rather than carrying its own
   palette.
 
+## Hosted behavior scripts and JS tests
+
+Per PADR-0045, `shared-web` hosts frontend behavior scripts as ES modules under
+`src/static/js/catalog/` (frontends load them with
+`<script type="module" src="{SHARED_URL}/static/js/catalog/<name>.js">`). Server values reach a
+script as `data-*` attributes, never template syntax. Tests live in `tests/js/*.test.js`
+(`node:test` + `jsdom`, Node pinned in `.node-version`); run them with `make test-js`.
+
+Every script initializes through `safeInit(selector, init)` (`safe-init.js`): a throwing init is
+logged and contained, and the root gets `data-script-state="ready"` or `"failed"`. Until a script
+runs, its root has no `data-script-state`, so frontend CSS keeps controls that need the script
+inert or hidden.
+
+Each script gets a section here, in this format:
+
+- **Root**: selector the script initializes from.
+- **Reads**: `data-*` attributes and element IDs, exactly what the test fixture uses.
+- **Failure behavior**: what the user sees if the script does not load or its init throws.
+
+Release order (PADR-0045): release the script here first and confirm its URL answers 200, then
+switch the frontend. A contract change stays compatible with the previous markup for one release.
+
 ## Documentation
 
 Documentation for this package can be found [here](https://sweetrpg.github.io/shared-web).

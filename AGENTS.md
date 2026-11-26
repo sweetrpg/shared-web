@@ -61,3 +61,10 @@ uv lock --upgrade      # update dependencies
 
 Requires a local Redis (`redis-server` on `localhost:6379`, no auth needed) - used for caching
 and sessions.
+
+## Browser scripts
+
+Hosted behavior scripts live in `src/static/js/catalog/` with tests in `tests/js/`; see the
+README section "Hosted behavior scripts and JS tests" and PADR-0045. `make test-js` runs them
+(Node version in `.node-version`). Scripts are ES modules, take values from `data-*` attributes,
+contain no user-facing string literals, and initialize through `safeInit` so a failure stays contained.
