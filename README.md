@@ -16,6 +16,9 @@ their own copy of.
 
 ## Error pages
 
+The 403 page also explains the refusal and offers "Sign out and switch account", a POST to
+`/auth/logout` on the site root. It does no session lookup.
+
 `GET /errors/<status_code>` renders a branded HTML page for a supported HTTP status code
 (400, 401, 403, 404, 500, 502, 503, 504; anything else gets a generic fallback), with the
 response's own status code set to match. Accepts two optional query parameters:

@@ -131,3 +131,29 @@ def test_footer_terms_link_is_site_root(app, client, monkeypatch, main_url, expe
     body = client.get("/errors/404").get_data(as_text=True)
 
     assert f'<a href="{expected}">Terms of Service</a>' in body
+
+
+def test_403_explains_and_offers_sign_out(app, client, monkeypatch):
+    monkeypatch.setitem(app.config, "MAIN_URL", "https://dev.sweetrpg.com/")
+
+    body = client.get("/errors/403").get_data(as_text=True)
+
+    assert "have access to this page" in body
+    assert '<form method="post" action="https://dev.sweetrpg.com/auth/logout">' in body
+    assert "Sign out and switch account</button>" in body
+    assert "Return to the Hearth" in body
+
+
+def test_403_sign_out_posts_to_site_root_when_main_url_unset(app, client, monkeypatch):
+    monkeypatch.setitem(app.config, "MAIN_URL", None)
+
+    body = client.get("/errors/403").get_data(as_text=True)
+
+    assert 'action="/auth/logout"' in body
+
+
+@pytest.mark.parametrize("status_code", sorted(set(STATUS_KEYS) - {403}) + [418])
+def test_other_statuses_offer_no_sign_out(client, status_code):
+    body = client.get(f"/errors/{status_code}").get_data(as_text=True)
+
+    assert "/auth/logout" not in body
