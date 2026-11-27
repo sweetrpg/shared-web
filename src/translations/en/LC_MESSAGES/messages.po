@@ -102,3 +102,9 @@ msgstr "Privacy Policy"
 
 msgid "Support"
 msgstr "Support"
+
+msgid "You don't have access to this page. If you're signed in with the wrong account, sign out, then sign in with another one."
+msgstr "You don't have access to this page. If you're signed in with the wrong account, sign out, then sign in with another one."
+
+msgid "Sign out and switch account"
+msgstr "Sign out and switch account"
